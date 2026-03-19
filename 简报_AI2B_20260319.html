@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>AI 2B 行业简报 · 2026.03.19</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;background:#0d1624;color:#e0e8f0;min-height:100vh;line-height:1.6}
+header{background:linear-gradient(135deg,#0f1e3d 0%,#1a2f55 100%);border-bottom:2px solid #e6a419;padding:40px 24px 32px}
+.header-inner{max-width:900px;margin:0 auto}
+.eyebrow{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#e6a419;font-weight:700;margin-bottom:10px}
+h1{font-size:28px;font-weight:800;color:#fff;margin-bottom:8px}
+.subtitle{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.7}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.badge{font-size:11px;padding:3px 10px;border-radius:20px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.6)}
+
+main{max-width:900px;margin:40px auto 80px;padding:0 20px}
+.section-title{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#5c7099;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.section-title::after{content:'';flex:1;height:1px;background:#1e2d4a}
+
+.card{background:#111e35;border:1px solid #1e2d4a;border-radius:14px;padding:24px;margin-bottom:20px;transition:border-color .2s}
+.card:hover{border-color:#2a4070}
+
+.company-tag{display:inline-block;font-size:11px;font-weight:700;background:#1a2f55;color:#60a5fa;padding:2px 9px;border-radius:5px;margin-right:6px;margin-bottom:4px}
+.company-tag-green{background:rgba(16,185,129,0.15);color:#6ee7b7}
+.product-name{font-size:20px;font-weight:800;color:#fff;margin:8px 0 4px;line-height:1.3}
+
+.quote{background:#0d1624;border-left:3px solid #e6a419;padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0;font-size:13px;font-style:italic;color:#d4a843}
+.quote cite{font-style:normal;font-size:11px;color:#5c7099;display:block;margin-top:4px}
+
+.card-section{margin-top:14px}
+.card-section-title{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#5c7099;margin-bottom:6px}
+ul.detail-list{padding-left:16px;color:#c8d8e8;font-size:13px}
+ul.detail-list li{margin-bottom:5px;line-height:1.6}
+
+.insight-box{background:#0d1a2f;border:1px solid #1e3a5a;border-radius:8px;padding:12px 16px;margin-top:14px}
+.insight-box-title{font-size:11px;font-weight:700;color:#60a5fa;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+ul.insight-list{padding-left:16px;color:#a0b8cc;font-size:13px}
+ul.insight-list li{margin-bottom:4px;line-height:1.6}
+
+.source-row{margin-top:16px;padding-top:14px;border-top:1px solid #1e2d4a;font-size:12px;color:#3a5070;display:flex;align-items:flex-start;gap:8px}
+.source-row a{color:#4a70a0;text-decoration:none}
+.source-row a:hover{color:#60a5fa;text-decoration:underline}
+
+/* 咨询机构卡片 */
+.card-analyst{background:#0f1e38;border:1px solid #2a4a6a;border-radius:14px;padding:24px;margin-bottom:20px}
+.analyst-tag{display:inline-flex;align-items:center;gap:6px;background:#1a3a5a;color:#93c5fd;font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;margin-bottom:10px;letter-spacing:0.5px}
+
+footer{text-align:center;padding:24px;font-size:12px;color:#2a3a55;border-top:1px solid #121c2e}
+footer a{color:#2a4070;text-decoration:none}
+.back-link{display:inline-block;margin-bottom:28px;font-size:12px;color:#4a70a0;text-decoration:none;padding:6px 14px;border:1px solid #1e2d4a;border-radius:6px;transition:border-color .2s}
+.back-link:hover{border-color:#e6a419;color:#e6a419}
+
+.number-circle{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#1a3a6a;color:#60a5fa;font-size:11px;font-weight:800;border-radius:50%;margin-right:6px;flex-shrink:0}
+.card-number{display:flex;align-items:flex-start;gap:0;margin-bottom:4px}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="eyebrow">AI 2B Intelligence · Daily Brief</div>
+    <h1>AI 2B 行业简报 · 2026.03.19</h1>
+    <p class="subtitle">覆盖：3月18日~19日 · 企业级AI · Agent 2B · AI安全治理 · 头部咨询机构观点<br>
+    今日聚焦：Anthropic Dispatch端侧Agent新范式 · NVIDIA推理全栈落地 · 中国信通院智能体评估体系 · Google Agent大规模渗透数据</p>
+    <div class="badges">
+      <span class="badge">Anthropic</span>
+      <span class="badge">NVIDIA</span>
+      <span class="badge">中国信通院</span>
+      <span class="badge">Google Cloud</span>
+      <span class="badge">McKinsey</span>
+      <span class="badge">Forrester</span>
+      <span class="badge">Gartner</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <a class="back-link" href="index.html">← 返回首页</a>
+
+  <!-- ===== 今日5条高价值信息 ===== -->
+  <div class="section-title">今日高价值信息（5条）</div>
+
+  <!-- 条目1：Anthropic Dispatch -->
+  <div class="card">
+    <div>
+      <span class="company-tag">Anthropic</span>
+      <span class="company-tag" style="background:rgba(139,92,246,0.15);color:#c4b5fd">Claude Cowork</span>
+    </div>
+    <div class="product-name">Claude Cowork Dispatch ——<br>手机远程指挥桌面AI，端侧 Agent 新范式</div>
+
+    <div class="card-section">
+      <div class="card-section-title">发布信息</div>
+      <ul class="detail-list">
+        <li>发布时间：2026年3月16~17日（研究预览版），面向 Claude Max 订阅用户优先开放</li>
+        <li>核心功能：用户通过手机 Claude App 输入自然语言指令，Claude 在配对的本地 Mac 上自动执行——点击、打字、跨应用操作，全程本地运行，无需云端中转</li>
+        <li>一句话定位："Anthropic 把 Claude Code 的 Agent 能力搬进了知识工作者的日常，从对话工具变成了真正在后台干活的同事"</li>
+      </ul>
+    </div>
+
+    <div class="card-section">
+      <div class="card-section-title">解决的企业场景痛点</div>
+      <ul class="detail-list">
+        <li>远程办公 / 通勤中的异步任务执行：员工离开工位仍可指挥电脑整理会议纪要、更新 Confluence / Notion</li>
+        <li>跨应用信息流打通：从邮件提取行动项 → 更新日历 → 发送 Slack 消息，无需人工反复切换</li>
+        <li>数据隐私敏感行业（金融/法律）的本地 Agent 落地：所有操作留在本地 Mac，不经云端</li>
+      </ul>
+    </div>
+
+    <div class="insight-box">
+      <div class="insight-box-title">📌 对企业级AI PC的启示</div>
+      <ul class="insight-list">
+        <li><strong>端侧 Agent 执行是差异化竞争核心：</strong>Dispatch 证明"本地执行 + 移动指令"的组合有强烈的企业需求。AI PC 天然具备本地算力优势，需要尽快提供类似的系统级 Agent 执行环境（File System Agent、跨应用 API 调用）。</li>
+        <li><strong>数据隐私是打开企业门槛的钥匙：</strong>本地运行是 Dispatch 的核心卖点，也是 AI PC 对比云端 Agent 最大的差异化主张——企业敏感数据不出机器是不可忽视的商业议题。</li>
+        <li><strong>移动指令 + 桌面执行的协同形态需要前置思考：</strong>Dispatch 的手机遥控范式可能成为通用模式，AI PC 需考虑与移动端的任务编排协同，而不只是单机体验。</li>
+      </ul>
+    </div>
+
+    <div class="source-row">
+      <span>📰</span>
+      <span>来源：<a href="https://finance.sina.com.cn/wm/2026-03-18/doc-inhrkwsv9425587.shtml" target="_blank">新智元 · 新浪财经（2026-03-18）</a> ·
+      <a href="https://claude.com/blog/cowork-plugins-across-enterprise" target="_blank">Anthropic 官方博客（2026-03-16）</a></span>
+    </div>
+  </div>
+
+  <!-- 条目2：NVIDIA Vera Rubin + Groq 3 -->
+  <div class="card">
+    <div>
+      <span class="company-tag">NVIDIA</span>
+      <span class="company-tag" style="background:rgba(16,185,129,0.15);color:#6ee7b7">GTC 2026</span>
+    </div>
+    <div class="product-name">Vera Rubin 平台 + Groq 3 LPU ——<br>企业级 Agentic AI 推理全栈发布</div>
+
+    <div class="card-section">
+      <div class="card-section-title">发布信息</div>
+      <ul class="detail-list">
+        <li>发布时间：2026年3月16~19日 GTC 大会，黄仁勋主题演讲（北京时间3月17日凌晨）</li>
+        <li>Vera Rubin 平台：7 款芯片 + 5 套机架系统 + 1 台 Agentic AI 超算，Rubin GPU 提供 50 petaflops NVFP4 推理算力，将推理成本降至前代 1/10</li>
+        <li>Groq 3 LPU（NVIDIA Groq 3）：低延迟专用推理加速器，256 个 LPU 支持万亿参数模型低延迟推理，为 Agent 任务高并发调用设计</li>
+        <li>Vera CPU：全球首款为 Agentic AI 与强化学习优化的处理器，效率是传统 CPU 2 倍</li>
+      </ul>
+    </div>
+
+    <div class="card-section">
+      <div class="card-section-title">解决的企业场景痛点</div>
+      <ul class="detail-list">
+        <li>大规模企业 Agent 工作流的推理成本过高问题：把万亿参数 Agent 推理成本降一个量级，使企业级 24/7 Agent 运行变得经济可行</li>
+        <li>低延迟多智能体协作：金融风控、供应链实时决策等对响应时间敏感的场景</li>
+        <li>企业 AI 工厂全栈交付：从芯片到机架的一体化方案，降低企业 AI 基础设施集成复杂度</li>
+      </ul>
+    </div>
+
+    <div class="insight-box">
+      <div class="insight-box-title">📌 对企业级AI PC的启示</div>
+      <ul class="insight-list">
+        <li><strong>推理成本将成为企业采购的核心指标：</strong>NVIDIA 将"推理成本降 10 倍"作为核心卖点，AI PC 在端侧推理的 TCO（总拥有成本）叙事上可以借力这一行业标准，强调端侧免云端调用成本的长期经济性。</li>
+        <li><strong>专用推理芯片正在从数据中心向边缘蔓延：</strong>Groq 3 LPU 的专用化路线昭示下一步是边缘 LPU，AI PC 端侧 NPU 的差异化叙事与此高度共鸣，可提前卡位"边缘推理加速器"这一产品定义方向。</li>
+        <li><strong>Agentic AI 的算力需求将倒逼 PC 端升级：</strong>Agent 多步骤任务对本地算力有明确需求，AI PC 产品规格定义应纳入 Agent 工作流的并发推理场景作为压力测试标准。</li>
+      </ul>
+    </div>
+
+    <div class="source-row">
+      <span>📰</span>
+      <span>来源：<a href="https://blogs.nvidia.cn/blog/nvidia-vera-rubin-platform/" target="_blank">NVIDIA 官方博客（2026-03-17）</a> ·
+      <a href="https://segmentfault.com/a/1190000047659021" target="_blank">超神经HyperAI（2026-03-17）</a> ·
+      <a href="https://news.qq.com/rain/a/20260317A04O0900" target="_blank">智通财经 · 腾讯新闻（2026-03-17）</a></span>
+    </div>
+  </div>
+
+  <!-- 条目3：中国信通院可信AI智能体评估 -->
+  <div class="card">
+    <div>
+      <span class="company-tag" style="background:rgba(239,68,68,0.15);color:#fca5a5">中国信通院</span>
+      <span class="company-tag" style="background:rgba(234,179,8,0.12);color:#fde68a">AI安全治理</span>
+    </div>
+    <div class="product-name">2026年"可信AI-智能体"系列评估正式启动</div>
+
+    <div class="card-section">
+      <div class="card-section-title">发布信息</div>
+      <ul class="detail-list">
+        <li>发布时间：2026年3月16日，中国信通院依托中国人工智能产业发展联盟（AIIA）安全治理委员会正式宣布启动</li>
+        <li>评估范围：从基础技术（平台工具、技术能力、运营服务、工程能力）和应用能力（通用任务、行业应用、成熟度）两大维度对企业智能体进行标准化评测</li>
+        <li>首批结果：计划于 2026年5月在相关产业大会上公布</li>
+        <li>背景：继 315 晚会曝光 AI 大模型数据投毒黑产之后，国内 AI 安全治理监管明显提速</li>
+      </ul>
+    </div>
+
+    <div class="card-section">
+      <div class="card-section-title">解决的企业场景痛点</div>
+      <ul class="detail-list">
+        <li>企业在引进 AI 智能体产品时缺乏可信评估标准，采购风险高</li>
+        <li>Agent 在企业内部操作权限过大、操作可查性差的合规问题</li>
+        <li>数据安全与智能体行为的可审计性要求</li>
+      </ul>
+    </div>
+
+    <div class="insight-box">
+      <div class="insight-box-title">📌 对企业级AI PC的启示</div>
+      <ul class="insight-list">
+        <li><strong>国内"可信 AI"认证将成为企业采购门槛：</strong>拿到信通院可信 AI 认证，可能很快成为政府/国企采购 AI PC 的必要条件而非加分项，需提前规划认证路径。</li>
+        <li><strong>可审计性（Auditability）是 AI PC 差异化的专业卖点：</strong>端侧运行天然具备操作日志留存在本地、不出境的合规优势，AI PC 应将操作审计日志作为标准系统功能。</li>
+        <li><strong>抢占安全认证先发优势窗口只剩约 2 个月：</strong>首批结果 5 月公布，现在申请参评的企业将获得行业背书资格，建议 AI PC 产品团队立即启动参评评估工作。</li>
+      </ul>
+    </div>
+
+    <div class="source-row">
+      <span>📰</span>
+      <span>来源：<a href="https://finance.sina.com.cn/jjxw/2026-03-16/doc-inhreeew9914697.shtml" target="_blank">新浪财经（2026-03-16）</a> ·
+      <a href="https://www.chinaflashmarket.com/newsflash/37068" target="_blank">闪存市场（2026-03-16）</a> ·
+      <a href="https://www.eeo.com.cn/2026/0316/811619.shtml" target="_blank">经济观察网（2026-03-16）</a></span>
+    </div>
+  </div>
+
+  <!-- 条目4：NVIDIA投资Nebius + 企业AI云竞争 -->
+  <div class="card">
+    <div>
+      <span class="company-tag">NVIDIA</span>
+      <span class="company-tag" style="background:rgba(16,185,129,0.15);color:#6ee7b7">Nebius</span>
+      <span class="company-tag" style="background:rgba(59,130,246,0.12);color:#93c5fd">企业AI云</span>
+    </div>
+    <div class="product-name">NVIDIA 20亿美元战略投资 Nebius ——<br>企业 AI 云基础设施版图加速卡位</div>
+
+    <div class="card-section">
+      <div class="card-section-title">发布信息</div>
+      <ul class="detail-list">
+        <li>发布时间：2026年3月16~17日，GTC 2026 期间宣布</li>
+        <li>NVIDIA 通过预融资认股权证向 Nebius Group（阿姆斯特丹，估值约 280 亿美元）注资 20 亿美元，获得股权</li>
+        <li>同期背景：Nebius 此前已与 Meta 签订长期 AI 基础设施协议，规模约 270 亿美元（五年期）</li>
+        <li>战略意图：NVIDIA 以投资+生态绑定的方式，将 GPU 算力直接注入独立 AI 云提供商，对抗 AWS / Azure / GCP 自研 ASIC 趋势</li>
+      </ul>
+    </div>
+
+    <div class="card-section">
+      <div class="card-section-title">解决的企业场景痛点</div>
+      <ul class="detail-list">
+        <li>大型企业希望在三大云平台之外获得 NVIDIA 原生 GPU 算力，减少对云巨头的依赖</li>
+        <li>AI 密集型中型企业缺乏经济可行的 GPU 租用选项</li>
+      </ul>
+    </div>
+
+    <div class="insight-box">
+      <div class="insight-box-title">📌 对企业级AI PC的启示</div>
+      <ul class="insight-list">
+        <li><strong>云端 GPU 资源竞争加剧 → 本地算力价值提升：</strong>云端 GPU 稀缺加剧将推高企业云推理成本，AI PC 的端侧推理经济性叙事将更具说服力，是"降云成本"的有力论据。</li>
+        <li><strong>NVIDIA 全栈生态战略对 AI PC 生态兼容性提出要求：</strong>NemoClaw + Vera Rubin + Nebius 云构成 NVIDIA 完整的 Agent 基础设施链条，AI PC 需评估与 NVIDIA 生态的软硬件兼容层规划。</li>
+        <li><strong>"混合推理"的端云协同成为确定性架构选择：</strong>AI PC 产品需将端侧推理（本地 NPU）和云端推理（Nebius/NVIDIA 云）的调度策略纳入产品架构层面的 P0 设计。</li>
+      </ul>
+    </div>
+
+    <div class="source-row">
+      <span>📰</span>
+      <span>来源：<a href="https://www.msn.com/en-us/money/general/nvidia-invests-2b-in-nebius-a-28b-ai-cloud-provider/ar-AA1Ytl99" target="_blank">MSN Finance（2026-03-16）</a> ·
+      <a href="https://nvidianews.nvidia.com/online-press-kit/gtc-2026-news" target="_blank">NVIDIA 官方新闻室（2026-03-17）</a></span>
+    </div>
+  </div>
+
+  <!-- 条目5：Google Cloud AI Agent Trends 2026 -->
+  <div class="card">
+    <div>
+      <span class="company-tag">Google Cloud</span>
+      <span class="company-tag" style="background:rgba(59,130,246,0.12);color:#93c5fd">行业报告</span>
+    </div>
+    <div class="product-name">Google Cloud《AI Agent Trends 2026》——<br>52% 企业已将 Agent 投入生产，五大趋势重构企业价值</div>
+
+    <div class="card-section">
+      <div class="card-section-title">报告概览</div>
+      <ul class="detail-list">
+        <li>发布方：Google Cloud，基于全球 3,466 位企业决策者调研 + Google DeepMind 技术洞察，报告共 49 页</li>
+        <li>核心数据：52% 的生成式 AI 企业已将 Agent 投入生产；88% 的早期 Agent 采用者已实现正投资回报（ROI）</li>
+        <li>覆盖场景：49% 用于客户服务，46% 用于营销/安全运营，45% 用于技术支持，43% 用于产品创新或生产力提升</li>
+        <li>五大趋势：①人人拥有 Agent（员工从执行者→管理者）；②全工作流 Agent（基于 A2A/MCP 的端到端流程）；③客户 Agent（礼宾式个性化服务）；④安全运营 Agent（智能防御）；⑤Agent 人才转型（技能重构）</li>
+      </ul>
+    </div>
+
+    <div class="card-section">
+      <div class="card-section-title">解决的企业场景痛点</div>
+      <ul class="detail-list">
+        <li>企业对 Agent 规模化落地的路径不清晰，Google 的数据给出了优先级参考框架</li>
+        <li>A2A（Agent-to-Agent）和 MCP 协议的标准化推进，打通企业孤立系统的工作流壁垒</li>
+      </ul>
+    </div>
+
+    <div class="insight-box">
+      <div class="insight-box-title">📌 对企业级AI PC的启示</div>
+      <ul class="insight-list">
+        <li><strong>Agent 生产部署规模已超过临界点：</strong>52% 的数字意味着 Agent 不再是实验项目——AI PC 进入企业的最佳理由已从"探索 AI"升级为"加速已部署的 Agent 执行效率"，产品叙事需随之调整。</li>
+        <li><strong>MCP / A2A 协议支持是 AI PC 的生态准入标准：</strong>未来企业 Agent 生态将建立在 MCP/A2A 之上，AI PC 若不具备对这两个协议的原生支持，将被排除在企业 Agent 工作流之外。</li>
+        <li><strong>88% 正 ROI 数据是企业采购 AI 工具的有力背书：</strong>将此数据纳入企业级 AI PC 的 ROI 估算模型，可显著缩短销售周期中的价值验证阶段。</li>
+      </ul>
+    </div>
+
+    <div class="source-row">
+      <span>📰</span>
+      <span>来源：<a href="https://view.inews.qq.com/a/20260214A03V9G00" target="_blank">腾讯新闻 · Google Cloud 报告解读（2026-02-14）</a> ·
+      <a href="https://www.cet.com.cn/wzsy/cyzx/10312647.shtml" target="_blank">中国经济新闻网（2026-02-03）</a> ·
+      Google Cloud 官方报告（2025年12月~2026年2月持续发布）</span>
+    </div>
+  </div>
+
+  <!-- ===== 咨询机构/行业大V观点 ===== -->
+  <div class="section-title">咨询机构 · 行业大V观点（2条）</div>
+
+  <div class="card-analyst">
+    <div class="analyst-tag">🔬 McKinsey × Forrester × Gartner × IDC 综合观点</div>
+    <div style="font-size:16px;font-weight:800;color:#fff;margin-bottom:10px">Agentic AI 2026：多机构综合分析——AI Agent 即将触发企业软件的"颠覆拐点"</div>
+
+    <div class="quote">
+      "Agentic AI 的影响不是渐进式的，而是颠覆性的。企业如果不在 2026 年建立 Agent 能力基线，到 2027 年将面临结构性竞争劣势。那些最早部署 Agent 的企业，已经在用 88% 正 ROI 的数据证明这一点。"
+      <cite>— 综合自 McKinsey《Seizing the Agentic AI Advantage》 · Gartner 2025 预测报告 · IDC FutureScape 2026 · Axis Intelligence 综合分析（2026-03-16）</cite>
+    </div>
+
+    <ul class="detail-list" style="margin-top:12px">
+      <li><strong>Gartner 预测：</strong>2026 年 40% 的企业应用将集成任务型 AI Agent，而 2025 年这一比例不足 5%，增幅 8 倍</li>
+      <li><strong>McKinsey：</strong>GenAI 悖论正在化解——"能力越强、采用越广"的飞轮效应在 Agent 场景上已经显现，水平型与垂直型 Agent 将共同构成企业 AI 基础设施</li>
+      <li><strong>IDC FutureScape 2026：</strong>Agentic AI 将到 2030 年重塑企业战略、劳动力结构与创新模式</li>
+      <li><strong>Forrester：</strong>Agent 治理（Governance）将在 2026 年成为 CIO 议程首要议题，超过"模型选择"本身的重要性</li>
+    </ul>
+
+    <div class="source-row">
+      <span>📰</span>
+      <span>来源：<a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/seizing-the-agentic-ai-advantage" target="_blank">McKinsey（2025-06）</a> ·
+      <a href="https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025" target="_blank">Gartner（2025-08）</a> ·
+      <a href="https://my.idc.com/getdoc.jsp?containerId=prUS53883425" target="_blank">IDC FutureScape 2026（2025-10）</a></span>
+    </div>
+  </div>
+
+  <div class="card-analyst">
+    <div class="analyst-tag">🔬 TrendForce 集邦咨询</div>
+    <div style="font-size:16px;font-weight:800;color:#fff;margin-bottom:10px">CSP 自研 ASIC 崛起，NVIDIA 转向多产品线差攻训练与推理，AI PC 端侧推理价值窗口打开</div>
+
+    <div class="quote">
+      "NVIDIA 在 GTC 2026 上的策略转向清晰：不再仅靠 GPU 独霸云端训练市场，而是以 GPU + CPU + LPU 多轴布局抢占 AI 推理应用落地。随着 CSP 自研 ASIC 的规模扩大，推理市场的碎片化将加速——这恰恰是端侧 AI PC 推理卡位的最佳时机。"
+      <cite>— TrendForce 集邦咨询，2026年3月18日，GTC 2026 专项分析报告</cite>
+    </div>
+
+    <ul class="detail-list" style="margin-top:12px">
+      <li>2026 年 ASIC AI Server 占整体出货比例约 27.8%，预计 2030 年将升至近 40%</li>
+      <li>NVIDIA 以 GB300、VR200 等整合 CPU+GPU 的整机柜方案应对 ASIC 压力，推动可扩展至 AI 推理的全栈交付</li>
+      <li>Groq 3 LPU 的出现标志 NVIDIA 正式进入专用推理芯片市场，AI 市场从训练主导向推理主导转型加速</li>
+    </ul>
+
+    <div class="source-row">
+      <span>📰</span>
+      <span>来源：<a href="https://news.qq.com/rain/a/20260318A087G300" target="_blank">TrendForce · 腾讯新闻（2026-03-18）</a></span>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  AI 2B 行业简报 · 2026.03.19（第4期）· 行业分析视角 · 每工作日更新 ·
+  <a href="https://yangzhengcuhk.github.io/ai2b-insights/" target="_blank">在线访问</a> ·
+  <a href="index.html">返回首页</a>
+</footer>
+</body>
+</html>
