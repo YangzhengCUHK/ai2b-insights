@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>深度分析 · AI 2B 行业洞察 · 2026.03.19</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;background:#0d1624;color:#e0e8f0;min-height:100vh;line-height:1.7}
+header{background:linear-gradient(135deg,#0f1e3d 0%,#1a2f55 100%);border-bottom:2px solid #e6a419;padding:44px 24px 36px}
+.header-inner{max-width:860px;margin:0 auto}
+.eyebrow{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#e6a419;font-weight:700;margin-bottom:10px}
+h1{font-size:30px;font-weight:800;color:#fff;margin-bottom:8px}
+.subtitle{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.7}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.badge{font-size:11px;padding:3px 10px;border-radius:20px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.6)}
+
+main{max-width:860px;margin:44px auto 80px;padding:0 22px}
+
+/* 章节标题 */
+.chapter{margin-bottom:52px}
+.chapter-title{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#e6a419;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+.chapter-title::after{content:'';flex:1;height:1px;background:#1e2d4a}
+.chapter-heading{font-size:22px;font-weight:800;color:#fff;margin-bottom:20px;line-height:1.4}
+
+/* 段落文字 */
+p{color:#c0d0e0;font-size:14px;margin-bottom:14px;line-height:1.75}
+strong{color:#e0e8f0}
+
+/* 信息块 */
+.info-block{background:#111e35;border:1px solid #1e2d4a;border-radius:12px;padding:20px 22px;margin-bottom:18px}
+.info-block-title{font-size:12px;font-weight:700;color:#5c7099;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+ul.block-list{padding-left:18px;color:#b0c4d8;font-size:14px}
+ul.block-list li{margin-bottom:7px;line-height:1.7}
+
+/* 引言 */
+.quote-block{background:#0d1a2f;border-left:4px solid #e6a419;padding:14px 18px;border-radius:0 10px 10px 0;margin:16px 0}
+.quote-block p{color:#d4a843;font-style:italic;margin-bottom:4px}
+.quote-block cite{font-size:12px;color:#4a6080;font-style:normal}
+
+/* 比较表格 */
+.compare-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0 24px}
+.compare-table th{background:#0f1e3d;color:#e6a419;font-weight:700;padding:10px 12px;text-align:left;border-bottom:2px solid #1e2d4a}
+.compare-table td{padding:10px 12px;border-bottom:1px solid #1a2840;color:#b0c4d8;vertical-align:top}
+.compare-table tr:last-child td{border-bottom:none}
+.compare-table tr:hover td{background:#0f1a30}
+.tag-p0{display:inline-block;background:#dc2626;color:#fff;font-size:10px;font-weight:700;padding:1px 6px;border-radius:4px}
+.tag-p1{display:inline-block;background:#d97706;color:#fff;font-size:10px;font-weight:700;padding:1px 6px;border-radius:4px}
+.tag-p2{display:inline-block;background:#2563eb;color:#fff;font-size:10px;font-weight:700;padding:1px 6px;border-radius:4px}
+.tag-p3{display:inline-block;background:#4b5563;color:#fff;font-size:10px;font-weight:700;padding:1px 6px;border-radius:4px}
+
+/* SWOT */
+.swot-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.swot-cell{border-radius:10px;padding:16px 18px}
+.swot-s{background:#0f2a18;border:1px solid #1a4a28}
+.swot-w{background:#2a1010;border:1px solid #4a1a1a}
+.swot-o{background:#0f1e38;border:1px solid #1a3060}
+.swot-t{background:#1a1a10;border:1px solid #3a3a10}
+.swot-label{font-size:11px;font-weight:800;letter-spacing:1px;margin-bottom:8px;text-transform:uppercase}
+.swot-s .swot-label{color:#4ade80}
+.swot-w .swot-label{color:#f87171}
+.swot-o .swot-label{color:#60a5fa}
+.swot-t .swot-label{color:#fde68a}
+.swot-cell ul{padding-left:16px;font-size:13px;color:#b0c4d8}
+.swot-cell ul li{margin-bottom:5px}
+
+/* 优先级卡片 */
+.priority-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.priority-card{background:#111e35;border-radius:10px;padding:16px 18px;border-left:4px solid #1e2d4a}
+.p0-card{border-left-color:#dc2626}
+.p1-card{border-left-color:#d97706}
+.p2-card{border-left-color:#2563eb}
+.p3-card{border-left-color:#4b5563}
+.priority-label{font-size:11px;font-weight:800;letter-spacing:1px;margin-bottom:8px}
+.priority-card ul{padding-left:16px;font-size:13px;color:#b0c4d8}
+.priority-card ul li{margin-bottom:5px}
+
+/* 时间线 */
+.timeline{position:relative;padding-left:24px;border-left:2px solid #1e2d4a;margin:16px 0}
+.timeline-item{position:relative;margin-bottom:24px;padding-left:16px}
+.timeline-item::before{content:'';position:absolute;left:-25px;top:6px;width:10px;height:10px;border-radius:50%;background:#e6a419}
+.timeline-label{font-size:11px;font-weight:700;color:#e6a419;letter-spacing:1px;margin-bottom:4px}
+.timeline-content{font-size:13px;color:#b0c4d8;line-height:1.7}
+
+/* 参考来源 */
+.ref-list{padding-left:18px}
+.ref-list li{font-size:13px;color:#5c7099;margin-bottom:6px;line-height:1.6}
+.ref-list a{color:#4a70a0;text-decoration:none}
+.ref-list a:hover{color:#60a5fa;text-decoration:underline}
+
+/* 趋势高亮 */
+.trend-pill{display:inline-block;background:#1a3060;color:#93c5fd;font-size:11px;font-weight:600;padding:2px 10px;border-radius:12px;margin:2px}
+
+.back-link{display:inline-block;margin-bottom:28px;font-size:12px;color:#4a70a0;text-decoration:none;padding:6px 14px;border:1px solid #1e2d4a;border-radius:6px;transition:border-color .2s}
+.back-link:hover{border-color:#e6a419;color:#e6a419}
+
+footer{text-align:center;padding:24px;font-size:12px;color:#2a3a55;border-top:1px solid #121c2e}
+footer a{color:#2a4070;text-decoration:none}
+
+@media(max-width:640px){
+  .swot-grid,.priority-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="eyebrow">AI 2B Deep Analysis · 深度分析</div>
+    <h1>企业级AI竞争格局 · 深度分析</h1>
+    <p class="subtitle">基于 2026年3月18~19日动态 · 第4期<br>
+    Anthropic Dispatch · NVIDIA全栈推理 · 信通院AI治理体系 · 多机构综合观点</p>
+    <div class="badges">
+      <span class="badge">Anthropic</span>
+      <span class="badge">NVIDIA</span>
+      <span class="badge">Google Cloud</span>
+      <span class="badge">中国信通院</span>
+      <span class="badge">McKinsey</span>
+      <span class="badge">Gartner</span>
+      <span class="badge">Forrester</span>
+      <span class="badge">TrendForce</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <a class="back-link" href="index.html">← 返回首页</a>
+
+  <!-- ===== 1. 竞争格局分析 ===== -->
+  <div class="chapter">
+    <div class="chapter-title">Chapter 01</div>
+    <div class="chapter-heading">今日动态揭示的竞争格局分析</div>
+
+    <p>3月18~19日的动态，集中呈现了企业级 AI Agent 市场进入"部署落地即竞争"阶段之后，各方玩家在<strong>端侧执行权</strong>、<strong>推理基础设施控制权</strong>和<strong>合规治理话语权</strong>三条战线上的同步博弈。</p>
+
+    <div class="info-block">
+      <div class="info-block-title">战线一：端侧 Agent 执行权争夺</div>
+      <ul class="block-list">
+        <li><strong>Anthropic Cowork Dispatch</strong> 的发布，标志着 Agent 执行战场正式从"云端为主"向"端侧协同"扩展。通过手机→本地 Mac 的控制链路，Anthropic 绕开了微软/Google 的云端生态壁垒，直接在用户的本地硬件上建立 Agent 执行权。</li>
+        <li>这一打法与<strong>微软 Copilot Cowork（3月9日）</strong>形成直接对垒：微软走"云端图谱 + 企业数据集成"路线，Anthropic 走"本地执行 + 隐私安全"路线。两种路线的客户群体存在结构性分化。</li>
+        <li>国内的<strong>阿里悟空</strong>（企业内网 + 钉钉权限体系）代表第三条路径：以企业既有组织架构为锚点，从内部生长出 Agent 执行环境。</li>
+      </ul>
+    </div>
+
+    <div class="info-block">
+      <div class="info-block-title">战线二：推理基础设施控制权</div>
+      <ul class="block-list">
+        <li><strong>NVIDIA GTC 2026</strong> 的全栈发布（Vera Rubin + Groq 3 LPU + NemoClaw + Nebius 20亿美元投资）揭示了 NVIDIA 的战略意图：从"卖芯片"升级为"控制 Agentic AI 的算力底座"，同时对抗 Google/Amazon 的自研 ASIC 替代趋势。</li>
+        <li>NVIDIA 以投资+生态绑定方式巩固独立 AI 云（Nebius），规避三大云平台将算力采购切向自研 ASIC 的风险。</li>
+        <li>推理成本降至前代 1/10 是今年最重要的产业信号之一——这意味着企业 24/7 Agent 运行的经济门槛已实质性突破。</li>
+      </ul>
+    </div>
+
+    <div class="info-block">
+      <div class="info-block-title">战线三：合规治理话语权</div>
+      <ul class="block-list">
+        <li><strong>中国信通院"可信AI-智能体"评估体系</strong>的启动，是国内 AI Agent 市场的重要监管信号。这意味着"合规可信"将成为国内企业采购 AI Agent 产品的准入条件，而非可选项。</li>
+        <li>Forrester 同期强调 Agent 治理将超越模型选择，成为 CIO 2026年首要议题，与信通院此举高度呼应。</li>
+        <li>率先获得"可信 AI"认证的产品，将在国内政府/央国企采购中形成竞争壁垒。</li>
+      </ul>
+    </div>
+
+    <p>综合来看，企业级 AI 市场的竞争已从"谁的模型更强"演变为<strong>三维度叠加的系统性博弈</strong>：端侧执行能力、推理成本竞争力、合规治理体系。任何一个维度的缺失，都可能导致在企业客户决策中的关键性失分。</p>
+  </div>
+
+  <!-- ===== 2. 核心趋势拆解 ===== -->
+  <div class="chapter">
+    <div class="chapter-title">Chapter 02</div>
+    <div class="chapter-heading">核心趋势拆解：从今日信号提炼的结构性洞察</div>
+
+    <div class="info-block">
+      <div class="info-block-title">趋势 1｜Agent 执行从云端独占转向"端云协同"范式</div>
+      <p>Anthropic Dispatch 的本地执行路线 + 微软 Copilot Cowork 的云端图谱路线，共同构建了"端云协同"成为主流的信号。<span class="trend-pill">端侧执行</span> <span class="trend-pill">隐私安全</span> <span class="trend-pill">本地数据</span></p>
+      <ul class="block-list">
+        <li>未来 6-12 个月，企业 CIO 的 Agent 部署决策将被分为"敏感任务本地化 + 通用任务云端化"两个层次</li>
+        <li>AI PC 天然是"本地化执行层"的最优载体，但需要主动配合企业 IAM 和合规体系，才能获得 IT 部门的批准采购</li>
+      </ul>
+    </div>
+
+    <div class="info-block">
+      <div class="info-block-title">趋势 2｜推理成本的量级性下降重新定义 Agent 商业边界</div>
+      <p>NVIDIA Vera Rubin 将推理成本降至前代 1/10，叠加 Groq 3 LPU 在低延迟场景的专用优化，企业 Agent 7×24 运行变得经济可行。<span class="trend-pill">推理成本</span> <span class="trend-pill">LPU专用化</span> <span class="trend-pill">Agent经济学</span></p>
+      <ul class="block-list">
+        <li>推理成本下降 → Agent 使用密度上升 → 对端侧算力的需求相应提升（频繁调用时，云端推理的网络延迟和 Token 成本构成瓶颈）</li>
+        <li>这为 AI PC 的端侧 NPU 场景增加了新的经济论证：减少云端 API 调用频次 = 可量化的直接成本节省</li>
+      </ul>
+    </div>
+
+    <div class="info-block">
+      <div class="info-block-title">趋势 3｜AI 治理从"可选项"升级为"采购前提"</div>
+      <p>信通院评估体系 + Forrester 将治理列为 CIO 首要议题，共同揭示：<strong>2026年下半年，AI Agent 的企业采购决策将以"是否通过可信评估"为关键过滤条件</strong>。<span class="trend-pill">AI治理</span> <span class="trend-pill">合规认证</span> <span class="trend-pill">信通院</span></p>
+      <ul class="block-list">
+        <li>国内市场：信通院评估首批结果 5 月公布，错过首批将在国企采购中失去 6-12 个月的先发红利</li>
+        <li>海外市场：EU AI Act 的 Agent 相关条款正在落地，合规能力将成为出海企业 AI PC 的硬性门槛</li>
+      </ul>
+    </div>
+
+    <div class="info-block">
+      <div class="info-block-title">趋势 4｜MCP / A2A 协议标准化加速，非兼容者将被隔离</div>
+      <p>Google Cloud 报告中明确指出，88% 正 ROI 的早期 Agent 采用者，多数采用了基于 A2A 和 MCP 协议的跨系统 Agent 工作流。协议标准化正在形成新的生态壁垒。<span class="trend-pill">MCP</span> <span class="trend-pill">A2A</span> <span class="trend-pill">生态互通</span></p>
+      <ul class="block-list">
+        <li>支持 MCP / A2A 协议的 AI PC 可以作为企业 Agent 工作流的合法"节点"被纳入编排；不支持则被排除在外</li>
+        <li>AI PC 操作系统层需要提供标准化的 MCP 服务端口和 Agent 任务接收 API</li>
+      </ul>
+    </div>
+
+    <div class="info-block">
+      <div class="info-block-title">趋势 5｜52% 生产部署数据标志着 Agent 进入"采购期"而非"实验期"</div>
+      <p>Google Cloud 报告显示，超过半数的生成式 AI 企业已将 Agent 投入生产，88% 实现正 ROI。这意味着企业预算正在从"AI 探索"移向"AI 扩张"。<span class="trend-pill">规模化部署</span> <span class="trend-pill">ROI验证</span> <span class="trend-pill">企业预算</span></p>
+      <ul class="block-list">
+        <li>AI PC 的销售叙事应从"帮助企业开始探索 AI"升级为"加速企业已有 Agent 工作流的执行效率"</li>
+        <li>目标购买决策者应从"CDO/创新部门"转向"CIO/IT 采购部门"，后者更关注 TCO 和合规</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== 3. 玩家战略路径比较 ===== -->
+  <div class="chapter">
+    <div class="chapter-title">Chapter 03</div>
+    <div class="chapter-heading">各玩家战略路径比较</div>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>玩家</th>
+          <th>核心战略</th>
+          <th>Agent 路线</th>
+          <th>数据/安全主张</th>
+          <th>商业模式</th>
+          <th>对 AI PC 威胁度</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Anthropic</strong></td>
+          <td>本地执行 × 隐私安全差异化</td>
+          <td>Claude Cowork + Dispatch；端侧本地执行，手机→PC 控制链路</td>
+          <td>全本地运行，数据不出设备，主打金融/法律隐私场景</td>
+          <td>Max 订阅 + 企业连接器插件；按用户收费</td>
+          <td>🔴 高——直接抢占端侧执行权</td>
+        </tr>
+        <tr>
+          <td><strong>NVIDIA</strong></td>
+          <td>全栈 Agentic AI 基础设施</td>
+          <td>NemoClaw（开源 Agent 框架）+ Vera Rubin（推理算力）+ Groq 3 LPU</td>
+          <td>OpenShell 沙盒 + 隐私路由器；满足企业合规</td>
+          <td>硬件销售 + 云投资（Nebius）+ 生态授权</td>
+          <td>🟡 中——算力合作伙伴，但同时竞争软件层</td>
+        </tr>
+        <tr>
+          <td><strong>Microsoft</strong></td>
+          <td>云端图谱 × M365 生态锁定</td>
+          <td>Copilot Cowork（云端执行）+ Agent 365 管理台；E7 套件打包</td>
+          <td>Work IQ 数据引擎 + 企业 AAD 权限体系</td>
+          <td>M365 E7（$99/用户/月）套件订阅</td>
+          <td>🔴 高——最强的企业软件生态壁垒</td>
+        </tr>
+        <tr>
+          <td><strong>阿里（悟空）</strong></td>
+          <td>企业组织原生 × 钉钉生态</td>
+          <td>悟空 Agent 平台；原生继承企业权限，"沟通即执行"</td>
+          <td>安全沙箱 + 企业 IAM + 操作可审计</td>
+          <td>ATH Token 计量 + 钉钉内置（2000万+企业）</td>
+          <td>🟡 中（国内高）——国内企业市场份额巨大</td>
+        </tr>
+        <tr>
+          <td><strong>Google Cloud</strong></td>
+          <td>Workspace 生态 × MCP/A2A 标准</td>
+          <td>Agentspace + Workspace Agent；推进 A2A/MCP 协议标准化</td>
+          <td>Workspace DLP + 企业身份验证</td>
+          <td>Google Workspace 订阅 + Cloud API 消费</td>
+          <td>🟡 中——标准制定影响力大</td>
+        </tr>
+        <tr>
+          <td><strong>中国信通院</strong></td>
+          <td>合规治理话语权构建</td>
+          <td>非产品；为 Agent 产品建立可信评估体系</td>
+          <td>制定行业标准，覆盖基础技术 + 应用能力</td>
+          <td>评估认证（非商业，政策性驱动）</td>
+          <td>🟢 合作——获认证可形成采购壁垒</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== 4. SWOT ===== -->
+  <div class="chapter">
+    <div class="chapter-title">Chapter 04</div>
+    <div class="chapter-heading">企业级AI PC · SWOT 分析（结合今日信号更新）</div>
+    <div class="swot-grid">
+      <div class="swot-cell swot-s">
+        <div class="swot-label">S — 优势 Strengths</div>
+        <ul>
+          <li>端侧算力 + 隐私安全，是 Anthropic Dispatch 验证的最强需求点</li>
+          <li>数据不出机器，满足金融/法律/政府高安全要求</li>
+          <li>本地推理经济性：减少 API 调用成本（新的量化论据）</li>
+          <li>Agent 执行延迟低于云端，适合高频短任务</li>
+          <li>离线可用，企业内网隔离场景天然适配</li>
+        </ul>
+      </div>
+      <div class="swot-cell swot-w">
+        <div class="swot-label">W — 劣势 Weaknesses</div>
+        <ul>
+          <li>企业 IAM / 权限体系集成能力弱，不如悟空"原生"</li>
+          <li>与 M365 / 钉钉等主流企业软件 Agent 生态的兼容性尚不完善</li>
+          <li>MCP / A2A 协议的系统级支持尚未标准化</li>
+          <li>Token 成本核算和 Agent 行为审计功能缺失</li>
+          <li>缺少针对企业的可信认证（信通院评估尚未参与）</li>
+        </ul>
+      </div>
+      <div class="swot-cell swot-o">
+        <div class="swot-label">O — 机会 Opportunities</div>
+        <ul>
+          <li>信通院可信 AI 评估：首批认证窗口期（截止约 4 月，结果 5 月公布）</li>
+          <li>NVIDIA 推理成本降 10 倍 → 本地端侧 NPU 价值论据更强</li>
+          <li>Anthropic Dispatch 的实测成功率仅 50%，端侧 Agent 执行可靠性的市场缺口存在</li>
+          <li>企业 Agent 采购期来临，IT 采购部门成为关键决策人，AI PC 有机会进入企业采购框架</li>
+          <li>EU AI Act + 国内数据安全法推动企业数据本地化需求增长</li>
+        </ul>
+      </div>
+      <div class="swot-cell swot-t">
+        <div class="swot-label">T — 威胁 Threats</div>
+        <ul>
+          <li>Anthropic Dispatch 直接占领端侧 Agent 执行市场，降低 AI PC 独特性认知</li>
+          <li>Microsoft M365 E7 套件的企业软件锁定效应持续强化</li>
+          <li>NVIDIA NemoClaw 开源 Agent 框架拉平"自建端侧 Agent"的技术门槛</li>
+          <li>若 AI PC 未获信通院认证，国内政企采购将系统性排斥</li>
+          <li>云端推理成本下降可能削弱"省 Token 费用"的端侧论据</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 5. 产品定义优先级建议 ===== -->
+  <div class="chapter">
+    <div class="chapter-title">Chapter 05</div>
+    <div class="chapter-heading">产品定义优先级建议（P0 / P1 / P2 / P3）</div>
+
+    <div class="priority-grid">
+      <div class="priority-card p0-card">
+        <div class="priority-label"><span class="tag-p0">P0</span> 必须做 · 立即启动</div>
+        <ul>
+          <li><strong>企业 IAM 接入层：</strong>支持对接 LDAP / AD / 钉钉账号体系，实现 Agent 操作权限的自动继承</li>
+          <li><strong>可信 AI 认证（信通院）：</strong>立即启动参评流程，窗口期约 4 周</li>
+          <li><strong>MCP 服务端口标准化：</strong>操作系统层提供标准化 MCP 接收 API，使企业 Agent 可将 AI PC 纳入执行节点</li>
+          <li><strong>端侧 Agent 沙盒环境：</strong>隔离 Agent 执行环境，操作可审计，日志本地留存</li>
+        </ul>
+      </div>
+      <div class="priority-card p1-card">
+        <div class="priority-label"><span class="tag-p1">P1</span> 重要 · 3个月内</div>
+        <ul>
+          <li><strong>Agent 行为审计日志：</strong>完整记录 Agent 操作路径，支持企业合规审查导出</li>
+          <li><strong>混合推理调度器：</strong>本地 NPU 与云端 API 的智能切换，根据任务类型和数据敏感度自动路由</li>
+          <li><strong>Token 成本核算模块：</strong>为企业量化端侧推理的 TCO 节约，支持按部门核算</li>
+          <li><strong>Anthropic / OpenAI 连接器兼容：</strong>支持主流 Agent 框架（Cowork / Frontier）在本地执行层对接</li>
+        </ul>
+      </div>
+      <div class="priority-card p2-card">
+        <div class="priority-label"><span class="tag-p2">P2</span> 规划 · 6个月内</div>
+        <ul>
+          <li><strong>A2A 协议支持：</strong>作为 Google/微软 Agentspace 的标准执行节点被纳入企业 Agent 编排</li>
+          <li><strong>移动→PC 任务指令通道：</strong>参考 Anthropic Dispatch 范式，支持移动端远程触发本地 Agent</li>
+          <li><strong>端侧模型安全隔离：</strong>企业自有模型在本地推理，不与云端共享权重</li>
+          <li><strong>NVIDIA NemoClaw 生态集成：</strong>支持 OpenShell 沙盒协议，与 NVIDIA Agent 生态互通</li>
+        </ul>
+      </div>
+      <div class="priority-card p3-card">
+        <div class="priority-label"><span class="tag-p3">P3</span> 长期探索 · 12个月</div>
+        <ul>
+          <li><strong>多 AI PC 协作编排：</strong>企业内多台 AI PC 作为分布式 Agent 执行节点协同工作</li>
+          <li><strong>EU AI Act 合规认证体系：</strong>面向出海企业市场的合规能力建设</li>
+          <li><strong>AI PC 作为本地 Agent Hub：</strong>成为企业内部 Agent 部署和管理的本地控制中心</li>
+          <li><strong>行业垂直 Agent 预装：</strong>金融/法律/医疗等高安全场景的行业定制 Agent 套件</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 6. 战略路径与时间线 ===== -->
+  <div class="chapter">
+    <div class="chapter-title">Chapter 06</div>
+    <div class="chapter-heading">战略路径与时间线建议</div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-label">▶ 即刻 ~ 1 个月（3月下旬 ~ 4月中旬）</div>
+        <div class="timeline-content">
+          <strong>核心动作：赢得合规入场券</strong><br>
+          · 启动中国信通院"可信AI-智能体"评估参评申请（窗口期约4周，首批结果5月公布）<br>
+          · 完成 MCP 服务端口标准化的技术规范定稿，供合作伙伴/ISV 接入<br>
+          · 组织内部对 Anthropic Dispatch、NVIDIA NemoClaw、悟空三个产品的技术逆向研究，提炼差异化机会点<br>
+          · 制定"AI PC 企业 Agent TCO 计算器"工具，量化端侧推理的成本节约
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-label">▶ 1 ~ 3 个月（4月 ~ 6月）</div>
+        <div class="timeline-content">
+          <strong>核心动作：完成 P0 功能交付，建立企业 IT 采购信任</strong><br>
+          · 企业 IAM 接入层（LDAP / AD / 钉钉）完成至少一个头部企业的 PoC<br>
+          · Agent 操作沙盒环境 + 审计日志功能发布，面向金融/法律/政府客户</br>
+          · 参与信通院首批认证结果发布（5月），争取背书资格<br>
+          · 启动与 1-2 家国内 Agent 框架厂商（如 LangChain 中国、智谱）的 AI PC 集成合作
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-label">▶ 3 ~ 6 个月（6月 ~ 9月）</div>
+        <div class="timeline-content">
+          <strong>核心动作：建立 P1 能力，进入企业正式采购框架</strong><br>
+          · 混合推理调度器上线，展示"端侧优先 + 云端备援"的完整推理方案<br>
+          · Token 成本核算模块上线，支持 IT 部门进行采购 ROI 核算<br>
+          · 完成对 Anthropic Cowork / 微软 Copilot Cowork 连接器的兼容适配<br>
+          · 发布面向企业 IT 部门的"AI PC 部署白皮书"，主打合规 + 安全 + TCO 三大主张
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-label">▶ 6 ~ 12 个月（9月 ~ 2027年3月）</div>
+        <div class="timeline-content">
+          <strong>核心动作：扩展 P2/P3 能力，建立生态壁垒</strong><br>
+          · A2A 协议支持上线，正式作为企业 Agent 生态的标准执行节点<br>
+          · 移动→AI PC 任务指令通道功能发布，对标 Anthropic Dispatch 提供更高可靠性（目标成功率 90%+）<br>
+          · 启动 EU AI Act 合规认证流程，为出海市场准备<br>
+          · 探索行业垂直 Agent 套件（金融/法律方向优先），联合行业 ISV 共建
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      <p>"2026年是企业 Agent 从实验到采购的分水岭年。那些现在建立合规体系、完成 IAM 集成、拿到可信认证的产品，将在 2026 下半年到 2027 年的企业采购浪潮中收获先发红利；那些仍停留在模型能力叙事的产品，将在企业 IT 采购的第一轮筛选中被淘汰。"</p>
+      <cite>— 综合麦肯锡、Forrester、Google Cloud、中国信通院多方观点，AI 2B 深度分析（2026-03-19）</cite>
+    </div>
+  </div>
+
+  <!-- ===== 7. 参考来源 ===== -->
+  <div class="chapter">
+    <div class="chapter-title">Chapter 07</div>
+    <div class="chapter-heading">参考来源</div>
+    <ol class="ref-list">
+      <li>Anthropic，《Claude Cowork Dispatch 功能发布》，<a href="https://claude.com/blog/cowork-plugins-across-enterprise" target="_blank">官方博客</a>，2026-03-16/17</li>
+      <li>新智元/新浪财经，《你的电脑已被手机接管！Anthropic亮出Dispatch：AI 24小时给你代工》，<a href="https://finance.sina.com.cn/wm/2026-03-18/doc-inhrkwsv9425587.shtml" target="_blank">链接</a>，2026-03-18</li>
+      <li>NVIDIA，《NVIDIA Vera Rubin 平台正开启下一个 AI 前沿》，<a href="https://blogs.nvidia.cn/blog/nvidia-vera-rubin-platform/" target="_blank">官方博客</a>，2026-03-17</li>
+      <li>超神经HyperAI，《GTC 2026 丨从 Vera Rubin 到 NemoClaw：英伟达的未来不止 GPU？》，<a href="https://segmentfault.com/a/1190000047659021" target="_blank">链接</a>，2026-03-17</li>
+      <li>智通财经/腾讯新闻，《不止GPU!英伟达GTC 2026连发LPU、CPU新品》，<a href="https://news.qq.com/rain/a/20260317A04O0900" target="_blank">链接</a>，2026-03-17</li>
+      <li>MSN Finance，《Nvidia invests $2B in Nebius, a $28B AI cloud provider》，<a href="https://www.msn.com/en-us/money/general/nvidia-invests-2b-in-nebius-a-28b-ai-cloud-provider/ar-AA1Ytl99" target="_blank">链接</a>，2026-03-16</li>
+      <li>NVIDIA 新闻室，《GTC 2026 新闻资源》，<a href="https://nvidianews.nvidia.com/online-press-kit/gtc-2026-news" target="_blank">链接</a>，2026-03-17</li>
+      <li>中国信通院/新浪财经，《2026年"可信AI-智能体"系列评估启动》，<a href="https://finance.sina.com.cn/jjxw/2026-03-16/doc-inhreeew9914697.shtml" target="_blank">链接</a>，2026-03-16</li>
+      <li>经济观察网，《中国信通院启动2026年"可信AI-智能体"系列评估》，<a href="https://www.eeo.com.cn/2026/0316/811619.shtml" target="_blank">链接</a>，2026-03-16</li>
+      <li>闪存市场（ChinaFlashMarket），《评估快讯》，<a href="https://www.chinaflashmarket.com/newsflash/37068" target="_blank">链接</a>，2026-03-16</li>
+      <li>Google Cloud，《AI Agent Trends 2026》报告，腾讯新闻解读，<a href="https://view.inews.qq.com/a/20260214A03V9G00" target="_blank">链接</a>，2026-02-14</li>
+      <li>中国经济新闻网，《谷歌权威发布!2026 AI Agent智能体趋势》，<a href="https://www.cet.com.cn/wzsy/cyzx/10312647.shtml" target="_blank">链接</a>，2026-02-03</li>
+      <li>McKinsey，《Seizing the Agentic AI Advantage》，<a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/seizing-the-agentic-ai-advantage" target="_blank">链接</a>，2025-06-13</li>
+      <li>Gartner，《Gartner Predicts 40% of Enterprise Apps Will Feature Task-Specific AI Agents by 2026》，<a href="https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025" target="_blank">链接</a>，2025-08-26</li>
+      <li>IDC，《IDC FutureScape: Worldwide AI and Automation 2026 Predictions》，<a href="https://my.idc.com/getdoc.jsp?containerId=prUS53883425" target="_blank">链接</a>，2025-10-23</li>
+      <li>TrendForce 集邦咨询，《CSP自研ASIC规模升级，英伟达多元产品线分攻AI训练与推理需求》，<a href="https://news.qq.com/rain/a/20260318A087G300" target="_blank">腾讯新闻链接</a>，2026-03-18</li>
+    </ol>
+  </div>
+
+</main>
+
+<footer>
+  AI 2B 深度分析 · 2026.03.19（第4期）· 行业分析视角 ·
+  <a href="https://yangzhengcuhk.github.io/ai2b-insights/" target="_blank">在线访问</a> ·
+  <a href="简报_AI2B_20260319.html">今日简报</a> ·
+  <a href="index.html">返回首页</a>
+</footer>
+</body>
+</html>
