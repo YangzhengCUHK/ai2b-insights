@@ -1,386 +1,500 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>AI 2B 行业简报 · 2026.03.18</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;background:#0d1624;color:#e0e8f0;min-height:100vh;line-height:1.6}
-header{background:linear-gradient(135deg,#0f1e3d 0%,#1a2f55 100%);border-bottom:2px solid #e6a419;padding:40px 24px 32px}
-.header-inner{max-width:900px;margin:0 auto}
-.eyebrow{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#e6a419;font-weight:700;margin-bottom:10px}
-h1{font-size:28px;font-weight:800;color:#fff;margin-bottom:8px}
-.subtitle{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.7}
-.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.badge{font-size:11px;padding:3px 10px;border-radius:20px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.6)}
-.badge-red{background:rgba(220,38,38,0.15);border-color:rgba(220,38,38,0.4);color:#f87171}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 2B 行业简报 · 2026.03.18</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+      background: #0f1117;
+      color: #e2e8f0;
+      line-height: 1.7;
+      padding: 24px 16px 60px;
+    }
+    .container { max-width: 820px; margin: 0 auto; }
 
-main{max-width:900px;margin:40px auto 80px;padding:0 20px}
-.section-title{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#5c7099;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:10px}
-.section-title::after{content:'';flex:1;height:1px;background:#1e2d4a}
+    /* 顶部标题区 */
+    .header {
+      border-left: 4px solid #6366f1;
+      padding: 20px 24px;
+      margin-bottom: 32px;
+      background: linear-gradient(135deg, #1e1f2e 0%, #161720 100%);
+      border-radius: 0 12px 12px 0;
+    }
+    .header-label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #6366f1;
+      margin-bottom: 6px;
+    }
+    .header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #f1f5f9;
+      margin-bottom: 6px;
+    }
+    .header-meta {
+      font-size: 12px;
+      color: #64748b;
+    }
+    .header-tags {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .tag {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: #1e293b;
+      color: #94a3b8;
+      border: 1px solid #334155;
+    }
 
-/* 普通信息卡片 */
-.card{background:#111e35;border:1px solid #1e2d4a;border-radius:14px;padding:24px;margin-bottom:20px;transition:border-color .2s}
-.card:hover{border-color:#2a4070}
+    /* 今日摘要 */
+    .summary-box {
+      background: #1a1d2e;
+      border: 1px solid #2d3748;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 28px;
+    }
+    .summary-box h2 {
+      font-size: 13px;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
+    }
+    .summary-box p {
+      font-size: 14px;
+      color: #cbd5e1;
+      line-height: 1.8;
+    }
+    .highlight-text { color: #a78bfa; font-weight: 600; }
 
-/* 重大新品卡片 */
-.card-major{background:#180d0d;border:2px solid #dc2626;border-radius:14px;padding:24px;margin-bottom:24px;position:relative;box-shadow:0 0 24px rgba(220,38,38,0.12)}
-.card-major:hover{border-color:#ef4444;box-shadow:0 0 32px rgba(220,38,38,0.2)}
+    /* 普通新闻卡片 */
+    .card {
+      background: #1a1d2e;
+      border: 1px solid #2d3748;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+      transition: border-color 0.2s;
+    }
+    .card:hover { border-color: #4a5568; }
 
-.major-label{display:inline-flex;align-items:center;gap:6px;background:#dc2626;color:#fff;font-size:11px;font-weight:800;letter-spacing:1px;padding:4px 12px;border-radius:6px;margin-bottom:14px;text-transform:uppercase}
-.company-tag{display:inline-block;font-size:11px;font-weight:700;background:#1a2f55;color:#60a5fa;padding:2px 9px;border-radius:5px;margin-right:6px;margin-bottom:4px}
-.company-tag-red{background:rgba(220,38,38,0.2);color:#fca5a5}
-.product-name{font-size:20px;font-weight:800;color:#fff;margin:8px 0 4px;line-height:1.3}
-.product-name-major{font-size:22px;color:#fca5a5}
-.event-info{background:#1a0d0d;border-left:3px solid #dc2626;padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0;font-size:13px;color:#fca5a5}
-.event-info strong{color:#f87171;display:block;margin-bottom:4px}
-.quote{background:#0d1624;border-left:3px solid #e6a419;padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0;font-size:13px;font-style:italic;color:#d4a843}
-.quote cite{font-style:normal;font-size:11px;color:#5c7099;display:block;margin-top:4px}
+    /* 重大新品卡片 */
+    .card-major {
+      background: linear-gradient(135deg, #1f1218 0%, #1a1020 100%);
+      border: 2px solid #dc2626;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 24px rgba(220, 38, 38, 0.12);
+    }
 
-.card-section{margin-top:14px}
-.card-section-title{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#5c7099;margin-bottom:6px}
-.card-section-title-major{color:#f87171}
-ul.detail-list{padding-left:16px;color:#c8d8e8;font-size:13px}
-ul.detail-list li{margin-bottom:5px;line-height:1.6}
+    .major-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(220, 38, 38, 0.15);
+      border: 1px solid #dc2626;
+      color: #f87171;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 14px;
+    }
 
-.source-row{margin-top:16px;padding-top:14px;border-top:1px solid #1e2d4a;font-size:12px;color:#3a5070;display:flex;align-items:flex-start;gap:8px}
-.source-row-major{border-top-color:rgba(220,38,38,0.3)}
-.source-row a{color:#4a70a0;text-decoration:none}
-.source-row a:hover{color:#60a5fa;text-decoration:underline}
+    .card-number {
+      font-size: 11px;
+      color: #4a5568;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #f1f5f9;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .card-major h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fef2f2;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .card-company {
+      font-size: 12px;
+      color: #6366f1;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .card-major .card-company { color: #f87171; }
 
-.deep-note{margin-top:14px;background:rgba(220,38,38,0.1);border:1px solid rgba(220,38,38,0.3);border-radius:8px;padding:10px 14px;font-size:12px;color:#f87171;font-weight:600}
+    .card-desc {
+      font-size: 14px;
+      color: #94a3b8;
+      margin-bottom: 14px;
+      line-height: 1.7;
+    }
 
-/* 观点卡片 */
-.insight-card{background:#0f1e35;border:1px solid #1e3a5a;border-left:4px solid #e6a419;border-radius:0 12px 12px 0;padding:20px;margin-bottom:18px}
-.insight-source{font-size:11px;font-weight:700;color:#e6a419;letter-spacing:0.5px;margin-bottom:8px;text-transform:uppercase}
-.insight-content{font-size:14px;color:#d0dcea;line-height:1.7}
-.insight-tags{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
-.insight-tag{font-size:10px;background:#1a2f4a;color:#5a8aaa;padding:2px 8px;border-radius:4px}
+    /* 发布会信息块 */
+    .launch-info {
+      background: rgba(220, 38, 38, 0.08);
+      border: 1px solid rgba(220, 38, 38, 0.25);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+    .launch-info-title {
+      font-size: 11px;
+      color: #f87171;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .launch-info p {
+      font-size: 13px;
+      color: #fca5a5;
+      margin-bottom: 4px;
+    }
+    .launch-quote {
+      font-style: italic;
+      color: #fde68a;
+      font-size: 13px;
+      border-left: 3px solid #f59e0b;
+      padding-left: 10px;
+      margin-top: 8px;
+      line-height: 1.6;
+    }
 
-.tag-row{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 12px}
-.tag{font-size:11px;background:#1a2640;color:#5a80a0;padding:3px 9px;border-radius:5px}
-.tag-hot{background:rgba(220,38,38,0.15);color:#f87171}
+    /* 启示列表 */
+    .insight-list {
+      background: #0f1825;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+    .insight-list-title {
+      font-size: 11px;
+      color: #38bdf8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .insight-item {
+      font-size: 13px;
+      color: #7dd3fc;
+      padding: 4px 0;
+      padding-left: 14px;
+      position: relative;
+    }
+    .insight-item::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #0ea5e9;
+    }
 
-nav{background:#0a1220;border-bottom:1px solid #111e35;padding:12px 20px;position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:16px;font-size:12px}
-nav a{color:#5c7099;text-decoration:none;transition:color .15s}
-nav a:hover{color:#e6a419}
-nav .home-link{color:#e6a419;font-weight:700}
-.nav-sep{color:#1e2d4a}
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .source-link {
+      font-size: 11px;
+      color: #4a5568;
+      text-decoration: none;
+    }
+    .source-link:hover { color: #94a3b8; }
+    .date-badge {
+      font-size: 11px;
+      color: #475569;
+      background: #1e293b;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
 
-footer{text-align:center;padding:24px;font-size:11px;color:#2a3a55;border-top:1px solid #121c2e;margin-top:40px}
-footer a{color:#2a4070;text-decoration:none}
+    .deep-dive-notice {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px dashed #ef4444;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-top: 12px;
+      font-size: 13px;
+      color: #fca5a5;
+      text-align: center;
+    }
 
-.toc{background:#111e35;border:1px solid #1e2d4a;border-radius:12px;padding:20px;margin-bottom:32px}
-.toc-title{font-size:12px;font-weight:700;color:#5c7099;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
-.toc ul{list-style:none;padding:0}
-.toc li{margin-bottom:6px;font-size:13px}
-.toc a{color:#60a5fa;text-decoration:none}
-.toc a:hover{text-decoration:underline}
-.toc .major-item{color:#f87171}
-.toc .major-item a{color:#f87171}
-</style>
+    /* 机构观点 */
+    .opinion-section {
+      margin-top: 32px;
+    }
+    .section-label {
+      font-size: 11px;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #1e293b;
+    }
+    .opinion-card {
+      background: #131620;
+      border-left: 3px solid #f59e0b;
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin-bottom: 14px;
+    }
+    .opinion-source {
+      font-size: 11px;
+      color: #f59e0b;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .opinion-text {
+      font-size: 13px;
+      color: #94a3b8;
+      line-height: 1.7;
+    }
+
+    /* 页脚 */
+    .footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #1e293b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-left { font-size: 12px; color: #334155; }
+    .footer-links { display: flex; gap: 16px; }
+    .footer-links a {
+      font-size: 12px;
+      color: #475569;
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: #94a3b8; }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #2d3748, transparent);
+      margin: 8px 0 20px;
+    }
+  </style>
 </head>
 <body>
-<nav>
-  <a class="home-link" href="index.html">⬅ 首页</a>
-  <span class="nav-sep">|</span>
-  <a href="深度分析_AI2B_20260318.html">深度分析报告 →</a>
-  <span class="nav-sep">|</span>
-  <span style="color:#2a3a55;margin-left:auto">AI 2B 行业洞察日报 · 2026.03.18</span>
-</nav>
+<div class="container">
 
-<header>
-  <div class="header-inner">
-    <div class="eyebrow">AI 2B Intelligence · Daily Brief</div>
+  <!-- 标题 -->
+  <div class="header">
+    <div class="header-label">AI 2B 行业简报 · 第3期</div>
     <h1>AI 2B 行业简报</h1>
-    <p class="subtitle">2026年3月18日（周三）· 本期覆盖3月17日至18日动态<br>🔴 含2条重大新品发布：NVIDIA NemoClaw × 阿里钉钉悟空</p>
-    <div class="badges">
-      <span class="badge badge-red">🔴 2条重大新品</span>
-      <span class="badge">NVIDIA GTC 2026</span>
-      <span class="badge">阿里ATH事业群</span>
-      <span class="badge">微软 M365</span>
-      <span class="badge">IBM×NVIDIA</span>
-      <span class="badge">腾讯QClaw</span>
-      <span class="badge">a16z观点</span>
-    </div>
-  </div>
-</header>
-
-<main>
-  <div class="toc">
-    <div class="toc-title">📋 本期目录</div>
-    <ul>
-      <li class="major-item">🔴 <a href="#item1">重大新品 | NVIDIA NemoClaw — 企业级 Agent 安全部署平台</a></li>
-      <li class="major-item">🔴 <a href="#item2">重大新品 | 阿里钉钉"悟空" — 全球首个企业级AI原生工作平台</a></li>
-      <li><a href="#item3">微软 M365 Copilot Wave 3 — Agent 365 与 E7 前沿套件</a></li>
-      <li><a href="#item4">IBM × NVIDIA — 企业AI规模化落地联合方案</a></li>
-      <li><a href="#item5">腾讯 QClaw / WorkBuddy — 一日三连发，打通B端生态</a></li>
-      <li><a href="#insight1">行业观点 | a16z：AI Agent将颠覆企业基础设施三大维度</a></li>
-      <li><a href="#insight2">行业观点 | Gartner：2026年40%企业应用将嵌入任务型AI Agent</a></li>
-    </ul>
-  </div>
-
-  <!-- ============= 重大新品 1：NVIDIA NemoClaw ============= -->
-  <div class="section-title">🔴 重大新品发布</div>
-
-  <div class="card-major" id="item1">
-    <div class="major-label">🔴 重大新品发布</div>
-    <div><span class="company-tag company-tag-red">NVIDIA</span></div>
-    <div class="product-name product-name-major">NemoClaw — 企业级 Agent 安全部署平台</div>
-
-    <div class="event-info">
-      <strong>📅 发布会信息</strong>
-      活动名称：NVIDIA GTC 2026 主题演讲（Keynote）<br>
-      时间地点：2026年3月16日，美国加利福尼亚州圣何塞<br>
-      主讲人：NVIDIA CEO 黄仁勋（Jensen Huang）
-    </div>
-
-    <div class="quote">
-      "每个公司都应该拥有一个 OpenClaw 策略。NemoClaw 是一个开源平台，本质上是集成了企业级安全和隐私考虑的 OpenClaw。"
-      <cite>— 黄仁勋，GTC 2026 主题演讲，2026年3月16日</cite>
-    </div>
-
-    <div class="card-section">
-      <div class="card-section-title card-section-title-major">🏢 解决企业什么场景问题</div>
-      <ul class="detail-list">
-        <li>OpenClaw 在企业落地最大障碍是安全与合规：数据可能在智能体执行过程中泄露至外部，且缺乏策略管控</li>
-        <li>NemoClaw 通过隔离沙盒（OpenShell Runtime）、隐私路由器和基于策略的护栏，让企业 AI Agent 在受控边界内运行</li>
-        <li>支持单命令安装，大幅降低企业 IT 部署门槛，适配从 RTX PC 到 DGX 企业服务器的全硬件谱系</li>
-      </ul>
-    </div>
-
-    <div class="card-section">
-      <div class="card-section-title card-section-title-major">💡 对企业级AI PC产品定义的启示</div>
-      <ul class="detail-list">
-        <li><strong>端侧安全沙盒成为标配：</strong>NemoClaw 的 OpenShell 隔离机制说明"Agent 可执行但不可越界"将成企业 AI PC 的核心能力标准，本地沙盒执行环境需纳入产品 P0 优先级</li>
-        <li><strong>硬件与 Agent 框架深度绑定是护城河：</strong>NVIDIA 将 NemoClaw 与其 GPU 硬件形成配套，AI PC 需思考如何将自身计算优势与主流 Agent 框架（如 OpenClaw）形成原生适配，而非仅靠 AI 算力</li>
-        <li><strong>混合推理架构（本地+云端）是方向：</strong>NemoClaw 支持本地 Nemotron 模型+云端前沿模型的灵活切换，AI PC 需提供同类混合推理调度能力</li>
-      </ul>
-    </div>
-
-    <div class="tag-row">
-      <span class="tag tag-hot">🔴 重大新品</span>
-      <span class="tag">NVIDIA GTC 2026</span>
-      <span class="tag">企业Agent</span>
-      <span class="tag">安全沙盒</span>
-      <span class="tag">OpenClaw生态</span>
-    </div>
-
-    <div class="source-row source-row-major">
-      📌 来源：<a href="https://blogs.nvidia.cn/blog/nvidia-announces-nemoclaw/" target="_blank">NVIDIA 官方博客 — NVIDIA 宣布推出 NemoClaw（2026.03.16）</a>｜
-      <a href="https://k.sina.cn/article_5952915705_162d248f906702mdb8.html" target="_blank">新浪财经 — GTC2026英伟达版OpenClaw（2026.03.17）</a>
-    </div>
-
-    <div class="deep-note">⚠️ 本条已在深度分析报告中做专项拆解，详见深度分析报告</div>
-  </div>
-
-  <!-- ============= 重大新品 2：阿里钉钉悟空 ============= -->
-  <div class="card-major" id="item2">
-    <div class="major-label">🔴 重大新品发布</div>
-    <div><span class="company-tag company-tag-red">阿里巴巴 × 钉钉</span></div>
-    <div class="product-name product-name-major">钉钉"悟空"— 全球首个企业级AI原生工作平台</div>
-
-    <div class="event-info">
-      <strong>📅 发布会信息</strong>
-      活动名称：AI钉钉2.0年度新品发布会<br>
-      时间地点：2026年3月17日，杭州（直播）<br>
-      主讲人：钉钉创始人、CEO 陈航（花名：无招）；阿里巴巴 CEO 吴泳铭全程出席
-    </div>
-
-    <div class="quote">
-      "今天，我们把钉钉打碎，用AI重建，炼出'悟空'。过去是人用钉钉来工作，未来是AI用钉钉来工作。"
-      <cite>— 陈航，AI钉钉2.0发布会，2026年3月17日</cite>
-    </div>
-
-    <div class="quote">
-      "看到知识博主天天吹龙虾，我感觉这很不负责任。你把超级智能体随便在外面乱撒，每家公司的电脑全在开后门、全中了木马病毒。我们希望，AI 的工作是可追溯、可控制的。"
-      <cite>— 陈航，AI钉钉2.0发布会，2026年3月17日</cite>
-    </div>
-
-    <div class="card-section">
-      <div class="card-section-title card-section-title-major">🏢 解决企业什么场景问题</div>
-      <ul class="detail-list">
-        <li>OpenClaw 等通用 AI Agent 缺乏企业权限管控，数据安全风险高，操作不可追溯——悟空从设计之初即面向企业，内置权限继承、安全沙盒和 Token 计费</li>
-        <li>企业需要一支 24 小时在线的 AI 团队处理跨系统审批、文档、会议、数据分析——悟空通过 Agent Runtime 实现"沟通即执行"</li>
-        <li>作为独立 App + 钉钉内置双形态，接触超 2000 万企业组织，解决 B 端 AI 落地入口问题</li>
-      </ul>
-    </div>
-
-    <div class="card-section">
-      <div class="card-section-title card-section-title-major">💡 对企业级AI PC产品定义的启示</div>
-      <ul class="detail-list">
-        <li><strong>企业身份与权限是 AI PC 的核心壁垒：</strong>悟空"自动继承企业权限规则"说明企业 AI 的核心不是模型能力，而是与企业身份/权限体系的深度集成，AI PC 应将企业 IAM 接入列为 P0</li>
-        <li><strong>可核算的 Token 成本管理是 CFO 的需求：</strong>悟空明确将 Token 消耗一目了然作为卖点，AI PC 需考虑提供本地/云端混合 Token 使用成本看板</li>
-        <li><strong>平台入口之争已打响：</strong>悟空直接内置到 2000 万企业钉钉，AI PC 若不能成为企业工作流的核心入口，将面临被边缘化的风险</li>
-      </ul>
-    </div>
-
-    <div class="tag-row">
-      <span class="tag tag-hot">🔴 重大新品</span>
-      <span class="tag">ATH事业群</span>
-      <span class="tag">企业Agent平台</span>
-      <span class="tag">钉钉2.0</span>
-      <span class="tag">B端AI入口</span>
-    </div>
-
-    <div class="source-row source-row-major">
-      📌 来源：<a href="https://news.qq.com/rain/a/20260318A00E3S00" target="_blank">每日经济新闻 — "悟空"横扫"虾兵"（2026.03.18）</a>｜
-      <a href="https://k.sina.cn/article_5953740931_162dee08306702uul0.html" target="_blank">新浪新闻 — 阿里下大棋成立Token Hub事业群（2026.03.17）</a>｜
-      <a href="https://www.cnbc.com/2026/03/17/alibaba-wukong-ai-enterprise-tool-restructuring-qwen-exits.html" target="_blank">CNBC — Alibaba launches Wukong（2026.03.17）</a>
-    </div>
-
-    <div class="deep-note">⚠️ 本条已在深度分析报告中做专项拆解，详见深度分析报告</div>
-  </div>
-
-  <!-- ============= 常规条目 3：微软 ============= -->
-  <div class="section-title">今日要闻</div>
-
-  <div class="card" id="item3">
-    <div><span class="company-tag">微软</span></div>
-    <div class="product-name">Microsoft 365 Copilot Wave 3 — Agent 365 与 E7 前沿套件</div>
-    <div class="tag-row">
-      <span class="tag">M365 Copilot</span><span class="tag">企业Agent</span><span class="tag">多模型</span><span class="tag">治理</span>
-    </div>
-    <div class="card-section">
-      <div class="card-section-title">产品/技术内容</div>
-      <ul class="detail-list">
-        <li><strong>Agent 365：</strong>企业代理控制平面，统一管理数以百万计的 Agent，定价 $15/用户/月，2026年5月1日上线</li>
-        <li><strong>Copilot Cowork（与 Anthropic 合作）：</strong>支持多步骤、长时间运行的跨工具任务，整合 Claude 模型，首批 Frontier 计划客户抢测</li>
-        <li><strong>M365 E7 前沿套件：</strong>将 Copilot + Agent 365 + Entra + E5 安全打包，$99/用户/月，2026年5月1日开售</li>
-      </ul>
-    </div>
-    <div class="card-section">
-      <div class="card-section-title">解决企业什么问题</div>
-      <ul class="detail-list">
-        <li>企业大规模部署 Agent 后的治理失控问题——Agent 365 提供可见、可管、可停的控制层</li>
-        <li>单一 AI 模型难以覆盖全场景——多模型编排策略（OpenAI + Anthropic）自动最优匹配</li>
-      </ul>
-    </div>
-    <div class="card-section">
-      <div class="card-section-title">对企业级AI PC的启示</div>
-      <ul class="detail-list">
-        <li>套件化定价（$99 全包）正在成为企业 AI 采购主流模式，AI PC 的商业化需考虑软硬件捆绑套件策略</li>
-        <li>Agent 控制平面成为新的 IT 基础设施，AI PC 应提供原生的本地 Agent 管控能力</li>
-        <li>多模型架构是中期必选项，AI PC 需支持多种推理后端的灵活切换调度</li>
-      </ul>
-    </div>
-    <div class="source-row">
-      📌 来源：<a href="https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/09/powering-frontier-transformation-with-copilot-and-agents/" target="_blank">Microsoft 365 官方博客 — Powering Frontier Transformation（2026.03.09）</a>
+    <div class="header-meta">2026年03月18日（星期三）· 今日含 2 条重大新品发布</div>
+    <div class="header-tags">
+      <span class="tag">企业级AI</span>
+      <span class="tag">AI安全</span>
+      <span class="tag">Agent 2B</span>
+      <span class="tag">AIOS</span>
+      <span class="tag">AI PC</span>
     </div>
   </div>
 
-  <!-- ============= 常规条目 4：IBM × NVIDIA ============= -->
-  <div class="card" id="item4">
-    <div><span class="company-tag">IBM</span><span class="company-tag">NVIDIA</span></div>
-    <div class="product-name">IBM × NVIDIA — 企业AI规模化落地联合方案（GTC 2026）</div>
-    <div class="tag-row">
-      <span class="tag">企业AI落地</span><span class="tag">GPU原生分析</span><span class="tag">主权AI</span><span class="tag">watsonx</span>
+  <!-- 今日摘要 -->
+  <div class="summary-box">
+    <h2>今日要点</h2>
+    <p>
+      企业级AI Agent进入<span class="highlight-text">平台化竞争决战期</span>：本周内，NVIDIA与阿里钉钉相继发布重磅企业Agent平台，一个聚焦<span class="highlight-text">底层安全基础设施</span>（NemoClaw），一个主打<span class="highlight-text">原生企业操作系统</span>（悟空）；与此同时，微软重组Copilot产品线，信号明确——行业正从"百花齐放"走向"平台收敛"。企业级AI的竞争格局，正在本周完成一次历史性卡位。
+    </p>
+  </div>
+
+  <!-- 今日新闻 -->
+  <div class="section-label">今日动态 · 5 条精选</div>
+
+  <!-- NO.1 NVIDIA NemoClaw -->
+  <div class="card-major">
+    <div class="major-badge">🔴 重大新品发布</div>
+    <div class="card-number">NO.1</div>
+    <h3>NVIDIA NemoClaw：开源企业级 AI Agent 安全平台正式亮相</h3>
+    <div class="card-company">NVIDIA · GTC 2026 · 2026年3月16日</div>
+
+    <div class="launch-info">
+      <div class="launch-info-title">发布会信息</div>
+      <p>📍 活动：GTC 2026 · 加利福尼亚州圣何塞 SAP 中心（3月15-19日，超3万人参会）</p>
+      <p>🎤 主讲：NVIDIA CEO 黄仁勋（Jensen Huang）主题演讲</p>
+      <div class="launch-quote">
+        "OpenClaw为所有人开启了AI的下一个前沿领域。NemoClaw则使这个前沿领域对企业来说变得安全。"<br>
+        —— 黄仁勋，GTC 2026 主题演讲
+      </div>
     </div>
-    <div class="card-section">
-      <div class="card-section-title">产品/技术内容</div>
-      <ul class="detail-list">
-        <li><strong>watsonx.data + NVIDIA cuDF：</strong>GPU 加速企业结构化数据分析，雀巢案例：15分钟降至3分钟，成本节省83%</li>
-        <li><strong>IBM Docling + NVIDIA Nemotron：</strong>非结构化文档智能解析，高吞吐量多模态 AI 就绪转换</li>
-        <li><strong>主权云 + Blackwell Ultra GPU：</strong>2026 Q2 在 IBM Cloud 上线，支持数据驻留合规的本地 AI 推理</li>
-      </ul>
+
+    <div class="card-desc">
+      NemoClaw 是 NVIDIA 基于 OpenClaw 开源框架推出的企业级 AI Agent 安全平台，许可证为 Apache 2.0，当前处于 Alpha 阶段。核心能力：四层安全隔离（网络层/文件系统层/进程层/推理层），零权限默认启动，策略即代码（YAML），完整审计追踪，GPU 透传支持本地推理。已与 Salesforce、Cisco、Google、Adobe、CrowdStrike 达成企业集成合作。发布背景：2026年2月 OpenAI 收购 OpenClaw 后，企业担忧供应商锁定，NVIDIA 推出开源替代以争夺 Agent 基础设施标准地位。
     </div>
-    <div class="card-section">
-      <div class="card-section-title">解决企业什么问题</div>
-      <ul class="detail-list">
-        <li>企业 AI 从 PoC 到大规模生产的三大障碍：数据碎片化、基础设施不匹配、合规要求</li>
-        <li>金融/医疗/政府等受监管行业的数据主权合规与高性能 AI 推理的矛盾</li>
-      </ul>
+
+    <div class="insight-list">
+      <div class="insight-list-title">对企业级 AI PC 产品的启示</div>
+      <div class="insight-item">AI Agent 安全沙箱将成为 B 端产品的标配门槛，AI PC 需在硬件层提供可信执行环境（TEE）作为差异化</div>
+      <div class="insight-item">开源 + Apache 2.0 的策略正在重塑企业 AI 平台竞争规则，私有化部署与本地 GPU 推理是 AI PC 的核心护城河</div>
+      <div class="insight-item">"策略即代码"（YAML 声明式安全）提示 AI PC 应提供可审计、可版本控制的企业安全策略管理能力</div>
     </div>
-    <div class="card-section">
-      <div class="card-section-title">对企业级AI PC的启示</div>
-      <ul class="detail-list">
-        <li>GPU 原生数据分析将成标配——AI PC 需要支持 GPU 加速的本地数据管道，而非单纯的模型推理</li>
-        <li>主权 AI（数据不出本地）将是企业级 AI PC 的核心差异化卖点，尤其面向政企客户</li>
-      </ul>
+
+    <div class="card-footer">
+      <a class="source-link" href="https://www.secondtalent.com/resources/nvidia-nemoclaw-how-it-works-use-cases-features-2026/" target="_blank">来源：Second Talent · 2026-03-18</a>
+      <span class="date-badge">2026-03-16 发布</span>
     </div>
-    <div class="source-row">
-      📌 来源：<a href="https://newsroom.ibm.com/2026-03-16-ibm-and-nvidia-announce-expanded-collaboration-at-gtc-2026-to-advance-ai-for-the-enterprise" target="_blank">IBM 新闻中心 — IBM × NVIDIA GTC 2026 合作声明（2026.03.16）</a>
+    <div class="deep-dive-notice">
+      ⚠️ 本条已在深度分析报告中做专项拆解，详见深度分析报告
     </div>
   </div>
 
-  <!-- ============= 常规条目 5：腾讯 ============= -->
-  <div class="card" id="item5">
-    <div><span class="company-tag">腾讯</span></div>
-    <div class="product-name">腾讯 QClaw / WorkBuddy — 一日三连发，打通B端生态</div>
-    <div class="tag-row">
-      <span class="tag">OpenClaw生态</span><span class="tag">B端Agent</span><span class="tag">企业微信</span><span class="tag">腾讯云</span>
+  <!-- NO.2 阿里钉钉悟空 -->
+  <div class="card-major">
+    <div class="major-badge">🔴 重大新品发布</div>
+    <div class="card-number">NO.2</div>
+    <h3>阿里钉钉"悟空"：全球首个企业级 AI 原生工作平台正式发布</h3>
+    <div class="card-company">阿里巴巴 / 钉钉 · 2026 AI 钉钉 2.0 年度新品发布会 · 2026年3月17日</div>
+
+    <div class="launch-info">
+      <div class="launch-info-title">发布会信息</div>
+      <p>📍 活动：2026 AI 钉钉 2.0 年度新品发布会（3月17日）</p>
+      <p>🎤 主讲：钉钉创始人、CEO 陈航</p>
+      <p>🏢 组织背景：阿里 CEO 吴泳铭 3月16日宣布成立 ATH（Alibaba Token Hub）事业群，亲自挂帅</p>
+      <div class="launch-quote">
+        "未来不是人用钉钉，而是 AI 用钉钉。悟空与市面上的 Agent 不同，它天然长在企业组织里，能安全使用。"<br>
+        —— 陈航，2026 AI 钉钉 2.0 发布会
+      </div>
     </div>
-    <div class="card-section">
-      <div class="card-section-title">产品/技术内容</div>
-      <ul class="detail-list">
-        <li><strong>QClaw（个人端）：</strong>桌面 App，连接 OpenClaw 与个人微信/QQ，2026年3月9日发布</li>
-        <li><strong>WorkBuddy（企业端）：</strong>企业级 Agent，兼容企业微信、飞书、钉钉，上线即因访问量崩溃，腾讯云紧急扩容十倍</li>
-        <li><strong>OpenClaw × 微信Work：</strong>在企业微信机器人平台内集成 OpenClaw 框架，强化企业场景 AI 执行能力</li>
-      </ul>
+
+    <div class="card-desc">
+      悟空是阿里钉钉发布的全球首个企业级 AI 原生工作平台，支持 PC 端与移动端，用户可在钉钉内直接下达指令，AI 可 24 小时不间断自主工作（"龙虾军团"概念）。技术亮点：钉钉全面重写为 CLI（命令行界面）体系，推出 RealDoc 系统（含超 1 万条命令指令），内置企业级安全沙箱，操作可追溯可审计，Token 消耗成本透明可控。同期发布 OPT（一人团队）十大行业解决方案，覆盖电商、制造、法律、财税等垂直场景。已开启邀测，将内置至覆盖超 2000 万企业组织的钉钉中。
     </div>
-    <div class="card-section">
-      <div class="card-section-title">解决企业什么问题</div>
-      <ul class="detail-list">
-        <li>企业想用 OpenClaw（龙虾）但缺乏原生企业系统集成——腾讯以现有企业微信生态为桥，降低企业 Agent 落地成本</li>
-        <li>模型能力不占优（Hunyuan 排名偏低）的情况下，以生态接口优势弥补模型短板</li>
-      </ul>
+
+    <div class="insight-list">
+      <div class="insight-list-title">对企业级 AI PC 产品的启示</div>
+      <div class="insight-item">企业操作系统（Enterprise OS）赛道正式开战：CLI 化的底层重构思路对 AI PC 的系统层设计具有直接参考价值</div>
+      <div class="insight-item">垂直行业 OPT 解决方案（一人团队）揭示 AI 2B 的核心价值主张正从"提效工具"转向"替代人力角色"</div>
+      <div class="insight-item">ATH "Token 计量计费"商业模式提示 AI PC 可探索按 Agent 任务执行量收费的新型 SaaS 模式，而非纯硬件销售</div>
     </div>
-    <div class="card-section">
-      <div class="card-section-title">对企业级AI PC的启示</div>
-      <ul class="detail-list">
-        <li>AI PC 的竞争不仅是模型能力，更是生态接入广度——OpenClaw 兼容性成为企业客户新采购标准</li>
-        <li>腾讯"以接口代模型"的策略提醒：AI PC 的差异化可以聚焦于连接现有企业系统，而非独立大模型</li>
-      </ul>
+
+    <div class="card-footer">
+      <a class="source-link" href="https://www.chooseai.net/news/2898/" target="_blank">来源：ChooseAI · 2026-03-17</a>
+      <span class="date-badge">2026-03-17 发布</span>
     </div>
-    <div class="source-row">
-      📌 来源：<a href="https://hellochinatech.com/p/tencent-openclaw-wechat-ai-strategy" target="_blank">Hello China Tech — Why Tencent Needs OpenClaw（2026.03.11）</a>
+    <div class="deep-dive-notice">
+      ⚠️ 本条已在深度分析报告中做专项拆解，详见深度分析报告
     </div>
   </div>
 
-  <!-- ============= 行业观点 ============= -->
-  <div class="section-title" style="margin-top:36px">行业观点 · 高价值洞察</div>
-
-  <div class="insight-card" id="insight1">
-    <div class="insight-source">a16z · Big Ideas 2026（2025.12.09）</div>
-    <div class="insight-content">
-      <strong>AI Agent 将颠覆企业基础设施三大维度：</strong><br><br>
-      1. <strong>基础设施需从"人类速度"升级为"Agent速度"</strong>：Agent 任务具有突发性、高并发、递归性（一个目标触发数千子任务），现有数据库、API 限流机制对 Agent 的密集请求可能误判为 DDoS。企业需要"Agent原生基础设施"，解决冷启动延迟、并发限制、状态协调等问题。<br><br>
-      2. <strong>垂直领域将从"单机 AI"升级为"多 Agent 协作"</strong>：采购 AI 与财务 AI 将直接交互，减少人工交接错误，形成网络效应和用户粘性。<br><br>
-      3. <strong>界面设计将从"为人优化"转向"为 Agent 可读"</strong>：机器可读性将取代视觉设计成为新标准，SEO 和产品架构都需 Agent 友好化。
+  <!-- NO.3 微软重组Copilot -->
+  <div class="card">
+    <div class="card-number">NO.3</div>
+    <h3>微软重组 Copilot 产品线：任命新负责人，Mustafa Suleyman 转攻基础模型</h3>
+    <div class="card-company">Microsoft · 2026年3月18日</div>
+    <div class="card-desc">
+      微软 CEO Satya Nadella 发布内部备忘录，宣布将旗下超 10 款 Copilot 变体（面向开发者、安全、财务等）的团队全面合并，任命前 Greylock/Snap 高管 Jacob Andreou 统领整合后的 Copilot 组织；原 AI 负责人 Mustafa Suleyman 将工作重心转向 AI 基础模型研发。原因：企业客户反映变体过多导致选择困难与重复付费疑虑。整合后将提供统一的消费者+企业 Copilot 套件，功能更聚焦，定价更清晰。
     </div>
-    <div class="insight-tags">
-      <span class="insight-tag">a16z</span>
-      <span class="insight-tag">AI Agent基础设施</span>
-      <span class="insight-tag">多Agent协作</span>
-      <span class="insight-tag">企业AI</span>
+    <div class="insight-list">
+      <div class="insight-list-title">对企业级 AI PC 产品的启示</div>
+      <div class="insight-item">微软 Copilot 的"产品矩阵过复杂"问题是 AI PC 企业套件需主动规避的陷阱：功能整合优于功能堆砌</div>
+      <div class="insight-item">将基础模型团队与产品团队分离，是大厂 AI 组织进入成熟期的典型信号，AI PC 生态伙伴战略需提前布局</div>
+      <div class="insight-item">Copilot 简化路径为 AI PC 的 B 端产品经理提供了"从复杂到克制"的设计参考</div>
     </div>
-    <div class="source-row" style="border-top:1px solid #1e3a5a;margin-top:12px;padding-top:10px">
-      📌 来源：<a href="https://a16z.com/newsletter/big-ideas-2026-part-1/" target="_blank">a16z · Big Ideas 2026: Part 1（2025.12.09）</a>
+    <div class="card-footer">
+      <a class="source-link" href="https://www.kejixun.co/article/747791.html" target="_blank">来源：科技讯 · 2026-03-18</a>
+      <span class="date-badge">2026-03-18</span>
     </div>
   </div>
 
-  <div class="insight-card" id="insight2">
-    <div class="insight-source">Gartner · 2025年8月预测</div>
-    <div class="insight-content">
-      <strong>2026年，40% 的企业应用将集成任务型AI Agent</strong>（2025年不足5%），增幅达8倍。Gartner 认为这一快速渗透将推动企业 IT 架构的根本性重组——传统 SaaS 将不再是被动工具，而需向"代理化平台"转型。今日 NemoClaw、悟空、M365 Agent 365 的集中发布，标志着这一预测正在从数字加速落地。
+  <!-- NO.4 滴滴AI打车助手 -->
+  <div class="card">
+    <div class="card-number">NO.4</div>
+    <h3>滴滴 AI 打车助手"小橙"：国内出行场景垂直 Agent 落地，B2B2C 模式起量</h3>
+    <div class="card-company">滴滴出行 · 2026年3月17-18日</div>
+    <div class="card-desc">
+      滴滴正式推出企业出行 AI 助手"小橙"，针对企业差旅管理场景，可自动识别差旅审批流、一键合规报销、为企业员工提供 24 小时出行 Agent 服务。采用 B2B2C 路径：企业采购 → 员工使用，直接集成企业报销系统和差旅管理平台（如国旅、携程商旅）。是国内垂直场景企业 Agent 从"Demo"走向"规模化商用"的标志性案例。
     </div>
-    <div class="insight-tags">
-      <span class="insight-tag">Gartner</span>
-      <span class="insight-tag">AI Agent渗透率</span>
-      <span class="insight-tag">企业SaaS转型</span>
+    <div class="insight-list">
+      <div class="insight-list-title">对企业级 AI PC 产品的启示</div>
+      <div class="insight-item">垂直场景 Agent（出行、报销）正在通过 B2B2C 路径实现规模化落地，AI PC 可优先攻克高频企业刚需场景</div>
+      <div class="insight-item">差旅+报销场景的 Agent 落地路径为 AI PC 的企业采购推广提供了"系统集成 + 员工自用"的双入口参考</div>
+      <div class="insight-item">国内出行 Agent 起量信号强，AI PC 预装合规出行 Agent 可作为企业销售的差异化亮点</div>
     </div>
-    <div class="source-row" style="border-top:1px solid #1e3a5a;margin-top:12px;padding-top:10px">
-      📌 来源：<a href="https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025" target="_blank">Gartner — 40% Enterprise Apps Will Feature AI Agents by 2026（2025.08.26）</a>
+    <div class="card-footer">
+      <a class="source-link" href="https://news.qq.com/rain/a/20260318A01OVE00" target="_blank">来源：每日经济新闻 · 2026-03-18</a>
+      <span class="date-badge">2026-03-17~18</span>
     </div>
   </div>
 
-</main>
+  <!-- NO.5 LangChain Open SWE -->
+  <div class="card">
+    <div class="card-number">NO.5</div>
+    <h3>LangChain 发布 Open SWE 开源框架：企业级软件工程 Agent 标准化提速</h3>
+    <div class="card-company">LangChain · 2026年3月18日</div>
+    <div class="card-desc">
+      LangChain 发布 Open SWE（软件工程 Agent）开源框架，专为企业 DevOps/代码审查/自动修复场景设计，支持与 GitHub、GitLab、Jira 等主流研发工具链的原生集成。此前同期，Unsloth AI 发布 Unsloth Studio，本地模型训练显存需求降低 70%；Ollama 发布 0.18.1 版本支持 Web 搜索。三个开源项目合力，正在降低企业自建 AI Agent 的技术门槛。
+    </div>
+    <div class="insight-list">
+      <div class="insight-list-title">对企业级 AI PC 产品的启示</div>
+      <div class="insight-item">研发 Agent 生态加速成熟，AI PC 在研发/IT 人员场景中的本地推理优势（隐私+低延迟）时间窗口正在打开</div>
+      <div class="insight-item">Unsloth 本地训练降显存 70% 的技术突破，直接提升 AI PC 端侧微调的可行性，是端侧 Agent 个性化的关键基础</div>
+      <div class="insight-item">AI PC 预装 LangChain/Open SWE 集成工具链，可成为针对技术型企业客户的核心卖点</div>
+    </div>
+    <div class="card-footer">
+      <a class="source-link" href="https://zhuanlan.zhihu.com/p/2017535048165918295" target="_blank">来源：知乎 AI 早报 · 2026-03-18</a>
+      <span class="date-badge">2026-03-18</span>
+    </div>
+  </div>
 
-<footer>
-  AI 2B 行业洞察日报 · 行业分析视角 · 每个工作日更新 ·
-  <a href="https://github.com/YangzhengCUHK/ai2b-insights">GitHub</a>
-  · 2026.03.18
-</footer>
+  <!-- 机构观点 -->
+  <div class="opinion-section">
+    <div class="section-label">机构/大V 高价值观点</div>
+
+    <div class="opinion-card">
+      <div class="opinion-source">吴泳铭（阿里 CEO）· 内部公告 · 2026-03-16</div>
+      <div class="opinion-text">
+        "在 AGI 爆发的前夜，数以百亿计的 AI Agent 将成为人类与数字世界交互的主要载体。ATH 事业群的使命是'创造、输送、应用 Token'——将模型能力转化为真实生产力。"<br>
+        <em>解读：这是阿里对 AGI 过渡期企业级市场的战略判断，直接指向"Agent 即基础设施"的趋势，与 NVIDIA 黄仁勋同期演讲高度共鸣。</em>
+      </div>
+    </div>
+
+    <div class="opinion-card">
+      <div class="opinion-source">黄仁勋（NVIDIA CEO）· GTC 2026 主题演讲 · 2026-03-16</div>
+      <div class="opinion-text">
+        "AI 行业正从生成文本/图像的系统，转向能自主行动的'智能体 AI'。NVIDIA 提供从芯片（Rubin）到软件（NemoClaw）的全栈解决方案，行动型 AI 已具备基础设施支持，并非未来预测。"<br>
+        <em>解读：硅片到软件的全栈战略意味着 NVIDIA 不仅卖算力，更要成为企业 Agent 基础设施的"标准制定者"，这对 AI PC 厂商的芯片选择和软件生态战略具有直接影响。</em>
+      </div>
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <div class="footer">
+    <div class="footer-left">
+      AI 2B 行业简报 · 第3期 · 2026-03-18<br>
+      每个工作日更新
+    </div>
+    <div class="footer-links">
+      <a href="https://yangzhengcuhk.github.io/ai2b-insights/" target="_blank">历史归档</a>
+      <a href="https://yangzhengcuhk.github.io/ai2b-insights/深度分析_AI2B_20260318.html" target="_blank">今日深度分析 →</a>
+    </div>
+  </div>
+
+</div>
 </body>
 </html>
