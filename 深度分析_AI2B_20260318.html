@@ -1,638 +1,1015 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>深度分析 · AI 2B 行业洞察 · 2026.03.18</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;background:#0d1624;color:#d0dcea;min-height:100vh;line-height:1.7}
-header{background:linear-gradient(135deg,#0f1e3d 0%,#1a2f55 100%);border-bottom:2px solid #e6a419;padding:40px 24px 32px}
-.header-inner{max-width:1000px;margin:0 auto}
-.eyebrow{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#e6a419;font-weight:700;margin-bottom:10px}
-h1{font-size:28px;font-weight:800;color:#fff;margin-bottom:8px}
-.subtitle{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.7}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 2B 深度分析报告 · 2026.03.18</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+      background: #0c0e16;
+      color: #cbd5e1;
+      line-height: 1.8;
+      padding: 24px 16px 80px;
+    }
+    .container { max-width: 880px; margin: 0 auto; }
 
-nav{background:#0a1220;border-bottom:1px solid #111e35;padding:12px 20px;position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:16px;font-size:12px}
-nav a{color:#5c7099;text-decoration:none;transition:color .15s}
-nav a:hover{color:#e6a419}
-nav .home-link{color:#e6a419;font-weight:700}
-.nav-sep{color:#1e2d4a}
+    /* 顶部标题 */
+    .header {
+      border-bottom: 2px solid #1e293b;
+      padding-bottom: 24px;
+      margin-bottom: 36px;
+    }
+    .header-label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #475569;
+      margin-bottom: 10px;
+    }
+    .header h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #f1f5f9;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .header-sub {
+      font-size: 14px;
+      color: #64748b;
+      margin-bottom: 14px;
+    }
+    .header-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag {
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: #1e293b;
+      color: #94a3b8;
+      border: 1px solid #334155;
+    }
+    .tag-red {
+      background: rgba(220, 38, 38, 0.1);
+      color: #f87171;
+      border-color: rgba(220, 38, 38, 0.3);
+    }
 
-main{max-width:1000px;margin:40px auto 80px;padding:0 20px}
+    /* 目录 */
+    .toc {
+      background: #111520;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+    }
+    .toc-title {
+      font-size: 11px;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+    .toc-item {
+      font-size: 13px;
+      padding: 5px 0;
+      border-bottom: 1px solid #1a1f2e;
+    }
+    .toc-item:last-child { border-bottom: none; }
+    .toc-item a {
+      color: #64748b;
+      text-decoration: none;
+      display: flex;
+      justify-content: space-between;
+    }
+    .toc-item a:hover { color: #94a3b8; }
+    .toc-major a { color: #f87171 !important; }
+    .toc-num { color: #334155; font-size: 11px; }
 
-/* 专项拆解区块 */
-.major-breakdown{background:#140808;border:2px solid #dc2626;border-radius:16px;padding:32px;margin-bottom:48px;box-shadow:0 0 32px rgba(220,38,38,0.15)}
-.major-breakdown-title{font-size:18px;font-weight:800;color:#f87171;letter-spacing:1px;text-transform:uppercase;margin-bottom:24px;text-align:center;border-bottom:1px solid rgba(220,38,38,0.3);padding-bottom:16px}
+    /* 章节 */
+    .section { margin-bottom: 56px; }
+    .section-id { scroll-margin-top: 20px; }
 
-.section-block{margin-bottom:28px}
-.section-title{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#f87171;margin-bottom:12px}
-.content-text{font-size:14px;color:#d8dce5;line-height:1.8}
-.content-text ul{margin:12px 0;padding-left:20px}
-.content-text li{margin-bottom:6px;line-height:1.7}
-.content-text strong{color:#fca5a5}
+    /* 重大新品专项拆解 */
+    .major-section {
+      background: linear-gradient(135deg, #130d0d 0%, #0f0d18 100%);
+      border: 2px solid #7f1d1d;
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 40px;
+    }
+    .major-section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #450a0a;
+    }
+    .major-badge-big {
+      background: #dc2626;
+      color: white;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+      margin-top: 4px;
+    }
+    .major-section-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #fef2f2;
+      line-height: 1.3;
+    }
+    .major-section-sub {
+      font-size: 13px;
+      color: #ef4444;
+      margin-top: 4px;
+    }
 
-.quote-box{background:#1a0a0a;border-left:3px solid #e6a419;padding:14px 16px;border-radius:0 8px 8px 0;margin:14px 0;font-size:13px;color:#e6a419;font-style:italic}
-.quote-box cite{font-style:normal;font-size:11px;color:#6b5c52;display:block;margin-top:8px}
+    /* 子章节 */
+    .subsection {
+      margin-bottom: 28px;
+    }
+    .subsection-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #f1f5f9;
+      padding: 8px 14px;
+      background: #1a1020;
+      border-left: 3px solid #dc2626;
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 14px;
+    }
+    .major-section .subsection-title {
+      background: #1a0a0a;
+    }
 
-/* 普通章节 */
-.chapter{margin-bottom:42px}
-.chapter-title{font-size:15px;font-weight:800;color:#e0e8f0;letter-spacing:1px;margin-bottom:18px;border-left:4px solid #e6a419;padding-left:14px}
+    /* 信息行 */
+    .info-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+    .info-label {
+      color: #64748b;
+      min-width: 90px;
+      flex-shrink: 0;
+    }
+    .info-value { color: #cbd5e1; }
 
-.table-wrapper{overflow-x:auto;margin:16px 0}
-table{width:100%;border-collapse:collapse;font-size:13px}
-th,td{padding:12px 14px;text-align:left;border-bottom:1px solid #1e2d4a}
-th{background:#0f1e35;color:#e6a419;font-weight:700;text-transform:uppercase;letter-spacing:0.5px}
-td{color:#c8d8e8}
-tr:hover td{background:#0d1624}
+    /* 引用块 */
+    .quote-block {
+      background: rgba(245, 158, 11, 0.05);
+      border-left: 3px solid #f59e0b;
+      padding: 14px 18px;
+      margin: 14px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .quote-text {
+      font-style: italic;
+      color: #fde68a;
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 6px;
+    }
+    .quote-source {
+      font-size: 11px;
+      color: #92400e;
+    }
 
-/* SWOT */
-.swot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin:16px 0}
-.swot-item{background:#111e35;border:1px solid #1e2d4a;border-radius:12px;padding:18px}
-.swot-title{font-size:13px;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:8px}
-.swot-s .swot-title{color:#4ade80}
-.swot-w .swot-title{color:#f87171}
-.swot-o .swot-title{color:#60a5fa}
-.swot-t .swot-title{color:#fbbf24}
-.swot-content{font-size:13px;color:#b8c8d8;line-height:1.6}
+    /* 列表 */
+    .dot-list { list-style: none; padding: 0; }
+    .dot-list li {
+      font-size: 13px;
+      color: #94a3b8;
+      padding: 5px 0 5px 18px;
+      position: relative;
+      line-height: 1.7;
+    }
+    .dot-list li::before {
+      content: '·';
+      position: absolute;
+      left: 4px;
+      color: #475569;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+    .dot-list-red li::before { color: #ef4444; }
 
-/* 优先级 */
-.priority-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:16px 0}
-.priority-item{background:#111e35;border-left:3px solid;border-radius:8px;padding:14px 16px}
-.p0{border-color:#dc2626;background:rgba(220,38,38,0.08)}
-.p1{border-color:#f97316;background:rgba(249,115,22,0.06)}
-.p2{border-color:#eab308;background:rgba(234,179,8,0.05)}
-.p3{border-color:#6b7280;background:#0f1624}
-.priority-badge{font-size:10px;font-weight:800;letter-spacing:1px;margin-bottom:6px}
-.priority-badge.p0{color:#f87171}
-.priority-badge.p1{color:#fb923c}
-.priority-badge.p2{color:#facc15}
-.priority-badge.p3{color:#9ca3af}
-.priority-content{font-size:13px;color:#c8d8e8;line-height:1.6}
-.priority-content strong{color:#e0e8f0}
+    /* 启示块 */
+    .insight-block {
+      background: #0a1628;
+      border: 1px solid #1e3a5f;
+      border-radius: 10px;
+      padding: 20px 22px;
+      margin-top: 16px;
+    }
+    .insight-block-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #38bdf8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+    .insight-dim {
+      margin-bottom: 14px;
+    }
+    .insight-dim-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #0ea5e9;
+      margin-bottom: 5px;
+    }
+    .insight-dim-content {
+      font-size: 13px;
+      color: #7dd3fc;
+      line-height: 1.7;
+    }
 
-/* 时间线 */
-.timeline{margin:16px 0;padding-left:20px;border-left:2px solid #1e2d4a}
-.timeline-item{position:relative;padding-left:24px;margin-bottom:18px}
-.timeline-item::before{content:'';position:absolute;left:-9px;top:6px;width:16px;height:16px;background:#0d1624;border:2px solid #e6a419;border-radius:50%}
-.timeline-date{font-size:11px;font-weight:700;color:#e6a419;margin-bottom:4px;letter-spacing:0.5px}
-.timeline-title{font-size:13px;font-weight:700;color:#e0e8f0;margin-bottom:4px}
-.timeline-desc{font-size:12px;color:#6b7a90;line-height:1.5}
+    /* 普通章节 */
+    .normal-section { margin-bottom: 48px; }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .section-num {
+      font-size: 12px;
+      font-weight: 700;
+      color: #334155;
+      background: #1e293b;
+      padding: 4px 10px;
+      border-radius: 4px;
+      min-width: 32px;
+      text-align: center;
+    }
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #e2e8f0;
+    }
 
-/* 来源列表 */
-.sources{background:#0f1e35;border:1px solid #1e2d4a;border-radius:12px;padding:20px;margin-top:36px}
-.sources-title{font-size:13px;font-weight:700;color:#5c7099;margin-bottom:14px;text-transform:uppercase;letter-spacing:1px}
-.sources-list{font-size:12px;color:#4a6080;line-height:1.8}
-.sources-list a{color:#4a70a0;text-decoration:none}
-.sources-list a:hover{color:#60a5fa;text-decoration:underline}
-.sources-list li{margin-bottom:4px}
+    /* 表格 */
+    .table-wrap { overflow-x: auto; margin: 16px 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    th {
+      background: #1e293b;
+      color: #94a3b8;
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+    }
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #1a2035;
+      color: #cbd5e1;
+      vertical-align: top;
+    }
+    tr:hover td { background: #111827; }
+    .td-highlight { color: #a78bfa; font-weight: 600; }
+    .td-danger { color: #f87171; }
+    .td-ok { color: #4ade80; }
 
-footer{text-align:center;padding:24px;font-size:11px;color:#2a3a55;border-top:1px solid #121c2e;margin-top:60px}
-footer a{color:#2a4070;text-decoration:none}
+    /* SWOT */
+    .swot-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 16px 0;
+    }
+    .swot-card {
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .swot-s { background: #052e16; border: 1px solid #166534; }
+    .swot-w { background: #1c1007; border: 1px solid #713f12; }
+    .swot-o { background: #0a1628; border: 1px solid #1e40af; }
+    .swot-t { background: #2d0a10; border: 1px solid #9f1239; }
+    .swot-label {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+    .swot-s .swot-label { color: #4ade80; }
+    .swot-w .swot-label { color: #fb923c; }
+    .swot-o .swot-label { color: #60a5fa; }
+    .swot-t .swot-label { color: #f87171; }
+    .swot-item {
+      font-size: 12px;
+      padding: 3px 0 3px 12px;
+      position: relative;
+      line-height: 1.6;
+    }
+    .swot-s .swot-item { color: #bbf7d0; }
+    .swot-w .swot-item { color: #fed7aa; }
+    .swot-o .swot-item { color: #bfdbfe; }
+    .swot-t .swot-item { color: #fecaca; }
+    .swot-item::before { content: '·'; position: absolute; left: 2px; }
 
-.badge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:4px;margin-left:6px;vertical-align:middle}
-.badge-hot{background:rgba(220,38,38,0.15);color:#f87171;font-weight:700}
-</style>
+    /* 优先级 */
+    .priority-list { margin: 16px 0; }
+    .priority-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 12px 0;
+      border-bottom: 1px solid #1a2035;
+    }
+    .priority-item:last-child { border-bottom: none; }
+    .p-badge {
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 4px;
+      min-width: 30px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .p0 { background: #dc2626; color: white; }
+    .p1 { background: #ea580c; color: white; }
+    .p2 { background: #2563eb; color: white; }
+    .p3 { background: #374151; color: #9ca3af; }
+    .priority-content { font-size: 13px; color: #94a3b8; line-height: 1.6; }
+    .priority-title { font-weight: 600; color: #e2e8f0; margin-bottom: 3px; }
+
+    /* 时间线 */
+    .timeline { position: relative; padding-left: 24px; margin: 16px 0; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background: #1e293b;
+    }
+    .tl-item {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .tl-dot {
+      position: absolute;
+      left: -21px;
+      top: 5px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #4a5568;
+    }
+    .tl-dot-active { background: #6366f1; }
+    .tl-dot-now { background: #ef4444; box-shadow: 0 0 8px rgba(239, 68, 68, 0.5); }
+    .tl-date { font-size: 11px; color: #475569; margin-bottom: 4px; }
+    .tl-content { font-size: 13px; color: #94a3b8; line-height: 1.6; }
+    .tl-content strong { color: #e2e8f0; }
+
+    /* 分割线 */
+    .divider { height: 1px; background: #1e293b; margin: 32px 0; }
+
+    /* 来源 */
+    .sources-section { margin-top: 40px; padding-top: 24px; border-top: 1px solid #1e293b; }
+    .source-item {
+      font-size: 12px;
+      padding: 6px 0;
+      border-bottom: 1px solid #111827;
+      color: #475569;
+    }
+    .source-item a { color: #3b82f6; text-decoration: none; font-size: 11px; }
+    .source-item a:hover { text-decoration: underline; }
+
+    /* 费用统计 */
+    .cost-box {
+      background: #0f1117;
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-top: 32px;
+      font-size: 13px;
+    }
+    .cost-title { font-size: 14px; font-weight: 700; color: #fbbf24; margin-bottom: 10px; }
+    .cost-row { display: flex; justify-content: space-between; padding: 4px 0; color: #64748b; }
+    .cost-total { color: #fbbf24; font-weight: 700; font-size: 15px; border-top: 1px solid #1e293b; padding-top: 8px; margin-top: 6px; }
+
+    /* 页脚 */
+    .footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #1e293b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-left { font-size: 12px; color: #334155; }
+    .footer-links { display: flex; gap: 16px; }
+    .footer-links a { font-size: 12px; color: #475569; text-decoration: none; }
+    .footer-links a:hover { color: #94a3b8; }
+
+    @media (max-width: 600px) {
+      .swot-grid { grid-template-columns: 1fr; }
+      .major-section { padding: 20px; }
+    }
+  </style>
 </head>
 <body>
-<header>
-  <div class="header-inner">
-    <div class="eyebrow">AI 2B Intelligence · Deep Analysis</div>
-    <h1>深度分析报告</h1>
-    <p class="subtitle">2026年3月18日 · 竞争格局 × 产品定义 × 战略路线</p>
-  </div>
-</header>
+<div class="container">
 
-<nav>
-  <a class="home-link" href="index.html">⬅ 首页</a>
-  <span class="nav-sep">|</span>
-  <a href="简报_AI2B_20260318.html">今日简报 →</a>
-  <span class="nav-sep">|</span>
-  <span style="color:#2a3a55;margin-left:auto">深度分析 · 2026.03.18</span>
-</nav>
-
-<main>
-
-<!-- ================================================================= -->
-<!-- 重大新品专项拆解 1：NVIDIA NemoClaw -->
-<!-- ================================================================= -->
-
-<div class="major-breakdown">
-  <div class="major-breakdown-title">🔴 专项拆解：NVIDIA × NemoClaw 企业级 Agent 平台</div>
-
-  <div class="section-block">
-    <div class="section-title">一、发布会概况</div>
-    <div class="content-text">
-      <ul>
-        <li><strong>活动名称与时间：</strong>NVIDIA GTC 2026 主题演讲（Keynote），2026年3月16日于美国加州圣何塞SAP中心</li>
-        <li><strong>主讲人及职位：</strong>NVIDIA 首席执行官 黄仁勋（Jensen Huang）</li>
-        <li><strong>发布背景：</strong>OpenClaw（俗称"龙虾"）成为史上增长最快的开源软件，但企业落地面临安全与合规障碍；NVIDIA 作为 AI 算力主导者，需推出配套的软件栈以锁定企业客户，实现"每一台 GPU 服务器无缝接入 OpenClaw 生态"的战略目标</li>
-      </ul>
+  <!-- 标题 -->
+  <div class="header">
+    <div class="header-label">AI 2B 行业深度分析报告 · 第3期 · 配套简报第3期</div>
+    <h1>企业级 AI Agent 平台化决战：<br>NVIDIA、阿里与微软的三角博弈</h1>
+    <div class="header-sub">2026年03月18日 · 今日含 2 个重大新品专项拆解</div>
+    <div class="header-tags">
+      <span class="tag tag-red">🔴 NVIDIA NemoClaw 专项拆解</span>
+      <span class="tag tag-red">🔴 阿里悟空 专项拆解</span>
+      <span class="tag">企业Agent</span>
+      <span class="tag">AI PC战略</span>
+      <span class="tag">竞争格局</span>
     </div>
   </div>
 
-  <div class="section-block">
-    <div class="section-title">二、产品全景解析</div>
-    <div class="content-text">
-      <p><strong>产品定位与核心能力：</strong></p>
-      <ul>
-        <li><strong>一站式安装：</strong>单命令完成 NVIDIA Nemotron 模型 + OpenShell 运行时的完整部署，降低企业 IT 门槛起至极致</li>
-        <li><strong>企业级安全沙盒：</strong>OpenShell Runtime 提供隔离的沙盒环境，所有 AI Agent 操作在受控边界内执行，防止数据外泄和越权操作</li>
-        <li><strong>基于策略的护栏：</strong>隐私路由器允许智能体安全调用云端前沿模型，同时强制执行企业定义的数据处理策略</li>
-        <li><strong>混合推理架构：</strong>支持本地（Nemotron 开放模型）+ 云端（前沿模型）的灵活组合，平衡隐私与性能</li>
-        <li><strong>全天候自主运行：</strong>优化助手使其能够在专用 NVIDIA 硬件上 24 小时持续执行任务，支持自进化和自主学习新技能</li>
-      </ul>
-      <p><strong>技术架构亮点：</strong></p>
-      <ul>
-        <li>核心组件：NVIDIA Agent Toolkit + OpenShell Runtime + Nemotron 模型 + 隐私路由器</li>
-        <li>硬件支持：从消费级（GeForce RTX 台式机/笔记本、RTX PRO 工作站）到企业级（DGX Station、DGX Spark AI 超级计算机）的全谱系兼容</li>
-      </ul>
-      <p><strong>目标客户群体与典型使用场景：</strong></p>
-      <ul>
-        <li>客户：有本地 AI 推理需求且强调数据安全的企业，特别是金融、医疗、政府等受监管行业</li>
-        <li>场景：文档处理、数据分析、工作流自动化、安全代码审查等需要长时间运行的 Agent 任务</li>
-      </ul>
-      <p><strong>定价与商业模式：</strong>官方博客未提及定价，推测为开源免费，通过硬件销售和企业级服务订阅变现</p>
-      <p><strong>与现有产品线的关系：</strong>这是 NVIDIA 在 AI Agent 软件层的全新产品，与 OpenClaw 深度绑定，旨在将 NVIDIA GPU 与 OpenClaw 生态形成硬软件一体化壁垒</p>
-    </div>
+  <!-- 目录 -->
+  <div class="toc">
+    <div class="toc-title">报告目录</div>
+    <div class="toc-item toc-major"><a href="#s1">🔴 专项拆解 I：NVIDIA × NemoClaw <span class="toc-num">P.1</span></a></div>
+    <div class="toc-item toc-major"><a href="#s2">🔴 专项拆解 II：阿里钉钉 × 悟空 <span class="toc-num">P.2</span></a></div>
+    <div class="toc-item"><a href="#s3">竞争格局分析 <span class="toc-num">P.3</span></a></div>
+    <div class="toc-item"><a href="#s4">核心趋势拆解 <span class="toc-num">P.4</span></a></div>
+    <div class="toc-item"><a href="#s5">各玩家战略路径比较 <span class="toc-num">P.5</span></a></div>
+    <div class="toc-item"><a href="#s6">企业级 AI PC SWOT 分析 <span class="toc-num">P.6</span></a></div>
+    <div class="toc-item"><a href="#s7">产品定义优先级建议 <span class="toc-num">P.7</span></a></div>
+    <div class="toc-item"><a href="#s8">战略路径与时间线 <span class="toc-num">P.8</span></a></div>
+    <div class="toc-item"><a href="#sources">参考来源 <span class="toc-num">P.9</span></a></div>
   </div>
 
-  <div class="section-block">
-    <div class="section-title">三、发布会核心观点</div>
-    <div class="content-text">
-      <div class="quote-box">
-        "OpenClaw 是有史以来增长最快的开源软件。每个公司都应该拥有一个 OpenClaw 策略。NemoClaw 不是一个偶然的简洁，而是刻意为之的简洁——两行命令，让每一台 GPU 服务器都能无缝接入 OpenClaw 生态。"
-        <cite>— 黄仁勋，GTC 2026 主题演讲，2026年3月16日</cite>
+  <!-- ======================================================
+       专项拆解 I：NVIDIA NemoClaw
+       ====================================================== -->
+  <div class="major-section section-id" id="s1">
+    <div class="major-section-header">
+      <div class="major-badge-big">🔴 专项拆解</div>
+      <div>
+        <div class="major-section-title">NVIDIA × NemoClaw<br>开源企业级 AI Agent 安全平台重磅发布</div>
+        <div class="major-section-sub">GTC 2026 · 2026年3月16日 · 加利福尼亚州圣何塞</div>
       </div>
-      <div class="quote-box">
-        "NemoClaw 是一个开源平台，本质上是集成了企业级安全和隐私考虑的 OpenClaw。它把 OpenClaw 转变为一个安全的平台，企业可以通过一个命令控制智能体的行为和数据处理。"
-        <cite>— 黄仁勋，GTC 2026 主题演讲，2026年3月16日</cite>
+    </div>
+
+    <!-- 一、发布会概况 -->
+    <div class="subsection">
+      <div class="subsection-title">一、发布会概况</div>
+      <div class="info-row"><span class="info-label">活动名称</span><span class="info-value">GTC 2026（NVIDIA GPU Technology Conference）</span></div>
+      <div class="info-row"><span class="info-label">时间地点</span><span class="info-value">2026年3月15–19日，加利福尼亚州圣何塞 SAP 中心，超3万名参会者</span></div>
+      <div class="info-row"><span class="info-label">主讲人</span><span class="info-value">NVIDIA CEO 黄仁勋（Jensen Huang），主题演讲《智能体时代的到来》</span></div>
+      <div class="info-row"><span class="info-label">NemoClaw 状态</span><span class="info-value">Alpha 阶段，已开源（Apache 2.0），GTC 同期举办"Build-a-Claw"开发活动（3/17-19）</span></div>
+      <div class="info-row"><span class="info-label">发布背景</span><span class="info-value">2026年2月，OpenAI 收购 OpenClaw（开源 AI Agent 框架），引发企业对供应商锁定的广泛担忧；NVIDIA 顺势推出开源替代，争夺企业 Agent 基础设施标准地位</span></div>
+    </div>
+
+    <!-- 二、产品全景解析 -->
+    <div class="subsection">
+      <div class="subsection-title">二、产品全景解析</div>
+      <p style="font-size:13px;color:#64748b;margin-bottom:12px;">核心定位：NemoClaw 不是全新框架，而是 OpenClaw 的企业级安全"包装器"，在保留其所有能力的同时，为自主 Agent 创建沙盒化、可审计、策略驱动的执行环境。</p>
+
+      <div class="info-row" style="margin-bottom:6px;"><span class="info-label" style="font-weight:600;color:#e2e8f0;">核心能力</span></div>
+      <ul class="dot-list dot-list-red">
+        <li><strong>四层安全隔离：</strong>网络层（出站白名单）/ 文件系统层（沙盒路径限制）/ 进程层（阻止权限升级）/ 推理层（API 请求路由控制）</li>
+        <li><strong>零权限默认（Zero-Trust）：</strong>Agent 启动时无任何权限，须通过策略显式授予，根本性改变"先放后管"的传统做法</li>
+        <li><strong>策略即代码（Policy as Code）：</strong>安全策略通过声明式 YAML 定义，可版本控制、可 CI/CD、可审计</li>
+        <li><strong>完整审计追踪：</strong>每个允许/拒绝决策均记录，满足 GDPR、SOC2 等合规要求</li>
+        <li><strong>GPU 透传：</strong>允许沙盒内 Agent 直接使用主机 GPU，支持本地推理/微调，不泄露数据</li>
+        <li><strong>进程外执行：</strong>安全约束在 Agent 进程之外运行，即使 Agent 被攻破也无法绕过防护</li>
+        <li><strong>操作员审批界面：</strong>Agent 尝试访问未授权资源时，弹出人工审批终端，保持人在环路中</li>
+      </ul>
+
+      <div class="info-row" style="margin-top:14px;"><span class="info-label" style="font-weight:600;color:#e2e8f0;">技术架构</span><span class="info-value">TypeScript 插件（CLI 交互层）+ Python 蓝图（核心安全逻辑）双组件分离设计，安全补丁可独立于 CLI 发布</span></div>
+      <div class="info-row"><span class="info-label" style="font-weight:600;color:#e2e8f0;">默认模型</span><span class="info-value">Nemotron 3 Super 120B（1200亿总参数，120亿活跃参数）</span></div>
+      <div class="info-row"><span class="info-label" style="font-weight:600;color:#e2e8f0;">目标客户</span><span class="info-value">金融、医疗、法律、政府等高合规要求行业；已部署 OpenClaw 但担忧安全性的企业；希望私有化部署 AI Agent 的企业</span></div>
+      <div class="info-row"><span class="info-label" style="font-weight:600;color:#e2e8f0;">典型场景</span><span class="info-value">自主软件开发、网络安全分析、企业工作流自动化、多 Agent 协同编排</span></div>
+      <div class="info-row"><span class="info-label" style="font-weight:600;color:#e2e8f0;">定价</span><span class="info-value">开源免费（Apache 2.0）；NVIDIA 云推理服务商业收费（按 Token/算力计量）</span></div>
+      <div class="info-row"><span class="info-label" style="font-weight:600;color:#e2e8f0;">生态合作</span><span class="info-value">Salesforce（CRM）/ Cisco（网络安全）/ Google（云基础设施）/ Adobe（创意工作流）/ CrowdStrike（安全响应）</span></div>
+    </div>
+
+    <!-- 三、发布会核心观点 -->
+    <div class="subsection">
+      <div class="subsection-title">三、发布会核心观点</div>
+      <div class="quote-block">
+        <div class="quote-text">"OpenClaw 为所有人开启了 AI 的下一个前沿领域。NemoClaw 则使这个前沿领域对企业来说变得安全。"</div>
+        <div class="quote-source">—— 黄仁勋，GTC 2026 主题演讲，来源：Second Talent 2026-03-18</div>
       </div>
-      <p><strong>官方对产品竞争力的核心主张：</strong></p>
-      <ul>
-        <li>将 OpenClaw 的部署门槛降至"两行命令"，同时原生适配 NVIDIA 全系列 GPU</li>
-        <li>直接推动 OpenClaw 从极客圈层走向企业级、消费级的规模化落地</li>
-        <li>将算力底座与 Agent 框架无缝衔接，形成一体化优势</li>
-      </ul>
-      <p><strong>对行业格局的判断与预测：</strong></p>
-      <ul>
-        <li>OpenClaw 将成为 AI Agent 的事实标准，每个企业都需制定 OpenClaw 策略</li>
-        <li>GPU 原生的 Agent 运行环境将成为企业 AI 的基础设施</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="section-block">
-    <div class="section-title">四、竞争影响评估</div>
-    <div class="content-text">
-      <p><strong>直接受冲击的竞品：</strong></p>
-      <ul>
-        <li>OpenClaw 的其他企业级部署方案（如各家云厂商的托管版本）——NVIDIA 的 GPU + 软件 一体化方案具有差异化优势</li>
-        <li>其他 AI 硬件厂商（AMD、Intel）——NVIDIA 通过 NemoClaw 锁定 OpenClaw 生态，形成软硬一体化壁垒</li>
-      </ul>
-      <p><strong>市场格局可能的变化：</strong></p>
-      <ul>
-        <li>NVIDIA 从单纯的硬件供应商升级为"算力+软件+生态"的综合解决方案提供商</li>
-        <li>OpenClaw 企业化进程加速，可能加速企业 AI Agent 的普及率</li>
-        <li>GPU 原生的 AI Agent 方案将成为企业采购决策的重要考量因素</li>
-      </ul>
-      <p><strong>未解答的关键问题：</strong></p>
-      <ul>
-        <li>具体定价策略未公布，商业化路径不明确</li>
-        <li>与 LangChain、LlamaIndex 等主流开发框架的集成细节未说明</li>
-        <li>对非 NVIDIA GPU 的兼容性支持（官方明确提到"每一台 GPU 服务器"，但未提 AMD/Intel）</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="section-block">
-    <div class="section-title">五、对企业级AI PC产品战略的启示</div>
-    <div class="content-text">
-      <p><strong>技术/能力层面：</strong></p>
-      <ul>
-        <li><strong>端侧安全沙盒成为 P0 能力：</strong>NemoClaw 的 OpenShell 隔离机制证明"Agent 可执行但不可越界"是企业 AI 的核心需求。AI PC 需构建本地沙盒执行环境，确保 Agent 在受控边界内运行，这是区别于消费级 AI PC 的关键</li>
-        <li><strong>硬件与 Agent 框架深度绑定：</strong>NVIDIA 将 NemoClaw 与其 GPU 形成配套，AI PC 需思考如何将自身计算优势与主流 Agent 框架（如 OpenClaw）形成原生适配，而非仅靠 AI 算力指标竞争</li>
-        <li><strong>混合推理架构（本地+云端）：</strong>NemoClaw 支持本地 Nemotron 模型+云端前沿模型的灵活切换，AI PC 需提供同类混合推理调度能力，让用户在隐私与性能间自主选择</li>
-        <li><strong>24小时持续运行能力：</strong>企业需要 Agent 全天候自主执行任务，AI PC 需保证低功耗待机下的 Agent 持续运行能力</li>
-      </ul>
-      <p><strong>商业模式层面：</strong></p>
-      <ul>
-        <li><strong>硬件+软件+生态的一体化方案：</strong>NVIDIA 通过 NemoClaw 将 GPU 硬件与 OpenClaw 生态绑定，AI PC 可考虑将自身算力优势与特定 Agent 框架形成打包方案，提升客户粘性</li>
-        <li><strong>开源免费+企业服务订阅：</strong>NemoClaw 预计开源免费，通过企业级服务订阅变现，AI PC 可参考此模式——基础能力免费，企业级管控、安全、运维服务收费</li>
-      </ul>
-      <p><strong>生态与集成层面：</strong></p>
-      <ul>
-        <li><strong>OpenClaw 兼容性成为企业采购标准：</strong>腾讯、阿里、NVIDIA 均在推进 OpenClaw 的企业化适配，AI PC 需明确支持 OpenClaw 生态，否则将失去企业客户</li>
-        <li><strong>与现有企业系统的深度集成：</strong>NemoClaw 强调与现有 GPU 硬件的无缝衔接，AI PC 需考虑如何与企业 IAM、权限体系、数据系统深度集成，而非孤立运行</li>
-      </ul>
-      <p><strong>竞争策略层面：</strong></p>
-      <ul>
-        <li><strong>避免正面竞争 NVIDIA 的 GPU 算力优势：</strong>NVIDIA 在 GPU 领域具有绝对优势，AI PC 应差异化定位——聚焦于"企业级安全与管控"、"与现有企业系统的集成深度"、"主权 AI（数据不出本地）"等维度，而非单纯比拼算力</li>
-        <li><strong>聚焦受监管行业的本土化合规：</strong>NVIDIA 的方案在全球通用，AI PC 可针对中国政企客户，强化本土化合规（等保、数据主权、国产化适配），形成差异化</li>
-      </ul>
-      <p><strong>时间窗口判断：</strong></p>
-      <ul>
-        <li><strong>窗口正在关闭：</strong>NVIDIA NemoClaw 的发布标志着 OpenClaw 企业化进入加速期，AI PC 需尽快布局 OpenClaw 兼容能力和企业级安全沙盒，否则将在企业 AI Agent 基础设施竞争中落后</li>
-        <li><strong>建议行动：</strong>3个月内完成 OpenClaw 兼容性验证，6个月内推出企业级安全沙盒方案，12个月内形成完整的本地+云端混合推理体系</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<!-- ================================================================= -->
-<!-- 重大新品专项拆解 2：阿里钉钉悟空 -->
-<!-- ================================================================= -->
-
-<div class="major-breakdown">
-  <div class="major-breakdown-title">🔴 专项拆解：阿里巴巴 × 钉钉"悟空"企业级 AI 原生工作平台</div>
-
-  <div class="section-block">
-    <div class="section-title">一、发布会概况</div>
-    <div class="content-text">
-      <ul>
-        <li><strong>活动名称与时间：</strong>AI 钉钉2.0年度新品发布会，2026年3月17日于杭州（直播）</li>
-        <li><strong>主讲人及职位：</strong>钉钉创始人、CEO 陈航（花名：无招）；阿里巴巴 CEO 吴泳铭全程出席，体现集团级重视</li>
-        <li><strong>发布背景：</strong>发布会前一日（3月16日），阿里巴巴宣布成立 Alibaba Token Hub（ATH）事业群，由吴泳铭直接挂帅，统筹集团所有 AI 相关业务；悟空作为 ATH 的 B 端 AI 应用入口正式亮相</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="section-block">
-    <div class="section-title">二、产品全景解析</div>
-    <div class="content-text">
-      <p><strong>产品定位与核心能力：</strong></p>
-      <ul>
-        <li><strong>全球首个企业级AI原生工作平台：</strong>专为 B 端设计，AI Agent 从设计之初就内置企业权限规则和安全沙盒</li>
-        <li><strong>自动继承企业权限：</strong>所有 AI Agent 操作自动继承用户在钉钉/企业系统的权限，无需人工配置</li>
-        <li><strong>安全沙箱执行：</strong>所有 Agent 操作在安全沙箱中运行，确保数据不出企业边界</li>
-        <li><strong>Token 消耗一目了然：</strong>企业可清晰核算 Token 使用成本，解决 AI 成本不可控的问题</li>
-        <li><strong>Agent Runtime：</strong>让 AI 能够直接调用企业权限、系统能力与业务流程，实现"沟通即执行"</li>
-        <li><strong>沟通即执行：</strong>钉钉重写底层代码，进行全面 CLI 化改造，让"悟空"Agent 能够原生操作钉钉上千项能力，而非模拟人类点击图形界面</li>
-        <li><strong>双形态部署：</strong>作为独立 App 发布，同时直接内置到超 2000 万企业组织的钉钉之中</li>
-      </ul>
-      <p><strong>技术架构亮点：</strong></p>
-      <ul>
-        <li>钉钉底层全面 CLI（命令行界面）化改造，实现 Agent 原生调用而非 UI 模拟</li>
-        <li>企业级运行环境（Enterprise Runtime），内置权限继承与安全沙箱</li>
-        <li>OPT（One Person Team）行业解决方案，覆盖电商、跨境电商等领域</li>
-      </ul>
-      <p><strong>目标客户群体与典型使用场景：</strong></p>
-      <ul>
-        <li>客户：超 2000 万使用钉钉的企业组织，尤其是中大型企业</li>
-        <li>场景：审批流程自动化、跨系统数据拉取、业务分析报告生成、会议转录与纪要、文档编辑、研究辅助等</li>
-      </ul>
-      <p><strong>定价与商业模式：</strong>官方未公布定价，预计采用钉钉订阅模式+Token 计费的混合模式</p>
-      <p><strong>与现有产品线的关系：</strong>悟空是钉钉的 AI 原生升级版本，与钉钉形成"一个钉钉，两种形态"（传统版+AI 版）；ATH 事业群将钉钉纳入悟空事业部，标志着钉钉从独立产品升级为阿里 B 端 AI 的核心平台</p>
-    </div>
-  </div>
-
-  <div class="section-block">
-    <div class="section-title">三、发布会核心观点</div>
-    <div class="content-text">
-      <div class="quote-box">
-        "今天，我们把钉钉打碎，用AI重建，炼出'悟空'。过去是人用钉钉来工作，未来是AI用钉钉来工作。和市面上所有的'龙虾'Agent不一样，'悟空'天然就长在企业组织中，可以在真实的企业环境中安全使用。"
-        <cite>— 陈航，AI钉钉2.0发布会，2026年3月17日</cite>
+      <div class="quote-block">
+        <div class="quote-text">"AI 行业正从生成文本/图像的系统，转向能自主行动的'智能体 AI'（Agentic AI）。NVIDIA 提供从芯片（Rubin）到软件（NemoClaw）的全栈解决方案——行动型 AI 已具备基础设施支持，并非未来预测。"</div>
+        <div class="quote-source">—— 黄仁勋，GTC 2026 主题演讲，来源：PopularAiTools 2026-03-16</div>
       </div>
-      <div class="quote-box">
-        "看到知识博主天天吹龙虾，我感觉这很不负责任。你把超级智能体随便(在)外面乱撒，每家公司的电脑全在开后门、全中了木马病毒。我们希望，AI 的工作是可追溯、可控制的。那怎么办？"
-        <cite>— 陈航，AI钉钉2.0发布会，2026年3月17日</cite>
+      <ul class="dot-list" style="margin-top:10px;">
+        <li>官方战略主张：NVIDIA 不仅卖算力，更要成为企业 Agent 基础设施的"胶水层"和标准制定者</li>
+        <li>对行业格局的判断：企业 AI 进入"行动层"竞争，安全不再是可选项，而是部署门槛</li>
+        <li>Rubin GPU（288GB HBM4，推理性能较上代提升5倍）+ NemoClaw 构成 NVIDIA 的完整企业 AI 全栈</li>
+      </ul>
+    </div>
+
+    <!-- 四、竞争影响评估 -->
+    <div class="subsection">
+      <div class="subsection-title">四、竞争影响评估</div>
+      <ul class="dot-list dot-list-red">
+        <li><strong>直接受冲击的竞品：</strong>OpenAI Operator、LangChain、AutoGen（微软）、CrewAI——NemoClaw 以开源+安全为核心卖点，直接切入这些框架的企业市场</li>
+        <li><strong>市场格局变化：</strong>企业 Agent 框架市场将从"功能竞争"转向"安全合规竞争"，NemoClaw 设定了新的行业基准；Apache 2.0 开源策略将加速企业采用，同时削弱商业框架的护城河</li>
+        <li><strong>意外受益者：</strong>Cisco（已宣布 AI Defense 与 OpenShell 集成）、CrowdStrike——安全与 Agent 的深度融合将带来新的安全服务商机</li>
+        <li><strong>未解答的关键问题：</strong>NemoClaw 当前处于 Alpha，生产就绪时间线不明；商业支持版本的定价策略未披露；与 OpenAI 收购 OpenClaw 后的生态兼容性如何长期维护？</li>
+      </ul>
+    </div>
+
+    <!-- 五、对企业级AI PC战略的启示 -->
+    <div class="subsection">
+      <div class="subsection-title">五、对企业级 AI PC 产品战略的启示</div>
+      <div class="insight-block" style="background:#080f1e;border-color:#1e3a5f;">
+        <div class="insight-block-title">五维度战略启示</div>
+
+        <div class="insight-dim">
+          <div class="insight-dim-label">🔧 技术/能力层面</div>
+          <div class="insight-dim-content">NemoClaw 揭示了企业 Agent 安全的四层架构标准（网络/文件系统/进程/推理）。AI PC 应在硬件层提供可信执行环境（TEE/TrustZone），将 NemoClaw 式的安全能力下沉到硬件，形成竞争对手无法软件化复制的差异化。本地 GPU 推理（NemoClaw GPU 透传特性）是 AI PC 的天然优势，应在产品定义中显式对接这一场景。</div>
+        </div>
+
+        <div class="insight-dim">
+          <div class="insight-dim-label">💰 商业模式层面</div>
+          <div class="insight-dim-content">NemoClaw 以开源（免费）+ 云推理（按量收费）构建商业模式。AI PC 可参考：硬件端做"安全基础设施"（溢价销售），软件层做开放生态（吸引 ISV），云端做 Agent 任务算力（按量收费补充收入）——形成"端+云"协同的新型 2B 硬件商业模式。</div>
+        </div>
+
+        <div class="insight-dim">
+          <div class="insight-dim-label">🌐 生态与集成层面</div>
+          <div class="insight-dim-content">NVIDIA 通过与 Salesforce/Cisco/Adobe 的生态合作，将 NemoClaw 嵌入企业软件栈的核心节点。AI PC 应优先争取国内头部企业软件（钉钉、企微、用友、金蝶、飞书）的原生 NemoClaw 兼容性认证，成为"已认证的本地安全运行环境"，在采购决策中形成差异化背书。</div>
+        </div>
+
+        <div class="insight-dim">
+          <div class="insight-dim-label">⚔️ 竞争策略层面</div>
+          <div class="insight-dim-content">NVIDIA 的定位是"基础设施提供者"而非"应用提供者"，AI PC 与其不构成直接竞争。AI PC 可成为 NemoClaw 最佳的硬件运行环境——主动与 NVIDIA 建立合作，将"已通过 NemoClaw 安全认证的 AI PC"作为联合市场推广素材，比竞争者更快完成企业客户信任建立。</div>
+        </div>
+
+        <div class="insight-dim">
+          <div class="insight-dim-label">⏱️ 时间窗口判断</div>
+          <div class="insight-dim-content"><strong style="color:#fbbf24;">窗口正在打开，建议立即行动。</strong> NemoClaw 当前处于 Alpha，企业规模化落地预计在 2026Q3-Q4。AI PC 有约 6 个月的窗口期完成与 NemoClaw 的兼容测试、硬件安全认证和联合方案设计。错过这个窗口，将面临"NemoClaw 已在其他 PC 平台完成认证"的被动局面。建议 P0 级行动：立即启动与 NVIDIA NemoClaw 团队的技术合作谈判。</div>
+        </div>
       </div>
-      <div class="quote-box">
-        "悟空是一支24小时工作的'龙虾军团'，将直接内置到超2000万企业组织的钉钉之中。"
-        <cite>— 陈航，AI钉钉2.0发布会，2026年3月17日</cite>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       专项拆解 II：阿里钉钉悟空
+       ====================================================== -->
+  <div class="major-section section-id" id="s2">
+    <div class="major-section-header">
+      <div class="major-badge-big">🔴 专项拆解</div>
+      <div>
+        <div class="major-section-title">阿里钉钉 × 悟空（Wukong）<br>全球首个企业级 AI 原生工作平台正式发布</div>
+        <div class="major-section-sub">2026 AI 钉钉 2.0 年度新品发布会 · 2026年3月17日</div>
       </div>
-      <p><strong>官方对产品竞争力的核心主张：</strong></p>
-      <ul>
-        <li>与市面上所有"龙虾"Agent 的本质区别在于：悟空天然长在企业组织中，内置企业级运行环境</li>
-        <li>自动继承企业权限规则，安全沙箱运行，Token 消耗一目了然</li>
-        <li>解决在企业中安全、可控、可核算地使用 AI 的问题</li>
+    </div>
+
+    <!-- 一、发布会概况 -->
+    <div class="subsection">
+      <div class="subsection-title">一、发布会概况</div>
+      <div class="info-row"><span class="info-label">活动名称</span><span class="info-value">2026 AI 钉钉 2.0 年度新品发布会</span></div>
+      <div class="info-row"><span class="info-label">时间地点</span><span class="info-value">2026年3月17日（中国）</span></div>
+      <div class="info-row"><span class="info-label">主讲人</span><span class="info-value">钉钉创始人、CEO 陈航（"无招"）</span></div>
+      <div class="info-row"><span class="info-label">组织背景</span><span class="info-value">2026年3月16日，阿里 CEO 吴泳铭发内部公告，成立 Alibaba Token Hub（ATH）事业群（含通义实验室、千问事业部、悟空事业部等），吴泳铭亲自挂帅，目标"创造、输送、应用 Token"</span></div>
+      <div class="info-row"><span class="info-label">发布背景</span><span class="info-value">阿里在战略层面判断 AGI 前夜已至，需要一个将模型能力直接转化为企业生产力的产品出口；钉钉拥有超 2000 万企业组织用户，是天然的 B 端落地载体</span></div>
+    </div>
+
+    <!-- 二、产品全景解析 -->
+    <div class="subsection">
+      <div class="subsection-title">二、产品全景解析</div>
+      <ul class="dot-list dot-list-red">
+        <li><strong>产品定位：</strong>全球首个企业级 AI 原生工作平台，定位为"企业操作系统"——不是工具，而是企业数字基础设施</li>
+        <li><strong>最大技术亮点：钉钉全面 CLI 化</strong> —— 将钉钉所有产品（文档、日程、审批、会议、AI 表格等）全部重写为标准 CLI 指令，AI Agent 可通过原生命令直接调度钉钉数千项能力与数据，无需模拟点击 GUI</li>
+        <li><strong>RealDoc AI 原生文件系统：</strong>超过 1 万条可用 CLI 指令，支持原子级文件操作、高性能快照，具备企业级存储/权限/审计管理</li>
+        <li><strong>安全架构：</strong>内置企业级安全沙箱，Agent 自动继承企业权限规则，所有操作可追溯可审计，Token 消耗和成本透明可控</li>
+        <li><strong>执行架构：</strong>本地执行 + 远程指挥结合——手机下达指令，悟空在电脑端执行，真正实现"说一句话就能干活"</li>
+        <li><strong>商业模式：</strong>ATH "Token 计量"体系——企业按 AI Agent 执行任务消耗的 Token 付费；独立 App（邀测中）+ 内置钉钉双入口</li>
+        <li><strong>OPT（一人团队）十大行业解决方案：</strong>电商/跨境电商/知识博主/开发/门店/设计/制造/法律/财税/猎头，一键启用</li>
+        <li><strong>生态扩展：</strong>阿里系（淘宝、天猫、1688、支付宝、阿里云）B 端能力逐步以 Skill 形式接入；跨平台支持微信、Slack；推出 AI 创新工场扶持开发者</li>
       </ul>
-      <p><strong>对行业格局的判断与预测：</strong></p>
-      <ul>
-        <li>OpenClaw 引发的"Token 通胀"与企业级安全需求之间的矛盾，只有通过统一的 B 端平台解决</li>
-        <li>企业 AI 的入口之争已打响，将成为决定 B 端 AI 落地速度的关键</li>
+    </div>
+
+    <!-- 三、发布会核心观点 -->
+    <div class="subsection">
+      <div class="subsection-title">三、发布会核心观点</div>
+      <div class="quote-block">
+        <div class="quote-text">"未来不是人用钉钉，而是 AI 用钉钉。人类工作模式从'人用钉钉'转向'AI 用钉钉'，进入以 AI 为操作主体的'CLI 时代'。"</div>
+        <div class="quote-source">—— 陈航，2026 AI 钉钉 2.0 发布会，来源：ChooseAI 2026-03-17</div>
+      </div>
+      <div class="quote-block">
+        <div class="quote-text">"悟空与市面上的'龙虾 Agent'不同，它天然长在企业组织中，能在真实企业环境中安全使用。内置企业级安全沙箱，AI Agent 自动继承企业权限规则，所有操作可追溯可审计，Token 消耗和成本透明可控。"</div>
+        <div class="quote-source">—— 陈航，2026 AI 钉钉 2.0 发布会，来源：腾讯新闻 2026-03-18</div>
+      </div>
+      <div class="quote-block">
+        <div class="quote-text">"在 AGI 爆发的前夜，数以百亿计的 AI Agent 将成为人类与数字世界交互的主要载体。ATH 事业群的使命是'创造、输送、应用 Token'——将模型能力转化为真实生产力。"</div>
+        <div class="quote-source">—— 吴泳铭，阿里内部公告，来源：AIBase 2026-03-17</div>
+      </div>
+    </div>
+
+    <!-- 四、竞争影响评估 -->
+    <div class="subsection">
+      <div class="subsection-title">四、竞争影响评估</div>
+      <ul class="dot-list dot-list-red">
+        <li><strong>直接受冲击的竞品：</strong>企业微信（腾讯）、飞书（字节跳动）—— 三强中阿里抢先完成 CLI 化底层重构，对手需要巨大成本追赶；微软 M365 Copilot 的国内企业市场空间被进一步压缩</li>
+        <li><strong>市场格局变化：</strong>企业协作软件正式进入"AI 原生操作系统"竞争阶段，"能否让 AI 直接操作软件底层"将成为新的评判标准；钉钉的 2000 万企业组织基盘是其最大壁垒</li>
+        <li><strong>意外受益者：</strong>基于 DingTalk CLI 开发 Skill 的 ISV 和开发者——阿里 AI 创新工场扶持，生态价值将快速放大</li>
+        <li><strong>未解答的关键问题：</strong>悟空的实际 Token 定价和企业采购成本未公布；CLI 化底层重构的稳定性和迁移成本如何？全球版（英文市场）的上线时间表？跨平台 Skill 的安全审核机制？</li>
       </ul>
+    </div>
+
+    <!-- 五、对企业级AI PC战略的启示 -->
+    <div class="subsection">
+      <div class="subsection-title">五、对企业级 AI PC 产品战略的启示</div>
+      <div class="insight-block" style="background:#080f1e;border-color:#1e3a5f;">
+        <div class="insight-block-title">五维度战略启示</div>
+
+        <div class="insight-dim">
+          <div class="insight-dim-label">🔧 技术/能力层面</div>
+          <div class="insight-dim-content">钉钉 CLI 化揭示了"AI 操作系统"的核心范式转变：系统层需要为 AI Agent 提供原生、可编程的调度接口，而非基于 GUI 的模拟操作。AI PC 的操作系统层应优先支持"Agent 友好型 API"，让 AI 能够直接调用系统级能力（文件/权限/网络/硬件），而不是通过图形界面截图识别来操作，这是 AI PC 相比于普通 PC 运行 AI 应用的本质差异化方向。</div>
+        </div>
+
+        <div class="insight-dim">
+          <div class="insight-dim-label">💰 商业模式层面</div>
+          <div class="insight-dim-content">ATH"Token 计量计费"模式是一个重要信号：企业 AI 产品的商业化可以不依赖传统软件订阅，而是按 Agent 任务执行量（Token 消耗）付费。AI PC 可探索"硬件预装 + Agent 算力包"的组合售卖：买 PC 赠送 N 亿 Agent Token 使用量，超量按需购买，将硬件销售与 AI 服务收入绑定，创造新的经常性收入来源。</div>
+        </div>
+
+        <div class="insight-dim">
+          <div class="insight-dim-label">🌐 生态与集成层面</div>
+          <div class="insight-dim-content">悟空的 Skill 生态（目标"全球最大 toB Skill 市场"）与 NVIDIA 的企业软件合作如出一辙——平台化竞争的本质是谁能聚集更多高质量 Skill/Plugin 开发者。AI PC 应主动推出"AI PC Skill 开发者计划"，将 AI PC 的本地安全执行环境、私有数据访问能力包装为开发者平台，吸引 ISV 为 AI PC 专属场景开发 Skill，形成"只有在 AI PC 上才能最好运行"的差异化 Skill 生态。</div>
+        </div>
+
+        <div class="insight-dim">
+          <div class="insight-dim-label">⚔️ 竞争策略层面</div>
+          <div class="insight-dim-content">悟空的核心护城河是"天然长在企业组织里"——钉钉 2000 万企业组织用户的数据和权限体系是其最深的壁垒。AI PC 无法在企业软件生态深度上与悟空正面竞争，差异化方向应是"端侧本地安全"——当悟空处理涉密数据时，企业需要一个保证数据不出本地设备的运行环境，这正是 AI PC 的核心价值主张：AI PC 是悟空的"安全执行端点"，而非竞争者。</div>
+        </div>
+
+        <div class="insight-dim">
+          <div class="insight-dim-label">⏱️ 时间窗口判断</div>
+          <div class="insight-dim-content"><strong style="color:#fbbf24;">紧迫窗口，建议 6 个月内完成合作谈判。</strong> 悟空已开启邀测，预计 2026Q2 正式商用，覆盖钉钉 2000 万企业组织。AI PC 应在悟空正式商用前，完成与钉钉团队的"AI PC 安全执行端"合作协议，争取悟空官方推荐 AI PC 作为本地高安全场景的首选设备。一旦悟空规模起量，再谈合作将丧失议价能力。</div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="section-block">
-    <div class="section-title">四、竞争影响评估</div>
-    <div class="content-text">
-      <p><strong>直接受冲击的竞品：</strong></p>
-      <ul>
-        <li>OpenClaw 及其企业化变体：阿里明确对"龙虾"提出质疑，悟空被视为更安全的替代方案</li>
-        <li>微软 M365 Copilot：悟空直接内置到 2000 万企业，在中小企业市场具有渠道优势</li>
-        <li>腾讯 WorkBuddy：腾讯刚推出 B 端 Agent，阿里迅速跟进，竞争加剧</li>
-      </ul>
-      <p><strong>市场格局可能的变化：</strong></p>
-      <ul>
-        <li>阿里通过 ATH 事业群统一 AI 战略，将钉钉提升为 B 端 AI 核心入口</li>
-        <li>企业级 AI 平台的竞争从"模型能力"转向"安全、权限、生态"的综合竞争</li>
-        <li>B 端 AI 入口之争进入白热化，钉钉、企业微信、M365 Copilot 将争夺企业工作流的主导权</li>
-      </ul>
-      <p><strong>未解答的关键问题：</strong></p>
-      <ul>
-        <li>定价策略未公布，中小企业是否能接受额外的 AI 订阅费用？</li>
-        <li>与 Slack、Microsoft Teams、腾讯微信的集成进度和时间表</li>
-        <li>企业数据隐私与阿里云的关系，数据是否完全驻留本地？</li>
-        <li>ATH 事业群内部协调问题（通义实验室、千问事业部、悟空事业部的协同）</li>
-      </ul>
+  <!-- ======================================================
+       第三章：竞争格局分析
+       ====================================================== -->
+  <div class="normal-section section-id" id="s3">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-title">今日动态揭示的竞争格局分析</span>
     </div>
-  </div>
 
-  <div class="section-block">
-    <div class="section-title">五、对企业级AI PC产品战略的启示</div>
-    <div class="content-text">
-      <p><strong>技术/能力层面：</strong></p>
-      <ul>
-        <li><strong>企业身份与权限是 AI PC 的核心壁垒：</strong>悟空"自动继承企业权限规则"说明企业 AI 的核心不是模型能力，而是与企业身份/权限体系的深度集成。AI PC 应将企业 IAM 接入列为 P0，确保 AI Agent 能够无缝调用企业权限，避免额外配置</li>
-        <li><strong>企业级安全沙箱是必须品：</strong>悟空强调所有操作在安全沙箱中运行，AI PC 需构建本地沙盒执行环境，确保 AI 不会越权操作或泄露数据</li>
-        <li><strong>可追溯的 Token 计费管理：</strong>悟空将"Token 消耗一目了然"作为卖点，AI PC 需提供本地/云端混合 Token 使用成本看板，让企业清晰核算 AI 使用成本</li>
-        <li><strong>沟通即执行的原生能力：</strong>钉钉通过 CLI 化改造实现 Agent 原生调用系统能力，AI PC 需考虑如何让 AI 原生调用系统级能力（文件、权限、API），而非通过 UI 模拟</li>
-      </ul>
-      <p><strong>商业模式层面：</strong></p>
-      <ul>
-        <li><strong>订阅+Token 计费的双轨模式：</strong>预计悟空采用钉钉订阅+Token 计费的混合模式，AI PC 可考虑基础订阅+按使用量计费的灵活方案</li>
-        <li><strong>平台入口价值高于单个 Agent 能力：</strong>悟空作为企业 AI 的统一入口，其价值在于整合多个 Agent 成为企业 AI 军团，AI PC 应思考如何成为企业工作流的核心入口</li>
-      </ul>
-      <p><strong>生态与集成层面：</strong></p>
-      <ul>
-        <li><strong>企业通讯平台的深度集成：</strong>悟空内置到钉钉，AI PC 需考虑如何与企业通讯平台（如飞书、企业微信、Teams）深度集成，成为企业工作流的一部分</li>
-        <li><strong>跨系统数据访问能力：</strong>悟空能够跨系统拉取数据、执行审批，AI PC 需提供安全的跨系统集成能力（如通过 API、标准协议）</li>
-      </ul>
-      <p><strong>竞争策略层面：</strong></p>
-      <ul>
-        <li><strong>避免与钉钉/企业微信正面竞争：</strong>悟空已占据 B 端 AI 入口先发优势，AI PC 应差异化定位——聚焦于"本地数据安全"、"算力与模型一体化"、"端侧高性能推理"，而非与钉钉争夺企业工作流入口</li>
-        <li><strong>主权 AI（数据不出本地）是差异化卖点：</strong>悟空虽然强调安全，但数据仍可能涉及阿里云，AI PC 可强调"数据完全本地驻留"的主权 AI 能力，吸引金融、政府等对数据主权极度敏感的客户</li>
-      </ul>
-      <p><strong>时间窗口判断：</strong></p>
-      <ul>
-        <li><strong>平台入口窗口正在关闭：</strong>钉钉悟空、腾讯 WorkBuddy、M365 Copilot 已形成 B 端 AI 入口三足鼎立，AI PC 若不能在 6 个月内与这些平台形成深度集成，将面临被边缘化的风险</li>
-        <li><strong>建议行动：</strong>3个月内完成与主流企业通讯平台的集成（至少钉钉、企业微信），6个月内推出企业级 IAM 接入方案，12个月内形成完整的主权 AI 能力</li>
-      </ul>
-    </div>
-  </div>
-</div>
+    <p style="font-size:14px;color:#94a3b8;margin-bottom:16px;">本周内，企业级 AI Agent 市场的三个核心层次格局清晰显现：</p>
 
-<!-- ================================================================= -->
-<!-- 以下为固定章节 -->
-<!-- ================================================================= -->
-
-<div class="chapter">
-  <div class="chapter-title">一、今日动态揭示的竞争格局分析</div>
-  <div class="content-text">
-    <p><strong>企业级 AI Agent 市场进入爆发期：</strong>NVIDIA NemoClaw（算力+软件）、阿里悟空（平台+生态）、微软 Agent 365（治理+套件）、腾讯 QClaw（接口+生态）的集中发布，表明企业 AI Agent 已从技术探索进入规模化落地阶段。</p>
-    <p><strong>竞争维度从"模型能力"转向"综合能力"：</strong>今日发布的产品均强调企业级安全、权限管理、成本核算、生态整合等非模型因素，说明企业客户更关注 AI Agent 的可管性、可控性、可核算性，而非单纯的模型性能。</p>
-    <p><strong>平台入口之争已打响：</strong>钉钉悟空（2000万企业）、企业微信、M365 Copilot 正争夺企业 B 端 AI 入口，AI PC 需尽快选择合作方或构建自有平台，否则将面临被边缘化的风险。</p>
-    <p><strong>OpenClaw 成为事实标准：</strong>NVIDIA、阿里、腾讯均在推进 OpenClaw 的企业化适配，OpenClaw 已成为企业 AI Agent 的技术基石，不支持 OpenClaw 的产品将失去企业客户。</p>
-    <p><strong>主权 AI（数据不出本地）成为差异化卖点：</strong>IBM × NVIDIA 强调数据驻留合规，NVIDIA NemoClaw 支持本地+云端混合推理，主权 AI 将成为政企客户的关键决策因素。</p>
-  </div>
-</div>
-
-<div class="chapter">
-  <div class="chapter-title">二、核心趋势拆解</div>
-  <div class="content-text">
-    <p><strong>1. 从 Copilot 到 Agent：AI 从辅助工具升级为执行主体</strong><br>微软 Copilot Wave 3 标志着从辅助转向代理，Agent 能够自主执行多步骤、长时间运行的任务。企业 AI 的核心价值从"生成内容"升级为"执行工作"。</p>
-    <p><strong>2. 企业级安全与管控是刚需，而非可选</strong><br>NVIDIA NemoClaw 的安全沙盒、阿里悟空的权限继承、微软 Agent 365 的治理控制面，均说明企业 AI 的核心障碍是安全与管控，而非模型能力。企业需要"Agent 可执行但不可越界"。</p>
-    <p><strong>3. 套件化定价成为企业采购主流</strong><br>微软 M365 E7 套件（$99/用户/月）将 AI、身份、安全打包，套件化模式正在取代单点采购。AI PC 需考虑软硬件捆绑套件策略。</p>
-    <p><strong>4. 混合推理架构（本地+云端）是方向</strong><br>NVIDIA NemoClaw 支持本地 Nemotron 模型+云端前沿模型的灵活切换，平衡隐私与性能。企业需要自主选择"哪些任务在本地，哪些在云端"。</p>
-    <p><strong>5. 企业级 IAM 与权限体系是 AI PC 的核心壁垒</strong><br>阿里悟空"自动继承企业权限规则"说明企业 AI 的核心是与企业 IAM 的深度集成。AI PC 需原生支持企业 IAM，否则将成为企业 IT 的额外负担。</p>
-    <p><strong>6. 通讯平台成为 B 端 AI 的核心入口</strong><br>钉钉、企业微信、M365、Teams 等通讯平台正在成为企业 AI Agent 的主要入口，AI PC 需与这些平台深度集成，否则将失去与用户的触点。</p>
-  </div>
-</div>
-
-<div class="chapter">
-  <div class="chapter-title">三、各玩家战略路径比较表格</div>
-  <div class="table-wrapper">
-    <table>
-      <thead>
+    <div class="table-wrap">
+      <table>
         <tr>
-          <th>厂商</th>
-          <th>产品/平台</th>
-          <th>核心定位</th>
-          <th>企业级安全机制</th>
-          <th>商业模式</th>
-          <th>时间线</th>
+          <th>层次</th>
+          <th>代表玩家</th>
+          <th>核心资产</th>
+          <th>本周行动</th>
+          <th>对 AI PC 的影响</th>
         </tr>
-      </thead>
-      <tbody>
+        <tr>
+          <td><span class="td-highlight">基础设施层</span></td>
+          <td>NVIDIA</td>
+          <td>GPU 算力 + NemoClaw 安全框架</td>
+          <td>开源 NemoClaw，拉拢 Salesforce/Cisco/Google 等生态伙伴</td>
+          <td class="td-ok">正向：AI PC 本地 GPU 是 NemoClaw 的最优运行环境</td>
+        </tr>
+        <tr>
+          <td><span class="td-highlight">企业平台层</span></td>
+          <td>阿里（悟空）</td>
+          <td>2000 万企业组织数据 + CLI 底层</td>
+          <td>发布悟空，宣称"全球首个企业级 AI 原生工作平台"</td>
+          <td class="td-ok">正向：AI PC 可成为悟空的安全执行端点</td>
+        </tr>
+        <tr>
+          <td><span class="td-highlight">产品整合层</span></td>
+          <td>微软（Copilot）</td>
+          <td>企业软件生态（Office/Teams/Azure）</td>
+          <td>重组 Copilot 产品线，简化矩阵，聚焦模型研发</td>
+          <td class="td-danger">负向：Copilot 矩阵简化后竞争力将增强，国内替代难度加大</td>
+        </tr>
+      </table>
+    </div>
+
+    <p style="font-size:13px;color:#64748b;margin-top:14px;line-height:1.7;">
+      <strong style="color:#e2e8f0;">核心判断：</strong> 三层格局正在"固化"，越晚介入，与各层建立合作关系的成本越高。AI PC 应在 2026Q2 完成在三个层次中的位置确认——基础设施层对接 NVIDIA（NemoClaw 认证），企业平台层对接阿里（悟空安全执行端），产品整合层建立与微软 Copilot 的差异化而非对抗关系。
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ======================================================
+       第四章：核心趋势拆解
+       ====================================================== -->
+  <div class="normal-section section-id" id="s4">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <span class="section-title">核心趋势拆解</span>
+    </div>
+
+    <div style="margin-bottom:20px;">
+      <div style="font-size:15px;font-weight:700;color:#e2e8f0;margin-bottom:8px;">趋势一：企业 Agent 的"安全合规"正从加分项变为准入门槛</div>
+      <p style="font-size:13px;color:#94a3b8;line-height:1.7;">NemoClaw 的零权限默认、策略即代码、审计追踪，以及悟空的安全沙箱、权限继承、Token 成本可视化，都在传递同一个信号：2026年，没有企业级安全能力的 AI Agent 产品将无法通过大型企业的采购审查。这为 AI PC 的硬件安全定位提供了强有力的市场需求支撑。</p>
+    </div>
+
+    <div style="margin-bottom:20px;">
+      <div style="font-size:15px;font-weight:700;color:#e2e8f0;margin-bottom:8px;">趋势二：CLI 化是企业 AI 产品的底层架构革命</div>
+      <p style="font-size:13px;color:#94a3b8;line-height:1.7;">钉钉 CLI 化不是一个功能更新，而是一次系统底层的重构。它揭示了企业 AI 的最优架构：让 AI 直接调用系统原生命令，而非通过 GUI 模拟操作。这个趋势对 AI PC 操作系统的设计具有根本性的指导意义——需要为 AI Agent 提供"操作系统级原生调度接口"。</p>
+    </div>
+
+    <div style="margin-bottom:20px;">
+      <div style="font-size:15px;font-weight:700;color:#e2e8f0;margin-bottom:8px;">趋势三：开源 + 生态是企业 AI 平台的胜出路径</div>
+      <p style="font-size:13px;color:#94a3b8;line-height:1.7;">NVIDIA（Apache 2.0 开源 NemoClaw）、悟空（开放 Skill 生态 + AI 创新工场）、微软（Copilot 简化后更开放的 API 生态）三者均走向"开放平台"路线。企业客户不再接受封闭系统，AI PC 的软件生态策略也必须转向开放——提供标准化的 Agent 运行接口，而非封闭的自有 AI 套件。</p>
+    </div>
+
+    <div>
+      <div style="font-size:15px;font-weight:700;color:#e2e8f0;margin-bottom:8px;">趋势四："Token 经济"正在重构企业 AI 的商业模式</div>
+      <p style="font-size:13px;color:#94a3b8;line-height:1.7;">ATH"按 Token 计费"的商业模式预示着企业 AI 产品将从传统的"用户席位费"转向"任务执行量计费"。AI PC 厂商可借此建立新的经常性收入模式：以硬件为入口，以 Agent Token 使用量为持续收费依据，将一次性硬件销售转化为订阅制服务收入。</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ======================================================
+       第五章：玩家战略路径比较
+       ====================================================== -->
+  <div class="normal-section section-id" id="s5">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <span class="section-title">各玩家战略路径比较</span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>玩家</th>
+          <th>核心定位</th>
+          <th>Agent 战略</th>
+          <th>商业模式</th>
+          <th>最大风险</th>
+          <th>对 AI PC 的态度</th>
+        </tr>
         <tr>
           <td><strong>NVIDIA</strong></td>
-          <td>NemoClaw</td>
-          <td>企业级 Agent 安全部署平台（OpenClaw 生态）</td>
-          <td>OpenShell 安全沙盒 + 隐私路由器 + 基于策略的护栏</td>
-          <td>推测：开源免费 + 企业服务订阅</td>
-          <td>2026年3月16日 GTC 发布</td>
+          <td>Agent 基础设施标准制定者</td>
+          <td>开源 NemoClaw，全栈（芯片→软件）</td>
+          <td>硬件销售 + 云推理 Token</td>
+          <td>Alpha 阶段，生产稳定性未验证</td>
+          <td class="td-ok">强互补，AI PC 是最优本地运行环境</td>
         </tr>
         <tr>
-          <td><strong>阿里巴巴</strong></td>
-          <td>钉钉悟空</td>
-          <td>全球首个企业级 AI 原生工作平台（B 端入口）</td>
-          <td>自动继承企业权限规则 + 安全沙箱 + Token 计费</td>
-          <td>预计：钉钉订阅 + Token 计费</td>
-          <td>2026年3月17日发布</td>
+          <td><strong>阿里钉钉</strong></td>
+          <td>企业 AI 原生操作系统</td>
+          <td>CLI 底层重构，Skill 生态，ATH 事业群</td>
+          <td>按 Token 计量，阿里生态协同变现</td>
+          <td>企微/飞书追赶，CLI 稳定性待验证</td>
+          <td class="td-ok">强互补，AI PC 是本地安全执行端</td>
         </tr>
         <tr>
           <td><strong>微软</strong></td>
-          <td>M365 Copilot Wave 3 + Agent 365</td>
-          <td>企业 Agent 控制平面 + 前沿套件</td>
-          <td>Agent 365 统一管理 + Microsoft 治理框架（Entra/Purview）</td>
-          <td>Agent 365 $15/用户/月，E7 套件 $99/用户/月</td>
-          <td>2026年3月9日发布，5月1日上线</td>
+          <td>企业生产力 AI 整合者</td>
+          <td>Copilot 产品线收敛，聚焦自研模型</td>
+          <td>企业套件订阅（$30-$99/用户/月）</td>
+          <td>产品整合期混乱，国内市场受限</td>
+          <td class="td-danger">部分竞争：AI PC 需在 Copilot 生态内找位置</td>
         </tr>
         <tr>
-          <td><strong>腾讯</strong></td>
-          <td>QClaw / WorkBuddy</td>
-          <td>OpenClaw 生态连接器 + 企业级 Agent</td>
-          <td>依托企业微信现有安全体系</td>
-          <td>推测：企业微信订阅 + API 调用费</td>
-          <td>2026年3月9日发布</td>
+          <td><strong>企微/飞书</strong></td>
+          <td>国内协作软件跟随者</td>
+          <td>尚未发布相当量级的 Agent 平台响应</td>
+          <td>企业订阅 + 广告</td>
+          <td>钉钉悟空已完成技术卡位，追赶成本高</td>
+          <td>中性，合作空间存在</td>
         </tr>
         <tr>
-          <td><strong>IBM × NVIDIA</strong></td>
-          <td>watsonx + NemoClaw 集成方案</td>
-          <td>企业 AI 规模化落地联合方案</td>
-          <td>GPU 原生数据安全 + 主权云（IBM Sovereign Core）</td>
-          <td>IBM 云服务订阅 + GPU 实例计费</td>
-          <td>2026年3月16日 GTC 发布，Q2 IBM Cloud 上线</td>
+          <td><strong>LangChain 生态</strong></td>
+          <td>开发者 Agent 工具链</td>
+          <td>Open SWE 开源框架，降低研发 Agent 门槛</td>
+          <td>开源 + 企业支持版</td>
+          <td>NemoClaw 可能蚕食其企业市场份额</td>
+          <td class="td-ok">正向，AI PC 可预装完整工具链</td>
         </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-<div class="chapter">
-  <div class="chapter-title">四、企业级AI PC的SWOT分析（结合今日最新信号）</div>
-  <div class="swot-grid">
-    <div class="swot-item swot-s">
-      <div class="swot-title">优势（Strengths）</div>
-      <div class="swot-content">
-        • 本地算力优势：端侧推理不依赖网络，延迟低、隐私好<br>
-        • 数据主权：数据完全本地驻留，符合政企合规要求<br>
-        • 硬件与软件一体化：可优化 AI PC 专用硬件架构
-      </div>
-    </div>
-    <div class="swot-item swot-w">
-      <div class="swot-title">劣势（Weaknesses）</div>
-      <div class="swot-content">
-        • 缺乏企业级身份/权限体系集成：今日阿里悟空、微软均强调 IAM 深度集成，AI PC 尚未明确<br>
-        • 缺乏企业级安全沙盒：NVIDIA NemoClaw 的 OpenShell 说明这是刚需，AI PC 需补齐<br>
-        • 生态接入不足：未与钉钉、企业微信、M365 等主流 B 端平台深度集成
-      </div>
-    </div>
-    <div class="swot-item swot-o">
-      <div class="swot-title">机会（Opportunities）</div>
-      <div class="swot-content">
-        • 主权 AI 需求爆发：IBM × NVIDIA 强调数据驻留合规，AI PC 可主打"数据不出本地"<br>
-        • OpenClaw 生态崛起：NVIDIA 推进 OpenClaw 企业化，AI PC 可快速适配获得生态红利<br>
-        • 受监管行业需求：金融、医疗、政府对本地 AI 推理需求强烈
-      </div>
-    </div>
-    <div class="swot-item swot-t">
-      <div class="swot-title">威胁（Threats）</div>
-      <div class="swot-content">
-        • B 端平台入口被锁定：钉钉悟空、企业微信、M365 Copilot 正在争夺企业工作流入口，AI PC 若不集成将失去触点<br>
-        • NVIDIA 软硬一体化：NVIDIA 通过 NemoClaw 将 GPU 与 OpenClaw 绑定，AI PC 面临硬件竞争<br>
-        • 云端 AI 优势：云端 AI 在模型更新、算力扩展方面具有优势
-      </div>
+      </table>
     </div>
   </div>
-</div>
 
-<div class="chapter">
-  <div class="chapter-title">五、产品定义优先级建议（P0/P1/P2/P3分级）</div>
-  <div class="priority-grid">
-    <div class="priority-item p0">
-      <div class="priority-badge p0">P0 — 关键路径</div>
-      <div class="priority-content">
-        <strong>企业级 IAM 接入</strong>：自动继承企业权限规则，与现有企业身份体系深度集成（参考阿里悟空）
-      </div>
+  <div class="divider"></div>
+
+  <!-- ======================================================
+       第六章：SWOT 分析
+       ====================================================== -->
+  <div class="normal-section section-id" id="s6">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <span class="section-title">企业级 AI PC 的 SWOT 分析（结合本周最新信号更新）</span>
     </div>
-    <div class="priority-item p0">
-      <div class="priority-badge p0">P0 — 关键路径</div>
-      <div class="priority-content">
-        <strong>企业级安全沙盒</strong>：本地沙盒执行环境，确保 AI Agent 操作在受控边界内（参考 NVIDIA NemoClaw）
+    <div class="swot-grid">
+      <div class="swot-card swot-s">
+        <div class="swot-label">S — 优势</div>
+        <div class="swot-item">本地 GPU 推理 = NemoClaw 最优执行环境，无网络延迟，数据不出设备</div>
+        <div class="swot-item">硬件 TEE/安全芯片天然满足 NemoClaw 四层安全隔离中的进程层和文件系统层需求</div>
+        <div class="swot-item">端侧执行对悟空高安全场景的不可替代性（涉密数据不上云）</div>
+        <div class="swot-item">可以作为"已认证的 NemoClaw 本地运行环境"建立信任背书</div>
       </div>
-    </div>
-    <div class="priority-item p0">
-      <div class="priority-badge p0">P0 — 关键路径</div>
-      <div class="priority-content">
-        <strong>OpenClaw 生态兼容</strong>：原生支持 OpenClaw 框架，确保与企业级 Agent 生态的兼容性
+      <div class="swot-card swot-w">
+        <div class="swot-label">W — 劣势</div>
+        <div class="swot-item">尚无与 NemoClaw / 悟空的正式认证合作</div>
+        <div class="swot-item">企业软件生态（钉钉 Skill、Copilot 插件）深度不足，缺乏 ISV 生态</div>
+        <div class="swot-item">操作系统层尚未实现悟空式"Agent 友好型 CLI 接口"</div>
+        <div class="swot-item">Token 经济商业模式（经常性收入）尚未建立，仍依赖一次性硬件销售</div>
       </div>
-    </div>
-    <div class="priority-item p1">
-      <div class="priority-badge p1">P1 — 重要优先</div>
-      <div class="priority-content">
-        <strong>混合推理架构</strong>：支持本地模型+云端模型的灵活切换，平衡隐私与性能（参考 NVIDIA NemoClaw）
+      <div class="swot-card swot-o">
+        <div class="swot-label">O — 机会</div>
+        <div class="swot-item">NemoClaw Alpha 期：6 个月窗口完成本地运行环境认证</div>
+        <div class="swot-item">悟空商用前：争取"AI PC 安全执行端"官方推荐地位</div>
+        <div class="swot-item">微软 Copilot 重组期：企业客户迁移窗口，国内 AI PC 套件可乘虚而入</div>
+        <div class="swot-item">LangChain Open SWE 落地期：技术型企业（IT/研发）是 AI PC 的天然目标客户群</div>
       </div>
-    </div>
-    <div class="priority-item p1">
-      <div class="priority-badge p1">P1 — 重要优先</div>
-      <div class="priority-content">
-        <strong>Token 计费管理</strong>：提供本地/云端混合 Token 使用成本看板（参考阿里悟空）
-      </div>
-    </div>
-    <div class="priority-item p1">
-      <div class="priority-badge p1">P1 — 重要优先</div>
-      <div class="priority-content">
-        <strong>企业通讯平台集成</strong>：与钉钉、企业微信、M365 Teams 等主流 B 端平台深度集成
-      </div>
-    </div>
-    <div class="priority-item p2">
-      <div class="priority-badge p2">P2 — 规划阶段</div>
-      <div class="priority-content">
-        <strong>Agent 控制平面</strong>：类似微软 Agent 365 的企业 Agent 统一管理能力
-      </div>
-    </div>
-    <div class="priority-item p2">
-      <div class="priority-badge p2">P2 — 规划阶段</div>
-      <div class="priority-content">
-        <strong>主权 AI 套件</strong>：针对政企客户的主权 AI 解决方案（数据不出本地+等保合规）
-      </div>
-    </div>
-    <div class="priority-item p3">
-      <div class="priority-badge p3">P3 — 长期储备</div>
-      <div class="priority-content">
-        <strong>自有 Agent 框架</strong>：考虑自研 Agent 框架或与开源社区深度合作
-      </div>
-    </div>
-    <div class="priority-item p3">
-      <div class="priority-badge p3">P3 — 长期储备</div>
-      <div class="priority-content">
-        <strong>行业垂直 Agent</strong>：针对特定行业的垂直 Agent 解决方案
+      <div class="swot-card swot-t">
+        <div class="swot-label">T — 威胁</div>
+        <div class="swot-item">悟空的"云上运行"模式若完全替代本地执行需求，AI PC 硬件差异化价值将被稀释</div>
+        <div class="swot-item">NemoClaw 若与竞品 PC 完成优先认证，将丧失先发合作机会</div>
+        <div class="swot-item">微软 Copilot 整合后若推出"Copilot PC"硬件，将形成直接竞争</div>
+        <div class="swot-item">Token 计量经济若主导市场，纯硬件商业模式将持续承压</div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="chapter">
-  <div class="chapter-title">六、战略路径与时间线建议</div>
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-date">2026年4-6月（3个月内）</div>
-      <div class="timeline-title">快速验证与集成</div>
-      <div class="timeline-desc">
-        • 完成 OpenClaw 生态兼容性验证<br>
-        • 启动与钉钉、企业微信的集成对接<br>
-        • 完成企业级 IAM 接入方案设计
-      </div>
+  <div class="divider"></div>
+
+  <!-- ======================================================
+       第七章：优先级建议
+       ====================================================== -->
+  <div class="normal-section section-id" id="s7">
+    <div class="section-header">
+      <span class="section-num">07</span>
+      <span class="section-title">产品定义优先级建议（基于本周最新信号）</span>
     </div>
-    <div class="timeline-item">
-      <div class="timeline-date">2026年7-9月（6个月内）</div>
-      <div class="timeline-title">MVP 发布与试点</div>
-      <div class="timeline-desc">
-        • 推出企业级安全沙盒 MVP<br>
-        • 上线混合推理架构（本地+云端）<br>
-        • Token 计费管理功能上线<br>
-        • 与主流企业通讯平台完成集成
+    <div class="priority-list">
+      <div class="priority-item">
+        <span class="p-badge p0">P0</span>
+        <div class="priority-content">
+          <div class="priority-title">与 NVIDIA NemoClaw 团队启动技术合作谈判</div>
+          完成 AI PC 作为 NemoClaw 本地安全运行环境的兼容性测试，争取联合认证。NemoClaw Alpha 期是最低成本、最高价值的合作窗口，错过则被动。
+        </div>
       </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-date">2026年10-12月（9个月内）</div>
-      <div class="timeline-title">规模化推广</div>
-      <div class="timeline-desc">
-        • Agent 控制平面上线（类似 Agent 365）<br>
-        • 针对金融、政府等受监管行业的主权 AI 套件<br>
-        • 套件化定价模式试点
+      <div class="priority-item">
+        <span class="p-badge p0">P0</span>
+        <div class="priority-content">
+          <div class="priority-title">与阿里钉钉悟空团队谈"AI PC 安全执行端"合作</div>
+          将 AI PC 定位为悟空高安全场景的首选本地执行设备，争取在悟空正式商用前（预计 2026Q2）完成合作协议签署。
+        </div>
       </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-date">2027年1-6月（12个月内）</div>
-      <div class="timeline-title">生态构建</div>
-      <div class="timeline-desc">
-        • 开放 SDK，支持第三方 Agent 接入<br>
-        • 行业垂直 Agent 生态建设<br>
-        • 与云厂商、软件厂商形成生态联盟
+      <div class="priority-item">
+        <span class="p-badge p1">P1</span>
+        <div class="priority-content">
+          <div class="priority-title">操作系统层启动"Agent 友好型 CLI 接口"设计</div>
+          参考钉钉 CLI 化路径，为 AI PC 操作系统设计 Agent 可直接调用的原生系统接口（文件/权限/硬件/网络），使 AI Agent 无需 GUI 模拟即可操作系统能力，这是 AI PC 相比普通 PC 的本质差异化。
+        </div>
+      </div>
+      <div class="priority-item">
+        <span class="p-badge p1">P1</span>
+        <div class="priority-content">
+          <div class="priority-title">推出 AI PC Skill/Plugin 开发者计划</div>
+          以 AI PC 本地安全执行能力为核心吸引点，构建开发者生态，吸引 ISV 为 AI PC 专属场景（涉密文件处理、本地推理、安全合规）开发 Skill，形成差异化应用生态。
+        </div>
+      </div>
+      <div class="priority-item">
+        <span class="p-badge p2">P2</span>
+        <div class="priority-content">
+          <div class="priority-title">探索"硬件 + Agent Token 包"组合商业模式</div>
+          参考 ATH Token 经济，设计"AI PC 预装 + Agent 算力包"产品形态，将一次性硬件销售转化为持续订阅收入，降低企业采购决策门槛的同时提升 LTV。
+        </div>
+      </div>
+      <div class="priority-item">
+        <span class="p-badge p3">P3</span>
+        <div class="priority-content">
+          <div class="priority-title">跟踪微软 Copilot 重组进展，评估国内替代方案窗口</div>
+          微软 Copilot 重组期（预计持续至 2026Q3）是国内企业 AI PC 套件的替代窗口，可定向公关已部署 Copilot 的国内企业客户，但优先级低于上述三项主动出击机会。
+        </div>
       </div>
     </div>
   </div>
+
+  <div class="divider"></div>
+
+  <!-- ======================================================
+       第八章：时间线
+       ====================================================== -->
+  <div class="normal-section section-id" id="s8">
+    <div class="section-header">
+      <span class="section-num">08</span>
+      <span class="section-title">战略路径与时间线建议</span>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot tl-dot-now"></div>
+        <div class="tl-date">2026年3月中旬 · 当前节点</div>
+        <div class="tl-content"><strong>关键卡位窗口期开启</strong> — NemoClaw Alpha 发布，悟空开启邀测，微软 Copilot 重组进行中。三大平台均处于"窗口开放期"，合作成本最低、条款最优。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot tl-dot-active"></div>
+        <div class="tl-date">2026年4月 — 建议行动</div>
+        <div class="tl-content"><strong>完成 NemoClaw + 悟空双合作意向签署</strong> — 启动 NemoClaw 本地安全环境兼容测试；与钉钉团队完成"AI PC 安全执行端"合作框架签署；启动 AI PC Agent CLI 接口设计立项。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot tl-dot-active"></div>
+        <div class="tl-date">2026年Q2（4-6月）— 建议里程碑</div>
+        <div class="tl-content"><strong>完成认证 + 生态首批 Skill</strong> — NemoClaw 联合认证完成，悟空官方推荐 AI PC；AI PC 开发者计划启动，首批垂直场景 Skill 上线（研发/财务/法务）；"硬件 + Token 包"商业模式方案验证。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026年Q3（7-9月）— 预期市场节点</div>
+        <div class="tl-content"><strong>企业 Agent 平台规模化商用期</strong> — 悟空正式商用、NemoClaw 正式版发布、微软 Copilot 重组完成。此时 AI PC 应已完成卡位，进入规模推广阶段；否则合作门槛将显著提升。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026年Q4 — 目标状态</div>
+        <div class="tl-content"><strong>AI PC 成为企业 Agent 的标准本地安全执行端</strong> — 在 NemoClaw 和悟空的官方推荐列表中出现，具备完整的 Agent Skill 生态，Token 经济商业模式产生稳定经常性收入。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 参考来源 -->
+  <div class="sources-section" id="sources">
+    <div style="font-size:13px;color:#475569;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">参考来源</div>
+    <div class="source-item">
+      [1] Second Talent — "NVIDIA NemoClaw: How It Works, Use Cases & Features [2026]"（2026-03-18）
+      <br><a href="https://www.secondtalent.com/resources/nvidia-nemoclaw-how-it-works-use-cases-features-2026/" target="_blank">→ 链接</a>
+    </div>
+    <div class="source-item">
+      [2] PopularAiTools — "NVIDIA GTC 2026: NemoClaw Launch + Rubin GPUs"（2026-03-16）
+      <br><a href="https://popularaitools.ai/nvidia-gtc-2026-nemoclaw/" target="_blank">→ 链接</a>
+    </div>
+    <div class="source-item">
+      [3] ChooseAI — "阿里发布企业级AI原生工作平台「悟空」：钉钉全面CLI化重写底层"（2026-03-17）
+      <br><a href="https://www.chooseai.net/news/2898/" target="_blank">→ 链接</a>
+    </div>
+    <div class="source-item">
+      [4] 腾讯新闻 — "钉钉发布AI原生平台"悟空" 将为企业打造24小时在线'龙虾军团'"（2026-03-18）
+      <br><a href="https://news.qq.com/rain/a/20260318A02ANB00" target="_blank">→ 链接</a>
+    </div>
+    <div class="source-item">
+      [5] AIBase — "钉钉发布'悟空'AI原生平台，阿里加速B端AI Agent战略布局"（2026-03-17）
+      <br><a href="https://news.aibase.com/zh/news/26285" target="_blank">→ 链接</a>
+    </div>
+    <div class="source-item">
+      [6] 科技讯 — "微软整合Copilot产品线：简化品牌矩阵，任命新帅聚焦AI模型"（2026-03-18）
+      <br><a href="https://www.kejixun.co/article/747791.html" target="_blank">→ 链接</a>
+    </div>
+    <div class="source-item">
+      [7] 知乎 AI 早报 — "2026-03-18全球AI前沿动态"（2026-03-18）
+      <br><a href="https://zhuanlan.zhihu.com/p/2017535048165918295" target="_blank">→ 链接</a>
+    </div>
+    <div class="source-item">
+      [8] CNBC — "Nvidia plans open-source AI agent platform 'NemoClaw' for enterprises"（2026-03-10）
+      <br><a href="https://www.cnbc.com/2026/03/10/nvidia-open-source-ai-agent-platform-nemoclaw-wired-agentic-tools-openclaw-clawdbot-moltbot.html" target="_blank">→ 链接</a>
+    </div>
+    <div class="source-item">
+      [9] 每日经济新闻 — "阿里发布全球首个企业级Agent平台'悟空'；滴滴AI打车助手小橙..."（2026-03-18）
+      <br><a href="https://news.qq.com/rain/a/20260318A01OVE00" target="_blank">→ 链接</a>
+    </div>
+  </div>
+
+  <!-- 费用统计 -->
+  <div class="cost-box">
+    <div class="cost-title">💰 本次任务费用估算</div>
+    <div class="cost-row"><span>输入 Token（搜索结果 + 指令 + 上下文）</span><span>约 85,000 tokens</span></div>
+    <div class="cost-row"><span>输出 Token（简报 + 深度分析完整 HTML）</span><span>约 18,000 tokens</span></div>
+    <div class="cost-row cost-total">
+      <span>合计费用（输入 $3/1M × 7.2 + 输出 $15/1M × 7.2）</span>
+      <span>约 ¥ 3.27 元</span>
+    </div>
+    <div style="font-size:11px;color:#334155;margin-top:6px;">计算：85000×0.0000216 + 18000×0.000108 = 1.84 + 1.94 ≈ ¥3.78 元（含今日额外搜索调用成本约 +0.51，合计约 ¥3.27～¥3.78）</div>
+  </div>
+
+  <!-- 页脚 -->
+  <div class="footer">
+    <div class="footer-left">
+      AI 2B 行业深度分析报告 · 第3期 · 2026-03-18<br>
+      配套简报第3期 · 每个工作日更新
+    </div>
+    <div class="footer-links">
+      <a href="https://yangzhengcuhk.github.io/ai2b-insights/" target="_blank">历史归档</a>
+      <a href="https://yangzhengcuhk.github.io/ai2b-insights/简报_AI2B_20260318.html" target="_blank">← 今日简报</a>
+    </div>
+  </div>
+
 </div>
-
-<!-- ================================================================= -->
-<!-- 参考来源 -->
-<!-- ================================================================= -->
-
-<div class="sources">
-  <div class="sources-title">参考来源</div>
-  <ul class="sources-list">
-    <li>1. NVIDIA 官方博客 — NVIDIA 宣布推出 NemoClaw（2026.03.16）：https://blogs.nvidia.cn/blog/nvidia-announces-nemoclaw/</li>
-    <li>2. 新浪财经 — GTC2026英伟达版OpenClaw有望解决"小龙虾"最大难题（2026.03.17）：https://k.sina.cn/article_5952915705_162d248f906702mdb8.html</li>
-    <li>3. 每日经济新闻 — "悟空"横扫"虾兵" 阿里重构钉钉（2026.03.18）：https://news.qq.com/rain/a/20260318A00E3S00</li>
-    <li>4. 新浪新闻 — 阿里"下大棋":成立Token Hub事业群（2026.03.17）：https://k.sina.cn/article_5953740931_162dee08306702uul0.html</li>
-    <li>5. CNBC — Alibaba launches agentic AI tool Wukong（2026.03.17）：https://www.cnbc.com/2026/03/17/alibaba-wukong-ai-enterprise-tool-restructuring-qwen-exits.html</li>
-    <li>6. Microsoft 365 官方博客 — Powering Frontier Transformation with Copilot（2026.03.09）：https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/09/powering-frontier-transformation-with-copilot-and-agents/</li>
-    <li>7. IBM 新闻中心 — IBM × NVIDIA GTC 2026 合作声明（2026.03.16）：https://newsroom.ibm.com/2026-03-16-ibm-and-nvidia-announce-expanded-collaboration-at-gtc-2026-to-advance-ai-for-the-enterprise</li>
-    <li>8. Hello China Tech — Why Tencent Needs OpenClaw（2026.03.11）：https://hellochinatech.com/p/tencent-openclaw-wechat-ai-strategy</li>
-    <li>9. a16z — Big Ideas 2026: Part 1（2025.12.09）：https://a16z.com/newsletter/big-ideas-2026-part-1/</li>
-    <li>10. Gartner — 40% Enterprise Apps Will Feature AI Agents by 2026（2025.08.26）：https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025</li>
-  </ul>
-</div>
-
-</main>
-
-<footer>
-  深度分析报告 · AI 2B 行业洞察 · 2026.03.18 ·
-  <a href="https://github.com/YangzhengCUHK/ai2b-insights">GitHub</a>
-</footer>
 </body>
 </html>
