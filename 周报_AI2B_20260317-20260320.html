@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>AI 2B 行业周报 · 2026 W12（3月17日—3月20日）</title>
+<style>
+:root{
+  --navy:#0a1628;
+  --navy2:#0f1e3d;
+  --navy3:#162845;
+  --gold:#e6a419;
+  --gold2:#fbbf24;
+  --red:#dc2626;
+  --blue:#2563eb;
+  --green:#059669;
+  --purple:#7c3aed;
+  --teal:#0891b2;
+  --text:#c8d8ec;
+  --sub:#6880a0;
+  --border:#1e2d4a;
+  --card:#0f1e38;
+  --bg:#0a1628;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);line-height:1.75;-webkit-font-smoothing:antialiased}
+
+/* ── HERO HEADER ─────────────────────────────── */
+.hero{background:linear-gradient(150deg,#05101f 0%,#0a1830 40%,#0f2040 100%);border-bottom:3px solid var(--gold);padding:52px 24px 44px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-60px;right:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(230,164,25,0.06) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:960px;margin:0 auto;position:relative}
+.hero-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.hero-eyebrow::before{content:'';width:24px;height:2px;background:var(--gold);display:inline-block}
+.hero h1{font-size:34px;font-weight:900;color:#fff;line-height:1.25;margin-bottom:10px}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero-sub{font-size:15px;color:rgba(255,255,255,0.45);margin-bottom:22px;line-height:1.6}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.meta-chip{font-size:11px;padding:4px 12px;border-radius:20px;font-weight:600;letter-spacing:0.3px}
+.chip-week{background:rgba(230,164,25,0.12);border:1px solid rgba(230,164,25,0.3);color:var(--gold)}
+.chip-count{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5)}
+.chip-red{background:rgba(220,38,38,0.12);border:1px solid rgba(220,38,38,0.3);color:#f87171}
+
+/* ── NAV ─────────────────────────────── */
+.nav-bar{background:#080f1c;border-bottom:1px solid var(--border);padding:0 24px;position:sticky;top:0;z-index:100}
+.nav-inner{max-width:960px;margin:0 auto;display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
+.nav-inner::-webkit-scrollbar{display:none}
+.nav-tab{font-size:12px;font-weight:600;color:var(--sub);padding:14px 18px;white-space:nowrap;text-decoration:none;border-bottom:2px solid transparent;transition:all .2s}
+.nav-tab:hover{color:var(--text);border-bottom-color:rgba(230,164,25,0.4)}
+.nav-tab.active{color:var(--gold);border-bottom-color:var(--gold)}
+
+/* ── LAYOUT ─────────────────────────────── */
+main{max-width:960px;margin:40px auto 80px;padding:0 20px}
+
+/* ── SECTION HEADER ─────────────────────────────── */
+.sec{margin-bottom:56px;scroll-margin-top:60px}
+.sec-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:24px}
+.sec-num{background:var(--navy2);border:1px solid var(--border);color:var(--gold);font-size:11px;font-weight:800;letter-spacing:1.5px;padding:6px 12px;border-radius:6px;flex-shrink:0;margin-top:3px}
+.sec-title{font-size:22px;font-weight:800;color:#f0f6ff}
+.sec-sub{font-size:13px;color:var(--sub);margin-top:4px}
+
+/* ── WEEK SUMMARY GRID ─────────────────────────────── */
+.week-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:32px}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 16px;text-align:center}
+.stat-num{font-size:32px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:4px}
+.stat-label{font-size:11px;color:var(--sub);letter-spacing:0.5px}
+
+/* ── EVENT TIMELINE ─────────────────────────────── */
+.event-list{display:flex;flex-direction:column;gap:0}
+.event-item{display:flex;gap:0;position:relative}
+.event-left{width:88px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;padding-top:3px}
+.event-dot{width:14px;height:14px;border-radius:50%;flex-shrink:0;z-index:1;border:2px solid var(--navy)}
+.dot-major{background:var(--red);box-shadow:0 0 8px rgba(220,38,38,0.5)}
+.dot-normal{background:#3a5080}
+.dot-signal{background:var(--gold)}
+.event-line{width:2px;background:var(--border);flex:1;margin-top:2px}
+.event-right{flex:1;padding:0 0 28px 16px}
+.event-date-badge{font-size:10px;font-weight:700;color:var(--sub);letter-spacing:1px;margin-bottom:5px}
+.event-title{font-size:14.5px;font-weight:700;color:#e0eaf8;margin-bottom:5px;line-height:1.4}
+.event-desc{font-size:13px;color:var(--sub);line-height:1.7}
+.event-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+.etag{font-size:10px;padding:2px 8px;border-radius:12px;font-weight:600}
+.etag-red{background:rgba(220,38,38,0.12);color:#f87171;border:1px solid rgba(220,38,38,0.2)}
+.etag-blue{background:rgba(37,99,235,0.12);color:#60a5fa;border:1px solid rgba(37,99,235,0.2)}
+.etag-gold{background:rgba(230,164,25,0.12);color:var(--gold);border:1px solid rgba(230,164,25,0.2)}
+.etag-green{background:rgba(5,150,105,0.12);color:#34d399;border:1px solid rgba(5,150,105,0.2)}
+.etag-purple{background:rgba(124,58,237,0.12);color:#a78bfa;border:1px solid rgba(124,58,237,0.2)}
+
+/* ── TREND CARDS ─────────────────────────────── */
+.trend-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+.trend-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 20px;position:relative;overflow:hidden}
+.trend-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.tc-1::before{background:linear-gradient(90deg,var(--red),#ff6b6b)}
+.tc-2::before{background:linear-gradient(90deg,var(--gold),var(--gold2))}
+.tc-3::before{background:linear-gradient(90deg,var(--blue),#60a5fa)}
+.tc-4::before{background:linear-gradient(90deg,var(--green),#34d399)}
+.tc-5::before{background:linear-gradient(90deg,var(--purple),#a78bfa)}
+.tc-6::before{background:linear-gradient(90deg,var(--teal),#38bdf8)}
+.trend-num{font-size:11px;font-weight:800;color:var(--sub);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+.trend-title{font-size:15px;font-weight:800;color:#e8f0f8;margin-bottom:8px;line-height:1.4}
+.trend-desc{font-size:13px;color:var(--sub);line-height:1.7}
+.trend-signal{font-size:11px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);color:#4a6080;padding:6px 10px;border-radius:6px;margin-top:10px;line-height:1.5}
+
+/* ── PLAYER TABLE ─────────────────────────────── */
+.table-wrap{overflow-x:auto;margin:16px 0}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead tr{background:#0a1628}
+th{padding:11px 14px;text-align:left;font-size:10.5px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:#3a5070;border-bottom:2px solid var(--border)}
+td{padding:11px 14px;border-bottom:1px solid #0e1828;color:var(--text);vertical-align:top;line-height:1.6}
+tr:hover td{background:rgba(255,255,255,0.02)}
+.td-high{color:#f87171}
+.td-med{color:#fbbf24}
+.td-low{color:#34d399}
+.td-coop{color:#a78bfa}
+.td-bold{color:#e8f0f8;font-weight:700}
+
+/* ── INSIGHT BLOCKS (2B AIPC 产品视角) ─────────────────────────────── */
+.insight-section{background:linear-gradient(135deg,#050e1e 0%,#081224 100%);border:1px solid rgba(230,164,25,0.2);border-radius:16px;padding:32px;margin-top:8px}
+.insight-header{display:flex;align-items:center;gap:14px;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid rgba(230,164,25,0.15)}
+.insight-icon{width:44px;height:44px;background:rgba(230,164,25,0.12);border:1px solid rgba(230,164,25,0.25);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.insight-title{font-size:20px;font-weight:800;color:#fff}
+.insight-subtitle{font-size:13px;color:rgba(255,255,255,0.4);margin-top:3px}
+
+.insight-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+.insight-card:last-child{margin-bottom:0}
+.ic-header{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}
+.ic-priority{font-size:11px;font-weight:800;padding:4px 10px;border-radius:6px;flex-shrink:0;letter-spacing:0.5px;margin-top:2px}
+.p0-badge{background:rgba(220,38,38,0.2);color:#f87171;border:1px solid rgba(220,38,38,0.35)}
+.p1-badge{background:rgba(230,164,25,0.2);color:var(--gold);border:1px solid rgba(230,164,25,0.35)}
+.p2-badge{background:rgba(37,99,235,0.2);color:#60a5fa;border:1px solid rgba(37,99,235,0.35)}
+.p3-badge{background:rgba(100,116,139,0.2);color:#94a3b8;border:1px solid rgba(100,116,139,0.35)}
+.ic-title{font-size:15px;font-weight:800;color:#f0f6ff}
+.ic-basis{font-size:11px;color:#3a5070;margin-top:3px}
+.ic-body{font-size:13.5px;color:#8aa0bc;line-height:1.75}
+.ic-action{display:flex;align-items:flex-start;gap:8px;margin-top:12px;background:rgba(230,164,25,0.05);border:1px solid rgba(230,164,25,0.1);border-radius:8px;padding:10px 14px}
+.ic-action-label{font-size:10px;font-weight:800;color:var(--gold);letter-spacing:1px;white-space:nowrap;margin-top:1px}
+.ic-action-text{font-size:12.5px;color:#7a94b0;line-height:1.6}
+
+/* ── WEEKLY WATCHLIST ─────────────────────────────── */
+.watchlist{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+.watch-item{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 18px}
+.watch-label{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.wl-high .watch-label{color:#f87171}
+.wl-med .watch-label{color:var(--gold)}
+.wl-low .watch-label{color:#60a5fa}
+.wl-coop .watch-label{color:#34d399}
+.watch-item p{font-size:13px;color:var(--sub);line-height:1.6}
+
+/* ── CONCLUSION BOX ─────────────────────────────── */
+.conclusion{background:var(--navy2);border:1px solid var(--border);border-radius:14px;padding:28px 30px;margin-top:16px}
+.conclusion-title{font-size:13px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.concl-items{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ci{background:rgba(255,255,255,0.04);border-radius:10px;padding:14px 16px;border:1px solid rgba(255,255,255,0.07)}
+.ci-num{font-size:24px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:5px}
+.ci-title{font-size:13px;font-weight:700;color:#e0eaf8;margin-bottom:5px}
+.ci-desc{font-size:12.5px;color:#6880a0;line-height:1.6}
+
+/* ── DIVIDER ─────────────────────────────── */
+.divider{height:1px;background:var(--border);margin:40px 0}
+
+/* ── SCROLLBAR ─────────────────────────────── */
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:var(--navy)}
+::-webkit-scrollbar-thumb{background:#2a3a55;border-radius:3px}
+
+/* ── FOOTER ─────────────────────────────── */
+footer{text-align:center;padding:28px;font-size:11px;color:#2a3a55;border-top:1px solid #0a1220}
+
+@media(max-width:640px){
+  .hero h1{font-size:24px}
+  .week-stats{grid-template-columns:1fr 1fr}
+  .trend-grid{grid-template-columns:1fr}
+  .concl-items{grid-template-columns:1fr}
+  .watchlist{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════ HERO ══════ -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">AI 2B Intelligence Weekly · W12</div>
+    <h1>企业AI <em>平台化决战</em><br>本周战局复盘与产品定义指南</h1>
+    <p class="hero-sub">覆盖周期：2026年3月17日（周一）— 3月20日（周五）<br>核心事件：NVIDIA NemoClaw · 阿里悟空 · Anthropic Dispatch · 360龙虾卫士 · 腾讯龙虾管家 · 信通院可信AI评估</p>
+    <div class="hero-meta">
+      <span class="meta-chip chip-week">📅 2026 W12 · 第1期周报</span>
+      <span class="meta-chip chip-count">📰 本周监测事件：17条</span>
+      <span class="meta-chip chip-count">🔴 重大新品：3个</span>
+      <span class="meta-chip chip-red">🚨 竞争窗口：高度紧张</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ NAV ══════ -->
+<nav class="nav-bar">
+  <div class="nav-inner">
+    <a class="nav-tab active" href="#sec-events">本周大事记</a>
+    <a class="nav-tab" href="#sec-trends">关键趋势</a>
+    <a class="nav-tab" href="#sec-players">玩家格局</a>
+    <a class="nav-tab" href="#sec-aipc">AI PC 产品定义启示</a>
+    <a class="nav-tab" href="#sec-watchlist">下周观察清单</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ══════ WEEK STATS ══════ -->
+<div class="week-stats">
+  <div class="stat-card">
+    <div class="stat-num">3</div>
+    <div class="stat-label">🔴 重大新品发布</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">6</div>
+    <div class="stat-label">📊 核心趋势信号</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">8</div>
+    <div class="stat-label">🏢 重点竞品厂商</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">5</div>
+    <div class="stat-label">⚡ AI PC 产品行动项</div>
+  </div>
+</div>
+
+<!-- ══════ SECTION 1：本周大事记 ══════ -->
+<div class="sec" id="sec-events">
+  <div class="sec-head">
+    <div class="sec-num">SEC·01</div>
+    <div>
+      <div class="sec-title">本周大事记</div>
+      <div class="sec-sub">3月17日—3月20日 · 按时间顺序排列 · 标注重大程度</div>
+    </div>
+  </div>
+
+  <div class="event-list">
+
+    <!-- 3/17 -->
+    <div class="event-item">
+      <div class="event-left">
+        <div class="event-dot dot-major"></div>
+        <div class="event-line"></div>
+      </div>
+      <div class="event-right">
+        <div class="event-date-badge">MON · 3月17日</div>
+        <div class="event-title">🔴 阿里正式发布悟空（Wukong）—— 全球首个企业级AI原生工作平台</div>
+        <div class="event-desc">钉钉CEO陈航发布会宣布：钉钉完成全面CLI化底层重构，所有产品能力暴露为10万+条原生指令，AI Agent可直接调度，无需GUI模拟操作。阿里CEO吴泳铭同日宣布成立ATH（Alibaba Token Hub）事业群，悟空正式列为战略核心产品。商业模式：按Token计量计费，独立App开启邀测。</div>
+        <div class="event-tags">
+          <span class="etag etag-red">重大发布</span>
+          <span class="etag etag-gold">ATH事业群</span>
+          <span class="etag etag-blue">钉钉CLI化</span>
+          <span class="etag etag-green">Token经济</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-left">
+        <div class="event-dot dot-signal"></div>
+        <div class="event-line"></div>
+      </div>
+      <div class="event-right">
+        <div class="event-date-badge">MON · 3月17日</div>
+        <div class="event-title">月之暗面Kimi K2.5估值180亿美元，三个月完成三轮融资</div>
+        <div class="event-desc">Kimi K2.5（MIT协议开源）在SWE-Bench代码基准上逼近GPT-4o，已嵌入钉钉/飞书/企业微信，月活突破2500万。估值三个月翻4倍，资本市场对"开源+协作嵌入"模式高度认可。</div>
+        <div class="event-tags">
+          <span class="etag etag-blue">开源模型</span>
+          <span class="etag etag-gold">融资</span>
+          <span class="etag etag-green">协作嵌入</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-left">
+        <div class="event-dot dot-normal"></div>
+        <div class="event-line"></div>
+      </div>
+      <div class="event-right">
+        <div class="event-date-badge">MON · 3月17日</div>
+        <div class="event-title">MiniMax M2.5开源，企业级多模态推理成本降至1/6</div>
+        <div class="event-desc">MiniMax M2.5在多模态理解基准上超越部分闭源模型，企业私有化部署门槛大幅降低，主打低成本高性能AI-native Workspace方向。</div>
+        <div class="event-tags">
+          <span class="etag etag-blue">开源模型</span>
+          <span class="etag etag-gold">多模态</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3/18 -->
+    <div class="event-item">
+      <div class="event-left">
+        <div class="event-dot dot-major"></div>
+        <div class="event-line"></div>
+      </div>
+      <div class="event-right">
+        <div class="event-date-badge">TUE · 3月18日</div>
+        <div class="event-title">🔴 NVIDIA GTC 2026 · NemoClaw正式发布 —— 开源企业级Agent安全平台</div>
+        <div class="event-desc">黄仁勋主题演讲宣布：NemoClaw是OpenClaw的企业级"安全包装器"，Apache 2.0开源，实现四层安全隔离（网络/文件系统/进程/推理）、零权限默认（Zero-Trust）、策略即代码（Policy as Code）。当前处于Alpha阶段，配套Rubin GPU（推理性能较上代5倍提升）+ Groq 3 LPU。合作伙伴：Salesforce、Cisco、Google、Adobe、CrowdStrike。</div>
+        <div class="event-tags">
+          <span class="etag etag-red">重大发布</span>
+          <span class="etag etag-gold">NVIDIA GTC 2026</span>
+          <span class="etag etag-blue">开源</span>
+          <span class="etag etag-purple">安全沙箱</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-left">
+        <div class="event-dot dot-normal"></div>
+        <div class="event-line"></div>
+      </div>
+      <div class="event-right">
+        <div class="event-date-badge">TUE · 3月18日</div>
+        <div class="event-title">微软Copilot产品线重组，Jacob Andreou出任新帅</div>
+        <div class="event-desc">微软对混乱的Copilot产品矩阵进行收敛整合，聚焦自研基础模型研发，同步推进M365 E7 Frontier Suite（$99/用户/月）上市，含Agent 365（$15/用户/月，2026.05.01起）独立定价。</div>
+        <div class="event-tags">
+          <span class="etag etag-blue">微软</span>
+          <span class="etag etag-gold">产品整合</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-left">
+        <div class="event-dot dot-normal"></div>
+        <div class="event-line"></div>
+      </div>
+      <div class="event-right">
+        <div class="event-date-badge">TUE · 3月18日</div>
+        <div class="event-title">LangChain Open SWE-Agent发布，代码开发Agent开源标杆</div>
+        <div class="event-desc">SWE-Bench Verified排名第一（54.6%），MIT协议开源，NVIDIA AI-Q Blueprint 深度研究基准同步刷新；两者合力降低企业自建开发Agent的技术门槛。</div>
+        <div class="event-tags">
+          <span class="etag etag-blue">开源框架</span>
+          <span class="etag etag-green">开发Agent</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3/19 -->
+    <div class="event-item">
+      <div class="event-left">
+        <div class="event-dot dot-major"></div>
+        <div class="event-line"></div>
+      </div>
+      <div class="event-right">
+        <div class="event-date-badge">WED · 3月19日</div>
+        <div class="event-title">🔴 Anthropic发布Claude Cowork Dispatch —— 端侧本地Agent执行平台</div>
+        <div class="event-desc">Anthropic推出"手机下令→PC本地执行"的本地Agent控制链路，全程数据不上云，主攻金融/法律/政府高隐私场景。与微软Copilot Cowork形成直接对垒，标志着Agent战场正式进入"云端 vs 本地"路线竞争。</div>
+        <div class="event-tags">
+          <span class="etag etag-red">重大发布</span>
+          <span class="etag etag-purple">本地执行</span>
+          <span class="etag etag-gold">隐私安全</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-left">
+        <div class="event-dot dot-signal"></div>
+        <div class="event-line"></div>
+      </div>
+      <div class="event-right">
+        <div class="event-date-badge">WED · 3月19日</div>
+        <div class="event-title">中国信通院启动"可信AI-智能体"评估认证体系</div>
+        <div class="event-desc">首批评估结果预计5月公布，覆盖基础技术能力、应用可信能力、安全治理三大维度。获认证产品将在国企/政府采购中形成准入壁垒，错过首批将损失6-12个月先发优势。</div>
+        <div class="event-tags">
+          <span class="etag etag-gold">政策监管</span>
+          <span class="etag etag-red">合规认证</span>
+          <span class="etag etag-green">国内市场</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-left">
+        <div class="event-dot dot-normal"></div>
+        <div class="event-line"></div>
+      </div>
+      <div class="event-right">
+        <div class="event-date-badge">WED · 3月19日</div>
+        <div class="event-title">Google Cloud发布Agent市场报告：52%企业已将Agent投入生产，88%实现正ROI</div>
+        <div class="event-desc">报告同步提出A2A（Agent to Agent）协议扩展规范，正与Anthropic MCP形成Agent间通信协议的标准之争。Forrester同期将Agent治理列为CIO 2026年首要议题。</div>
+        <div class="event-tags">
+          <span class="etag etag-blue">市场报告</span>
+          <span class="etag etag-gold">A2A协议</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3/20 -->
+    <div class="event-item">
+      <div class="event-left">
+        <div class="event-dot dot-signal"></div>
+        <div class="event-line"></div>
+      </div>
+      <div class="event-right">
+        <div class="event-date-badge">THU · 3月20日</div>
+        <div class="event-title">腾讯龙虾管家发布 —— PC终端Agent安全层卡位</div>
+        <div class="event-desc">嵌入电脑管家（2亿+设备存量），提供沙箱隔离+可视化权限监控，锁定"终端Agent安全层"入口。与360龙虾卫士同期发布，形成"管家"路线的正面竞争。</div>
+        <div class="event-tags">
+          <span class="etag etag-gold">腾讯</span>
+          <span class="etag etag-purple">终端安全</span>
+          <span class="etag etag-green">存量锁定</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-left">
+        <div class="event-dot dot-signal"></div>
+        <div class="event-line"></div>
+      </div>
+      <div class="event-right">
+        <div class="event-date-badge">THU · 3月20日</div>
+        <div class="event-title">360龙虾卫士发布 —— 硬件盒子"零门槛本地Agent"方案</div>
+        <div class="event-desc">基于OpenClaw，将部署时间从6小时压缩至10分钟，169元入门版，按Token计费。WSL沙箱隔离+"以模治模"安全策略，主打中小企业和个人用户。硬件盒子路径与AI PC存在直接市场重叠。</div>
+        <div class="event-tags">
+          <span class="etag etag-red">竞品警告</span>
+          <span class="etag etag-gold">360</span>
+          <span class="etag etag-purple">硬件盒子</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-left">
+        <div class="event-dot dot-normal"></div>
+        <div class="event-line"></div>
+      </div>
+      <div class="event-right">
+        <div class="event-date-badge">THU · 3月20日</div>
+        <div class="event-title">Manus"我的电脑"本地版发布，云Agent向本地文件系统延伸</div>
+        <div class="event-desc">一键下载即可使用，无需配置。直接访问本地文件系统+工具链，将Manus云端Agent能力延伸至用户PC，绕过平台方直接抢占本地Agent入口。</div>
+        <div class="event-tags">
+          <span class="etag etag-gold">Manus</span>
+          <span class="etag etag-purple">本地执行</span>
+          <span class="etag etag-red">竞品警告</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-left">
+        <div class="event-dot dot-normal"></div>
+        <div class="event-line"></div>
+      </div>
+      <div class="event-right">
+        <div class="event-date-badge">THU · 3月20日</div>
+        <div class="event-title">Anthropic × Material调研：500+企业技术领导者，80%有可量化正ROI</div>
+        <div class="event-desc">软件开发场景节省59%时间，客户服务成本降低35%。这是首个系统性的企业Agent ROI数据集，将成为2026年B端AI采购的基准参照，也是销售谈判的核心武器。</div>
+        <div class="event-tags">
+          <span class="etag etag-blue">研究报告</span>
+          <span class="etag etag-green">ROI数据</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-left">
+        <div class="event-dot dot-normal"></div>
+      </div>
+      <div class="event-right">
+        <div class="event-date-badge">THU · 3月20日</div>
+        <div class="event-title">Google ADK发布AgentTeam API，多Agent协作编排进入标准化</div>
+        <div class="event-desc">Vertex AI原生，结合Gemini 2.5 Pro + A2A协议，让多个专业Agent协同工作成为可调用API。与Anthropic MCP形成Agent间通信协议标准之争，非兼容者将被孤立于企业工作流之外。</div>
+        <div class="event-tags">
+          <span class="etag etag-blue">Google</span>
+          <span class="etag etag-gold">多Agent协作</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════ SECTION 2：关键趋势 ══════ -->
+<div class="sec" id="sec-trends">
+  <div class="sec-head">
+    <div class="sec-num">SEC·02</div>
+    <div>
+      <div class="sec-title">本周提炼的6大关键趋势</div>
+      <div class="sec-sub">从17条事件中凝练的结构性洞察，每条趋势均有本周信号支撑</div>
+    </div>
+  </div>
+
+  <div class="trend-grid">
+
+    <div class="trend-card tc-1">
+      <div class="trend-num">TREND 01 · 最高优先级</div>
+      <div class="trend-title">「Agent安全基础设施」进入产品化爆发期，安全从加分项变为准入门槛</div>
+      <div class="trend-desc">本周NVIDIA NemoClaw、腾讯龙虾管家、360龙虾卫士三款产品同期发布，均定位"终端Agent安全运行环境"。这不是偶然——它揭示了行业共识：谁定义了本地Agent的安全运行标准，谁就控制了企业侧Agent生态的入口。Forrester同期将Agent治理列为CIO 2026年首要议题。</div>
+      <div class="trend-signal">📎 本周信号：NemoClaw（3/18）· 龙虾管家（3/20）· 龙虾卫士（3/20）· Forrester报告（3/19）</div>
+    </div>
+
+    <div class="trend-card tc-2">
+      <div class="trend-num">TREND 02</div>
+      <div class="trend-title">端云协同成主流架构：「本地执行 + 云端规划」取代纯云Agent</div>
+      <div class="trend-desc">Anthropic Dispatch、Manus我的电脑、悟空"手机指令→PC执行"的设计，共同揭示：企业员工核心数据仍在本地（合同、代码、财务文件），纯云Agent无法完成完整的企业工作流自动化。未来6-12个月，端云协同将从选配变为标配。</div>
+      <div class="trend-signal">📎 本周信号：Anthropic Dispatch（3/19）· Manus我的电脑（3/20）· 悟空（3/17）</div>
+    </div>
+
+    <div class="trend-card tc-3">
+      <div class="trend-num">TREND 03</div>
+      <div class="trend-title">CLI化/原生接口化：企业软件的底层架构正在重构以适配AI</div>
+      <div class="trend-desc">钉钉将全部产品功能重写为10万+条CLI指令，让AI可以直接调用系统能力而无需GUI模拟。这揭示了"AI原生操作系统"的核心设计范式：软件的核心竞争力从"好用的界面"转向"AI可编程的接口深度"。企业软件的下一轮竞争将是"CLI化"的速度竞争。</div>
+      <div class="trend-signal">📎 本周信号：钉钉悟空CLI化（3/17）· 微软Copilot API开放（3/18）</div>
+    </div>
+
+    <div class="trend-card tc-4">
+      <div class="trend-num">TREND 04</div>
+      <div class="trend-title">Token经济重构B端AI商业模式：席位订阅→任务执行量计费</div>
+      <div class="trend-desc">阿里ATH事业群的"按Token计费"、360龙虾卫士的"169元入门+按量计费"，预示着B端AI商业模式从"用户席位订阅"向"Agent任务执行量计费"的根本性转变。这类似云计算从买服务器到按需用算力的跨越，将深刻改变企业AI的采购决策路径和预算归属。</div>
+      <div class="trend-signal">📎 本周信号：ATH Token计量体系（3/17）· 360龙虾卫士定价（3/20）</div>
+    </div>
+
+    <div class="trend-card tc-5">
+      <div class="trend-num">TREND 05</div>
+      <div class="trend-title">国内合规治理窗口打开：信通院认证将成国企采购准入条件</div>
+      <div class="trend-desc">中国信通院启动"可信AI-智能体"评估体系，首批结果5月公布。这意味着2026年下半年，国内政务/央国企的AI Agent采购将以"信通院认证"为关键过滤条件。这是国内市场独有的竞争壁垒——华为系产品在等保合规、数据安全法合规方面有天然优势，应率先申请首批认证。</div>
+      <div class="trend-signal">📎 本周信号：信通院可信AI评估启动（3/19）</div>
+    </div>
+
+    <div class="trend-card tc-6">
+      <div class="trend-num">TREND 06</div>
+      <div class="trend-title">Agent ROI数据化，企业采购从"探索期"进入"扩张期"</div>
+      <div class="trend-desc">Google Cloud报告（52%生产部署，88%正ROI）+ Anthropic调研（80%正ROI，开发节省59%时间）首次系统量化了Agent价值。企业预算已开始从"AI探索"移向"AI扩张"，目标决策者从CDO转向CIO。AI PC的销售叙事需要升级：从"探索AI"变为"加速企业已有Agent工作流"。</div>
+      <div class="trend-signal">📎 本周信号：Google Cloud报告（3/19）· Anthropic×Material调研（3/20）</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════ SECTION 3：玩家格局 ══════ -->
+<div class="sec" id="sec-players">
+  <div class="sec-head">
+    <div class="sec-num">SEC·03</div>
+    <div>
+      <div class="sec-title">本周竞争格局速览</div>
+      <div class="sec-sub">8大核心玩家 · 战略路径 · 对企业级AI PC的威胁与合作价值</div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>玩家</th>
+          <th>本周核心动作</th>
+          <th>战略卡位</th>
+          <th>与AI PC的关系</th>
+          <th>威胁/合作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-bold">NVIDIA</td>
+          <td>GTC发布NemoClaw（Alpha）+ Rubin GPU + Groq 3 LPU</td>
+          <td>Agent基础设施标准制定者；全栈（芯片→安全框架）</td>
+          <td>AI PC是NemoClaw最优本地执行环境，强互补</td>
+          <td class="td-low">🟢 合作优先</td>
+        </tr>
+        <tr>
+          <td class="td-bold">阿里悟空</td>
+          <td>发布悟空；钉钉CLI化；ATH事业群成立</td>
+          <td>企业AI原生操作系统；2000万企业组织钉钉用户</td>
+          <td>AI PC可成为悟空高安全场景的本地执行端</td>
+          <td class="td-low">🟢 合作优先</td>
+        </tr>
+        <tr>
+          <td class="td-bold">Anthropic</td>
+          <td>Claude Cowork Dispatch；ROI调研报告</td>
+          <td>本地执行+隐私安全差异化；MCP协议标准推进</td>
+          <td>直接抢占端侧执行权，是AI PC最直接的功能竞品</td>
+          <td class="td-high">🔴 高威胁</td>
+        </tr>
+        <tr>
+          <td class="td-bold">腾讯</td>
+          <td>龙虾管家（PC终端Agent安全层）</td>
+          <td>存量2亿+PC设备的软件安全层控制权</td>
+          <td>在存量PC上建立Agent安全入口，与AI PC硬件层竞争影响力</td>
+          <td class="td-med">🟡 中度威胁</td>
+        </tr>
+        <tr>
+          <td class="td-bold">360</td>
+          <td>龙虾卫士（硬件盒子+极简部署）</td>
+          <td>硬件盒子路线，争夺"零门槛本地AI硬件"市场</td>
+          <td>直接竞争中小企业"本地AI硬件"预算，产品重叠明显</td>
+          <td class="td-high">🔴 高威胁</td>
+        </tr>
+        <tr>
+          <td class="td-bold">Manus</td>
+          <td>我的电脑本地版（一键部署）</td>
+          <td>通用本地Agent，直接抢占PC本地Agent入口</td>
+          <td>在任何PC上部署本地Agent，绕过AI PC差异化价值</td>
+          <td class="td-high">🔴 高威胁</td>
+        </tr>
+        <tr>
+          <td class="td-bold">微软</td>
+          <td>Copilot重组；E7 Frontier Suite上市</td>
+          <td>M365生态锁定；Agent 365独立定价</td>
+          <td>外资/合资企业深度锁定，国内政务市场受限</td>
+          <td class="td-med">🟡 中度威胁（国内）</td>
+        </tr>
+        <tr>
+          <td class="td-bold">Google</td>
+          <td>ADK AgentTeam API；A2A协议推进；市场报告</td>
+          <td>多Agent协调框架；云平台标准制定</td>
+          <td>云平台定位，与端侧AI PC互补</td>
+          <td class="td-low">🟢 低威胁</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════ SECTION 4：AI PC 产品定义启示 ══════ -->
+<div class="sec" id="sec-aipc">
+  <div class="sec-head">
+    <div class="sec-num">SEC·04</div>
+    <div>
+      <div class="sec-title">2B AI PC 产品定义启示与建议</div>
+      <div class="sec-sub">基于本周全部信号 · 2B AIPC产品专家视角 · 按优先级排序</div>
+    </div>
+  </div>
+
+  <div class="insight-section">
+    <div class="insight-header">
+      <div class="insight-icon">🎯</div>
+      <div>
+        <div class="insight-title">本周核心定位判断</div>
+        <div class="insight-subtitle">本周最重要的战略结论：AI PC 的竞争窗口正在高速收窄，需在 2026Q2 完成三个关键卡位</div>
+      </div>
+    </div>
+
+    <!-- P0-1 -->
+    <div class="insight-card">
+      <div class="ic-header">
+        <span class="ic-priority p0-badge">P0</span>
+        <div>
+          <div class="ic-title">立即行动：重新定义AI PC的核心价值主张为「企业Agent的可信本地执行端」</div>
+          <div class="ic-basis">信号来源：NemoClaw发布（3/18）· 悟空发布（3/17）· Anthropic Dispatch（3/19）· 360龙虾卫士（3/20）</div>
+        </div>
+      </div>
+      <div class="ic-body">本周最清晰的信号是：企业Agent的"本地执行层"已成为各方争夺的核心战场。腾讯、360、Manus、Anthropic全部在本周抢占这一层。<strong>AI PC如果不主动定义自己在这个战场的位置，就会被定义成"能跑这些软件的普通PC"。</strong><br><br>
+      核心价值主张应该是：<strong>「AI PC是企业Agent工作流中，最可信、最安全的本地执行节点」</strong>——硬件级TEE安全隔离（比软件沙箱更可信）、NPU本地推理（比云端更低延迟、更低成本）、与企业IAM深度集成（Agent权限天然受控）、操作全程可审计（满足信通院合规要求）。这四点，是腾讯龙虾管家（纯软件）、360龙虾盒子（通用硬件）、Manus（云+本地混合）都无法完全复制的差异化组合。</div>
+      <div class="ic-action">
+        <span class="ic-action-label">NOW</span>
+        <span class="ic-action-text">更新对外产品叙事：所有AI PC产品材料中，明确"企业Agent可信本地执行端"的核心定位，并用"硬件级vs软件级"对比说明差异化优势。</span>
+      </div>
+    </div>
+
+    <!-- P0-2 -->
+    <div class="insight-card">
+      <div class="ic-header">
+        <span class="ic-priority p0-badge">P0</span>
+        <div>
+          <div class="ic-title">紧急窗口：与NVIDIA NemoClaw和阿里悟空启动技术合作谈判（6个月窗口）</div>
+          <div class="ic-basis">信号来源：NemoClaw Alpha阶段（3/18）· 悟空开启邀测（3/17）</div>
+        </div>
+      </div>
+      <div class="ic-body">NemoClaw当前处于Alpha，企业规模化落地预计在2026Q3-Q4；悟空预计2026Q2正式商用。<strong>两个产品都处于"合作成本最低、条款最优"的窗口期。</strong><br><br>
+      与NemoClaw合作的核心目标：完成"AI PC本地安全执行环境"兼容性测试，获得联合认证，出现在NemoClaw官方推荐的企业部署硬件列表中。这将让AI PC在企业CIO眼中直接获得"已经过安全验证"的信任背书。<br><br>
+      与悟空合作的核心目标：在悟空正式商用前签署"AI PC安全执行端"合作协议，让悟空在处理高安全等级任务（政务文件、财务数据、涉密合同）时，官方推荐用户在AI PC上本地运行，而非上云。一旦悟空规模起量，再谈合作将失去议价能力。</div>
+      <div class="ic-action">
+        <span class="ic-action-label">4月前</span>
+        <span class="ic-action-text">完成与NVIDIA和阿里钉钉的合作意向函签署，启动联合技术验证，争取在悟空正式商用（预计2026Q2）前完成首阶段认证。</span>
+      </div>
+    </div>
+
+    <!-- P0-3 -->
+    <div class="insight-card">
+      <div class="ic-header">
+        <span class="ic-priority p0-badge">P0</span>
+        <div>
+          <div class="ic-title">必做：申请信通院"可信AI-智能体"首批认证（5月截止）</div>
+          <div class="ic-basis">信号来源：信通院可信AI评估启动（3/19）</div>
+        </div>
+      </div>
+      <div class="ic-body">信通院首批评估结果5月公布，这是国内政务/央国企AI Agent采购的准入门槛。<strong>这是国内市场独有的竞争优势窗口，海外竞品（微软、Google、Anthropic）均无法轻易获得这一认证。</strong><br><br>
+      华为/鸿蒙PC在等保合规、数据安全法、国密算法支持等方面有天然优势，申请首批信通院可信AI认证的成功率和成本均优于竞争对手。错过首批认证，将在国企采购中损失6-12个月的先发优势——这个代价在国内B端市场极其高昂。</div>
+      <div class="ic-action">
+        <span class="ic-action-label">4月前</span>
+        <span class="ic-action-text">立即启动信通院可信AI认证申请流程，将AI PC的硬件安全日志、NPU本地推理、操作审计能力作为认证核心材料准备。</span>
+      </div>
+    </div>
+
+    <!-- P1-1 -->
+    <div class="insight-card">
+      <div class="ic-header">
+        <span class="ic-priority p1-badge">P1</span>
+        <div>
+          <div class="ic-title">操作系统层启动「Agent友好型原生接口」设计（参考钉钉CLI化路径）</div>
+          <div class="ic-basis">信号来源：钉钉CLI化（3/17）· Manus我的电脑（3/20）· Google ADK AgentTeam API（3/20）</div>
+        </div>
+      </div>
+      <div class="ic-body">钉钉CLI化揭示了企业AI的最优架构范式：<strong>让AI直接调用系统原生命令，而非通过GUI截图识别来操作</strong>。这是AI PC相比于"在普通PC上装一个AI应用"的本质差异化方向。<br><br>
+      HarmonyOS操作系统层应优先为AI Agent开放以下原生接口：文件系统读写API（含权限控制）、应用间数据调用API、设备硬件调用API（摄像头/麦克风/传感器）、企业IAM权限继承接口。同时需要支持MCP/A2A协议的系统级服务端口——Google A2A和Anthropic MCP的标准之争本周进入白热化，不支持这两个协议的AI PC将被排除在企业Agent工作流编排体系之外。</div>
+      <div class="ic-action">
+        <span class="ic-action-label">Q2 2026</span>
+        <span class="ic-action-text">启动"HarmonyOS Agent原生接口"设计立项，目标在2026Q2发布Developer Preview，支持MCP协议作为系统级服务，吸引早期ISV开发者。</span>
+      </div>
+    </div>
+
+    <!-- P1-2 -->
+    <div class="insight-card">
+      <div class="ic-header">
+        <span class="ic-priority p1-badge">P1</span>
+        <div>
+          <div class="ic-title">针对360龙虾卫士的竞争响应：用「内置优于外置」的叙事反制硬件盒子路线</div>
+          <div class="ic-basis">信号来源：360龙虾卫士硬件盒子（3/20）· Manus我的电脑（3/20）</div>
+        </div>
+      </div>
+      <div class="ic-body">360龙虾卫士的169元入门硬件盒子是对AI PC最直接的商业威胁：它用"零门槛、10分钟部署、低价"的叙事，将"本地AI执行能力"拆解为独立硬件销售，直接压缩了AI PC"本地AI"的差异化价值主张。<br><br>
+      <strong>反制策略：AI PC应以"深度集成优于外置盒子"为核心叙事</strong>——外置盒子只能做文件系统访问，无法访问设备传感器/摄像头/生物特征；外置盒子安全隔离依赖软件沙箱，AI PC依赖硬件TEE（不可绕过）；外置盒子与企业IAM体系的集成需要额外开发，AI PC系统层天然集成；外置盒子需要额外的供电、网络端口、物理空间，AI PC零额外部署成本。量化计算：一台AI PC节省的盒子购买成本+IT部署成本，1-2年内可弥补AI PC的溢价。</div>
+      <div class="ic-action">
+        <span class="ic-action-label">即时</span>
+        <span class="ic-action-text">准备针对360龙虾卫士的竞品对比材料，重点突出"硬件TEE vs 软件沙箱"、"零部署成本 vs 外置盒子"、"深度系统集成 vs 文件系统隔离"三组对比维度，用于销售一线使用。</span>
+      </div>
+    </div>
+
+    <!-- P2 -->
+    <div class="insight-card">
+      <div class="ic-header">
+        <span class="ic-priority p2-badge">P2</span>
+        <div>
+          <div class="ic-title">探索「硬件+Agent Token包」组合商业模式，响应Token经济趋势</div>
+          <div class="ic-basis">信号来源：ATH Token计量（3/17）· 360龙虾卫士按量计费（3/20）· Anthropic按用户收费模式</div>
+        </div>
+      </div>
+      <div class="ic-body">本周多个产品同步验证了"Agent Token计量计费"的商业模式。对AI PC而言，这既是挑战（纯硬件一次性销售模式承压），也是机会（可以建立经常性收入）。<br><br>
+      建议探索的商业模式：购买AI PC附赠首年N亿Token的Agent算力包（本地推理免费，云端调用按量计费）；企业版可购买年度Token配额，统一管理员工Agent使用量；超量部分按需购买，形成持续收入来源。这将AI PC从"一次性硬件销售"转化为"有持续收入的企业AI服务订阅"，显著提升LTV，并创造基于真实使用量的竞争壁垒。</div>
+      <div class="ic-action">
+        <span class="ic-action-label">Q2-Q3 2026</span>
+        <span class="ic-action-text">启动"AI PC Agent算力包"商业模式设计，与云端服务团队协同，完成Token计量基础设施设计和定价方案，用1-2个重点企业客户做POC验证。</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════ 核心结论 ══════ -->
+<div class="sec">
+  <div class="sec-head">
+    <div class="sec-num">SEC·04.5</div>
+    <div>
+      <div class="sec-title">本周战略核心结论</div>
+      <div class="sec-sub">四条不可错过的判断</div>
+    </div>
+  </div>
+
+  <div class="conclusion">
+    <div class="conclusion-title">WEEKLY CORE CONCLUSIONS</div>
+    <div class="concl-items">
+      <div class="ci">
+        <div class="ci-num">①</div>
+        <div class="ci-title">本地Agent执行层已成最激烈战场</div>
+        <div class="ci-desc">本周5家公司同时抢占"本地Agent执行权"。AI PC如不主动定义，将被降为"能运行这些软件的普通PC"，差异化价值将被彻底稀释。</div>
+      </div>
+      <div class="ci">
+        <div class="ci-num">②</div>
+        <div class="ci-title">6个月是最关键的合作窗口期</div>
+        <div class="ci-desc">NemoClaw Alpha → GA、悟空邀测 → 正式商用，均在2026Q3。窗口期内谈合作成本最低。错过后，合作门槛将至少提升10倍。</div>
+      </div>
+      <div class="ci">
+        <div class="ci-num">③</div>
+        <div class="ci-title">信通院认证是国内市场的不对称优势</div>
+        <div class="ci-desc">海外竞品无法快速获得，华为系产品天然合规优势明显。5月首批认证是只有一次的先发机会，必须抓住。</div>
+      </div>
+      <div class="ci">
+        <div class="ci-num">④</div>
+        <div class="ci-title">360龙虾盒子是最紧迫的商业威胁</div>
+        <div class="ci-desc">用169元直接切割"本地AI硬件"市场，叙事简单有力。AI PC需要立即准备针对性的竞品对比材料和销售话术，否则将丢失中小企业客户。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════ SECTION 5：下周观察清单 ══════ -->
+<div class="sec" id="sec-watchlist">
+  <div class="sec-head">
+    <div class="sec-num">SEC·05</div>
+    <div>
+      <div class="sec-title">下周（3月23-27日）重点观察清单</div>
+      <div class="sec-sub">按优先级标注 · 每周五自动更新</div>
+    </div>
+  </div>
+
+  <div class="watchlist">
+    <div class="watch-item wl-high">
+      <div class="watch-label">🔴 高优先级观察</div>
+      <p><strong>悟空进展：</strong>邀测规模扩大情况、Token定价公布、与企业微信/飞书的竞争响应是否出现<br><br>
+      <strong>NemoClaw：</strong>Alpha版本用户反馈、GA时间线更新、Salesforce/Cisco集成进展<br><br>
+      <strong>360龙虾卫士：</strong>实际销量数据、企业客户采购案例</p>
+    </div>
+    <div class="watch-item wl-med">
+      <div class="watch-label">🟡 中优先级观察</div>
+      <p><strong>信通院认证：</strong>首批申请企业名单、评估标准细则公布<br><br>
+      <strong>微软Copilot重组：</strong>Agent 365具体功能定义（5月上市前的产品发布）<br><br>
+      <strong>Anthropic Dispatch：</strong>企业版定价公布、国内合规情况</p>
+    </div>
+    <div class="watch-item wl-low">
+      <div class="watch-label">🔵 趋势观察</div>
+      <p><strong>A2A vs MCP：</strong>更多厂商的协议支持声明，判断哪个协议将胜出<br><br>
+      <strong>Claude Opus 4.6：</strong>企业采用率数据，验证百万Token上下文的实际商业价值<br><br>
+      <strong>Manus我的电脑：</strong>企业版功能和定价公布</p>
+    </div>
+    <div class="watch-item wl-coop">
+      <div class="watch-label">🟢 合作机会观察</div>
+      <p><strong>NVIDIA合作：</strong>NemoClaw团队对"本地硬件合作伙伴"的官方表态<br><br>
+      <strong>钉钉悟空：</strong>端设备合作伙伴计划是否正式发布<br><br>
+      <strong>LangChain Open SWE：</strong>国内ISV采用情况，识别潜在的AI PC应用生态伙伴</p>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  AI 2B 行业周报 · 2026 W12（3月17日—3月20日）· 每周五发布 · 基于每日简报与深度分析综合生成<br>
+  <span style="margin-top:6px;display:inline-block">
+    归档首页：<a href="https://yangzhengcuhk.github.io/ai2b-insights/" style="color:#3a6090;text-decoration:none">yangzhengcuhk.github.io/ai2b-insights</a>
+    &nbsp;·&nbsp;
+    订阅与反馈请联系报告生成系统
+  </span>
+</footer>
+
+</body>
+</html>
