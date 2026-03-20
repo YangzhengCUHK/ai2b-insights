@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>AI 2B 深度分析 · 2026.03.20</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;background:#0d1624;color:#e0e8f0;min-height:100vh;line-height:1.7}
+
+header{background:linear-gradient(135deg,#0f1e3d 0%,#1a2f55 100%);border-bottom:2px solid #e6a419;padding:40px 24px 32px}
+.header-inner{max-width:900px;margin:0 auto}
+.eyebrow{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#e6a419;font-weight:700;margin-bottom:10px}
+h1{font-size:26px;font-weight:800;color:#fff;margin-bottom:6px}
+.subtitle{font-size:13px;color:rgba(255,255,255,0.45)}
+.meta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
+.chip{font-size:11px;padding:3px 10px;border-radius:20px}
+.chip-date{background:rgba(230,164,25,0.15);border:1px solid rgba(230,164,25,0.35);color:#e6a419;font-weight:600}
+.chip-scope{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5)}
+
+main{max-width:900px;margin:36px auto 60px;padding:0 20px}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#3a5878;text-decoration:none;margin-bottom:28px;transition:color .15s}
+.back-link:hover{color:#60a5fa}
+
+/* ── Section Heading ── */
+.sec{margin-bottom:44px}
+.sec-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #1e2d4a}
+.sec-num{font-size:11px;font-weight:800;color:#e6a419;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap}
+.sec-title{font-size:19px;font-weight:800;color:#e8f0f8}
+.sec-sub{font-size:13px;color:#5070a0;margin-top:2px}
+
+/* ── Body Text ── */
+p{font-size:14px;color:#a8b8d0;line-height:1.8;margin-bottom:12px}
+h3{font-size:15px;font-weight:700;color:#c8d8ec;margin:20px 0 8px}
+h4{font-size:13.5px;font-weight:700;color:#a0b4cc;margin:14px 0 6px}
+
+/* ── Highlight Box ── */
+.hbox{background:#111e35;border-left:4px solid #e6a419;border-radius:0 10px 10px 0;padding:16px 18px;margin:14px 0}
+.hbox p{color:#c0d0e4;margin-bottom:0}
+
+/* ── Info Grid ── */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+@media(max-width:600px){.info-grid{grid-template-columns:1fr}}
+.info-card{background:#111e35;border:1px solid #1e2d4a;border-radius:10px;padding:14px 16px}
+.info-card-label{font-size:10px;font-weight:700;letter-spacing:1px;color:#4a6080;text-transform:uppercase;margin-bottom:6px}
+.info-card-val{font-size:13px;color:#c0d0e4;line-height:1.6}
+
+/* ── Comparison Table ── */
+.table-wrap{overflow-x:auto;margin:14px 0}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+thead tr{background:#0f1a2f}
+th{padding:10px 14px;text-align:left;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#4a6080;border-bottom:1px solid #1e2d4a;white-space:nowrap}
+td{padding:10px 14px;border-bottom:1px solid #141f33;color:#a8b8d0;vertical-align:top}
+tr:hover td{background:rgba(30,50,80,0.3)}
+.tag{display:inline-block;font-size:10px;padding:2px 7px;border-radius:4px;margin:1px;font-weight:600}
+.tag-cloud{background:rgba(59,130,246,0.15);color:#60a5fa;border:1px solid rgba(59,130,246,0.25)}
+.tag-local{background:rgba(16,185,129,0.15);color:#34d399;border:1px solid rgba(16,185,129,0.25)}
+.tag-sec{background:rgba(239,68,68,0.15);color:#f87171;border:1px solid rgba(239,68,68,0.25)}
+.tag-hw{background:rgba(230,164,25,0.15);color:#e6a419;border:1px solid rgba(230,164,25,0.25)}
+
+/* ── SWOT Grid ── */
+.swot-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+@media(max-width:600px){.swot-grid{grid-template-columns:1fr}}
+.swot-cell{border-radius:10px;padding:16px}
+.swot-s{background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2)}
+.swot-w{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2)}
+.swot-o{background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2)}
+.swot-t{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2)}
+.swot-label{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+.swot-s .swot-label{color:#34d399}
+.swot-w .swot-label{color:#f87171}
+.swot-o .swot-label{color:#60a5fa}
+.swot-t .swot-label{color:#fbbf24}
+.swot-cell ul{padding-left:16px}
+.swot-cell li{font-size:12.5px;color:#a0b4cc;line-height:1.7;margin-bottom:3px}
+
+/* ── Priority ── */
+.pri-row{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid #141f33}
+.pri-row:last-child{border-bottom:none}
+.pri-badge{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;letter-spacing:0.5px}
+.p0{background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.35)}
+.p1{background:rgba(230,164,25,0.2);color:#e6a419;border:1px solid rgba(230,164,25,0.35)}
+.p2{background:rgba(59,130,246,0.2);color:#60a5fa;border:1px solid rgba(59,130,246,0.35)}
+.p3{background:rgba(100,116,139,0.2);color:#94a3b8;border:1px solid rgba(100,116,139,0.35)}
+.pri-content h4{font-size:14px;font-weight:700;color:#c8d8ec;margin-bottom:4px}
+.pri-content p{font-size:12.5px;color:#7a94b0;margin-bottom:0}
+.pri-signal{font-size:11px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:#5c7099;padding:2px 8px;border-radius:4px;margin-top:5px;display:inline-block}
+
+/* ── Timeline ── */
+.tl{position:relative;padding-left:24px;margin:12px 0}
+.tl::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:2px;background:#1e2d4a}
+.tl-item{position:relative;margin-bottom:22px}
+.tl-dot{position:absolute;left:-24px;top:3px;width:14px;height:14px;border-radius:50%;border:2px solid #e6a419;background:#0d1624}
+.tl-time{font-size:11px;font-weight:700;color:#e6a419;letter-spacing:0.8px;margin-bottom:4px}
+.tl-title{font-size:14px;font-weight:700;color:#c8d8ec;margin-bottom:4px}
+.tl-desc{font-size:12.5px;color:#7a94b0}
+.tl-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px}
+
+/* ── References ── */
+.ref-list{list-style:none}
+.ref-list li{font-size:12px;color:#4a6080;padding:6px 0;border-bottom:1px solid #0e1828;display:flex;gap:8px}
+.ref-list li:last-child{border-bottom:none}
+.ref-num{color:#e6a419;font-weight:700;flex-shrink:0}
+.ref-list a{color:#2a6090;text-decoration:none}
+.ref-list a:hover{color:#60a5fa}
+
+footer{text-align:center;padding:20px;font-size:11px;color:#2a3a55;border-top:1px solid #121c2e}
+footer a{color:#2a4070;text-decoration:none}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="eyebrow">AI 2B Intelligence · Deep Analysis</div>
+    <h1>AI 2B 深度分析报告</h1>
+    <p class="subtitle">企业级AI · 竞争格局 · 产品战略 · 优先级建议</p>
+    <div class="meta-row">
+      <span class="chip chip-date">📅 2026年3月20日（周五）</span>
+      <span class="chip chip-scope">覆盖：3月19日～20日</span>
+      <span class="chip chip-scope">第5期</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <a class="back-link" href="index.html">← 返回历史归档</a>
+
+  <!-- ════════════════════════════════════════════════
+       第一章：竞争格局分析
+  ════════════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-num">CH.01</span>
+      <div>
+        <div class="sec-title">今日动态揭示的竞争格局分析</div>
+        <div class="sec-sub">本地 Agent 生态卡位战 · 安全基础设施话语权争夺</div>
+      </div>
+    </div>
+
+    <div class="hbox"><p>本期最显著的竞争信号：<strong>本地 Agent 运行时的安全基础设施</strong>正在成为企业软件栈的底层争夺点。NVIDIA、腾讯、360 三家从不同维度同期推出"Agent 安全沙箱"产品，这不是巧合——它揭示了一个共识：谁定义了本地 Agent 的安全运行标准，谁就控制了企业侧 Agent 生态的入口。</p></div>
+
+    <h3>战线一：本地 Agent 运行时（安全 + 沙箱层）</h3>
+    <p>NVIDIA OpenShell、腾讯龙虾管家、360 龙虾卫士在同一时间窗口密集发布，三者均定位"终端 Agent 安全运行环境"，但路径不同：NVIDIA 走企业服务器与云原生路线（打通 ISV 生态）；腾讯走 PC 终端管家路线（嵌入存量 2 亿+ 用户设备）；360 走零门槛硬件盒子路线（降低中小企业部署成本）。这一战线的竞争结果将直接决定：企业员工的 PC 上，哪家产品承担"可信 Agent 执行环境"的角色。</p>
+
+    <h3>战线二：云端 + 本地混合 Agent 能力（Manus、Claude Opus 4.6、Google ADK）</h3>
+    <p>Manus 我的电脑将云端 Agent 的触手延伸至本地文件系统；Claude Opus 4.6 的百万 Token 上下文使跨会话长任务成为现实；Google ADK 的 AgentTeam API 则打通多 Agent 协作链路。三者合力揭示：<strong>混合 Agent 架构</strong>（云端规划 × 本地执行 × 多 Agent 协调）正在取代单一云 Agent 成为企业 AI 的主流部署形态。</p>
+
+    <h3>战线三：Agent 框架协议标准化</h3>
+    <p>Google A2A 与 Anthropic MCP 的正面竞争进入白热化阶段。谁的协议率先成为 Agent 间通信的事实标准，谁就掌握了未来企业 AI 生态的互联互通规则。国内厂商（腾讯 OpenClaw、360 安全龙虾）目前跟随适配国际框架，尚未形成独立标准竞争力。</p>
+  </div>
+
+  <!-- ════════════════════════════════════════════════
+       第二章：核心趋势拆解
+  ════════════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-num">CH.02</span>
+      <div>
+        <div class="sec-title">核心趋势拆解</div>
+        <div class="sec-sub">从本期动态中提炼的 5 条结构性洞察</div>
+      </div>
+    </div>
+
+    <h3>趋势 ① ：「Agent 安全基础设施」进入产品化爆发期</h3>
+    <p>过去 6 个月，Agent 安全停留在白皮书和框架层面。本周三家头部公司同步推出产品级 Agent 安全沙箱，标志着这一领域进入产品化爆发期。企业 CIO/CISO 在 Agent 采购决策中，"安全可控"已上升为优先于"能力强弱"的第一筛选维度。</p>
+
+    <h3>趋势 ② ：本地 Agent 能力成为"云 Agent"的必要延伸</h3>
+    <p>Manus 我的电脑的发布，代表了行业对"纯云 Agent 局限性"的集体认知转变——企业员工的核心数据仍在本地（邮件、合同、代码、财务文件），仅靠云端 Agent 无法完成完整的企业工作流自动化。本地+云端混合架构将在 2026 年成为标配，而非选配。</p>
+
+    <h3>趋势 ③ ：大模型上下文军备竞赛向企业工作流场景倾斜</h3>
+    <p>Claude Opus 4.6 的 100 万 Token 上下文，其核心价值不是"能读更长的书"，而是"能跨越更长的工作会话保持连续性"。企业场景中，一个完整的合同审查、代码重构、多日项目规划任务，往往需要跨越数十万 Token 的上下文边界。这一趋势对本地端推理的内存需求形成倒逼。</p>
+
+    <h3>趋势 ④ ：部署简化成为 Agent 落地的关键竞争要素</h3>
+    <p>360 龙虾卫士将 OpenClaw 部署时间从 6 小时压缩至 10 分钟，Manus 提供一键下载即可使用的桌面端——两者都在针对同一痛点：企业 IT 资源稀缺，非技术人员无法自行配置 Agent 环境。降低部署门槛，比提升 Agent 能力上限，对当前企业采购决策的影响更直接。</p>
+
+    <h3>趋势 ⑤ ：企业 Agent 的 ROI 正在被量化并用于采购说服</h3>
+    <p>Anthropic × Material 调研（500+ 技术领导者）首次系统性地披露了 Agent ROI 数据：80% 企业有可衡量正 ROI，软件开发节省 59% 时间，客户服务成本降低 35%。这一数据集将成为 2026 年企业 AI 采购谈判的基准参考，也是竞争差异化叙事的核心武器。</p>
+  </div>
+
+  <!-- ════════════════════════════════════════════════
+       第三章：各玩家战略路径比较表
+  ════════════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-num">CH.03</span>
+      <div>
+        <div class="sec-title">各玩家战略路径比较</div>
+        <div class="sec-sub">基于本期发布动态更新</div>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>玩家</th>
+            <th>核心战略切入点</th>
+            <th>本地/端侧策略</th>
+            <th>安全治理路径</th>
+            <th>2B 商业化模式</th>
+            <th>对企业级 AI PC 威胁度</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>NVIDIA</strong></td>
+            <td>Agent 运行时基础设施标准（OpenShell）</td>
+            <td><span class="tag tag-cloud">云原生</span><br>边缘服务器向端侧延伸</td>
+            <td>基于策略的护栏 + ISV 合规生态</td>
+            <td>硬件 + 软件平台双层收费，ISV 预装</td>
+            <td style="color:#f87171">⚠️ 高：可能成为 AI PC Agent 运行时标准</td>
+          </tr>
+          <tr>
+            <td><strong>Manus</strong></td>
+            <td>通用 Agent 本地化（"我的电脑"）</td>
+            <td><span class="tag tag-local">本地优先</span><br>云+本地混合架构</td>
+            <td>用户审批机制（逐条授权）</td>
+            <td>订阅制，企业版待定</td>
+            <td style="color:#fbbf24">⚡ 中：直接竞争 AI PC 本地 Agent 入口</td>
+          </tr>
+          <tr>
+            <td><strong>腾讯（龙虾管家）</strong></td>
+            <td>PC 终端安全管家切入 Agent 安全层</td>
+            <td><span class="tag tag-local">终端优先</span><br>嵌入电脑管家</td>
+            <td>沙箱隔离 + 可视化权限监控</td>
+            <td>免费基础版，企业版增值</td>
+            <td style="color:#fbbf24">⚡ 中：存量 PC 用户基础强，但硬件层不直接竞争</td>
+          </tr>
+          <tr>
+            <td><strong>360（龙虾卫士）</strong></td>
+            <td>部署极简 + 安全兜底（硬件盒子）</td>
+            <td><span class="tag tag-hw">硬件盒子</span><br>10 分钟零配置</td>
+            <td>以模治模（AI 安全引擎）+ WSL 沙箱</td>
+            <td>基础免费 + Token 按量计费（169 元入门）</td>
+            <td style="color:#fbbf24">⚡ 中：硬件盒子路径与 AI PC 存在市场重叠</td>
+          </tr>
+          <tr>
+            <td><strong>Anthropic</strong></td>
+            <td>企业 Agent 框架标准（MCP） + 大模型能力领先</td>
+            <td><span class="tag tag-cloud">云端为主</span><br>通过 Claude Code 渗透本地</td>
+            <td>Responsible Scaling Policy + 审计追踪</td>
+            <td>API 计量 + 企业协议，ROI 数据驱动采购</td>
+            <td style="color:#34d399">🟢 低：生态层影响大，不直接竞争 PC 硬件</td>
+          </tr>
+          <tr>
+            <td><strong>Google（ADK）</strong></td>
+            <td>多 Agent 协调框架（A2A + AgentTeam API）</td>
+            <td><span class="tag tag-cloud">Vertex AI 云原生</span></td>
+            <td>Gemini 2.5 Pro 安全对齐 + 企业级合规</td>
+            <td>GCP 云计算按量计费，Workspace 套件捆绑</td>
+            <td style="color:#34d399">🟢 低：云平台定位，与端侧 AI PC 互补</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════
+       第四章：企业级 AI PC SWOT
+  ════════════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-num">CH.04</span>
+      <div>
+        <div class="sec-title">企业级 AI PC · SWOT 分析</div>
+        <div class="sec-sub">结合本期信号更新（20260320）</div>
+      </div>
+    </div>
+    <div class="swot-grid">
+      <div class="swot-cell swot-s">
+        <div class="swot-label">S · 优势</div>
+        <ul>
+          <li>硬件级安全隔离（TEE/安全芯片）比软件沙箱更可信，可成为 Agent 安全的最终锚点</li>
+          <li>本地推理无网络延迟，在数据敏感场景（金融/医疗/政务）具备合规优势</li>
+          <li>NPU 加速可在低功耗下完成高频小模型推理，与云端分层架构互补</li>
+          <li>集成企业 IAM 权限体系，天然适配企业多角色 Agent 权限管理</li>
+        </ul>
+      </div>
+      <div class="swot-cell swot-w">
+        <div class="swot-label">W · 劣势</div>
+        <ul>
+          <li>端侧内存上限制约超大上下文能力（Claude Opus 4.6 百万 Token 本地无法全量支持）</li>
+          <li>Agent 生态建设滞后于 Manus/腾讯/360 等纯软件玩家</li>
+          <li>OTA 更新周期慢于云端，Agent 框架版本容易落后</li>
+          <li>企业采购决策链长，硬件迭代周期与软件 AI 迭代速度错配</li>
+        </ul>
+      </div>
+      <div class="swot-cell swot-o">
+        <div class="swot-label">O · 机会</div>
+        <ul>
+          <li>【本期信号】360 安全龙虾 Box 验证"零门槛 AI 硬件"需求，AI PC 可以内置方式取代外置盒子</li>
+          <li>【本期信号】Manus 我的电脑揭示本地文件 + 工具链 Agent 的刚性需求，AI PC 是最优载体</li>
+          <li>欧盟 AI 法案（2026.09 生效）要求 Agent 审计追踪，AI PC 硬件日志可提供最高可信度</li>
+          <li>企业 Agent ROI 数据成熟后，采购预算向"可落地"方向集中，AI PC 受益于此</li>
+        </ul>
+      </div>
+      <div class="swot-cell swot-t">
+        <div class="swot-label">T · 威胁</div>
+        <ul>
+          <li>【本期信号】NVIDIA OpenShell 若成为 Agent 运行时标准，AI PC 将被降为基础算力提供者</li>
+          <li>腾讯龙虾管家在 PC 端已有 2 亿+ 存量用户，软件层 Agent 安全入口先于硬件渗透</li>
+          <li>云端百万 Token 上下文能力快速提升，"何必用 AI PC"的反向论证日益强势</li>
+          <li>Agent 框架碎片化（MCP/A2A/OpenClaw 各自生态）导致 AI PC 适配成本高企</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════
+       第五章：产品定义优先级建议
+  ════════════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-num">CH.05</span>
+      <div>
+        <div class="sec-title">产品定义优先级建议</div>
+        <div class="sec-sub">P0–P3 分级，基于本期信号更新</div>
+      </div>
+    </div>
+
+    <div class="pri-row">
+      <div class="pri-badge p0">P0</div>
+      <div class="pri-content">
+        <h4>硬件级 Agent 安全沙箱（TEE + NPU 联动）</h4>
+        <p>NVIDIA OpenShell、腾讯龙虾管家、360 龙虾卫士同期发布软件层沙箱。AI PC 的差异化窗口是：提供硬件级可信执行环境（TEE），使 Agent 的隔离可信度超越任何纯软件方案。这是当前市场空白，必须优先卡位。</p>
+        <span class="pri-signal">📡 本期信号：三家安全沙箱产品密集发布，市场认知正在形成</span>
+      </div>
+    </div>
+
+    <div class="pri-row">
+      <div class="pri-badge p0">P0</div>
+      <div class="pri-content">
+        <h4>本地 Agent 运行时 · 零门槛部署体验</h4>
+        <p>360 龙虾卫士将部署从 6 小时压缩至 10 分钟已获市场认可。AI PC 须做到"开机即用"的 Agent 运行环境，包含预置常用 Agent 框架（OpenClaw/LangChain/AutoGen）、自动配置本地模型权重、一键生成安全策略模板。</p>
+        <span class="pri-signal">📡 本期信号：360 Box 10 分钟部署成为用户心理锚点</span>
+      </div>
+    </div>
+
+    <div class="pri-row">
+      <div class="pri-badge p0">P0</div>
+      <div class="pri-content">
+        <h4>企业 IAM 接入 + 多角色 Agent 权限管理</h4>
+        <p>腾讯龙虾管家的可视化权限监控揭示了企业侧需求：需要知道 AI 在调用哪些资源。AI PC 须提供与企业 AD / LDAP / 飞书钉钉的权限体系深度集成，实现 Agent 操作的角色级审计追踪。</p>
+        <span class="pri-signal">📡 本期信号：欧盟 AI 法案 2026.09 生效，合规审计成刚需</span>
+      </div>
+    </div>
+
+    <div class="pri-row">
+      <div class="pri-badge p1">P1</div>
+      <div class="pri-content">
+        <h4>本地 × 云端混合 Agent 调度引擎</h4>
+        <p>Manus 我的电脑 + Claude Opus 4.6 共同指向混合架构的主流化。AI PC 需要一个调度层：将高频、数据敏感的 Agent 任务路由至本地 NPU，将需要大上下文或联网能力的任务路由至云端，并提供统一的任务编排视图。</p>
+        <span class="pri-signal">📡 本期信号：Manus 桌面端验证云+本地混合架构需求</span>
+      </div>
+    </div>
+
+    <div class="pri-row">
+      <div class="pri-badge p1">P1</div>
+      <div class="pri-content">
+        <h4>MCP / A2A 协议双栈适配</h4>
+        <p>Anthropic MCP 与 Google A2A 正在争夺 Agent 间通信标准位。AI PC 须同时支持两套协议，避免因站队失误被主流生态排斥。建议以硬件无关的抽象层封装，待标准收敛后切换成本最小化。</p>
+        <span class="pri-signal">📡 本期信号：Google ADK 更新强化 A2A，与 MCP 正面竞争</span>
+      </div>
+    </div>
+
+    <div class="pri-row">
+      <div class="pri-badge p2">P2</div>
+      <div class="pri-content">
+        <h4>可量化 ROI Dashboard（Agent 效能看板）</h4>
+        <p>Anthropic 调研数据显示，"可衡量 ROI"是 80% 企业的共同诉求。AI PC 可内置 Agent 效能监控面板，自动统计各 Agent 节省时间/成本，为企业 IT 决策者提供采购续费依据。</p>
+        <span class="pri-signal">📡 本期信号：80% 企业要求可衡量正 ROI</span>
+      </div>
+    </div>
+
+    <div class="pri-row">
+      <div class="pri-badge p3">P3</div>
+      <div class="pri-content">
+        <h4>垂直行业 Agent 套件预装</h4>
+        <p>法律、医疗、金融等垂直领域 Agent 平台正在获得大量融资（Moltbook 综述）。AI PC 可与垂直行业 ISV 合作，提供预装行业 Agent 套件，降低目标行业的部署摩擦，但优先级低于安全与架构层基础能力建设。</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ════════════════════════════════════════════════
+       第六章：战略路径与时间线
+  ════════════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-num">CH.06</span>
+      <div>
+        <div class="sec-title">战略路径与时间线建议</div>
+        <div class="sec-sub">基于本期竞争格局更新</div>
+      </div>
+    </div>
+
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-time">⚡ 即刻（3月内）</div>
+        <div class="tl-title">安全差异化定位 · 抢占 Agent 安全叙事</div>
+        <div class="tl-desc">在 NVIDIA/腾讯/360 安全沙箱产品密集发布的窗口期，立即发布"硬件级 Agent 安全白皮书"，抢占"比软件沙箱更可信"的差异化定位。同时完成与 OpenShell 的兼容性适配，避免被企业 IT 认知为"不支持 NVIDIA 标准"的孤立产品。</div>
+        <div class="tl-tags">
+          <span class="tag tag-sec">安全定位</span><span class="tag tag-hw">白皮书</span><span class="tag tag-cloud">OpenShell 兼容</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-time">📅 1～3 个月（2026 Q2）</div>
+        <div class="tl-title">本地 Agent 运行时 MVP · 零门槛部署体验</div>
+        <div class="tl-desc">完成"开机即用 Agent 环境"的 MVP 版本：预置 OpenClaw + LangChain 运行时、NPU 加速本地小模型（7B/13B）、企业 IAM 对接（飞书/钉钉/AD）、基础 Agent 沙箱策略模板。对标 360 Box 的 10 分钟部署体验，做到 AI PC 的"5 分钟 Agent 就绪"。</div>
+        <div class="tl-tags">
+          <span class="tag tag-local">本地运行时</span><span class="tag tag-hw">NPU 加速</span><span class="tag tag-sec">IAM 集成</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-time">📅 3～6 个月（2026 Q3）</div>
+        <div class="tl-title">混合 Agent 调度层 + MCP/A2A 双栈 + ROI 看板</div>
+        <div class="tl-desc">上线本地×云端 Agent 智能调度引擎（数据敏感任务本地执行，大上下文任务云端执行）；完成 MCP 与 A2A 双协议适配；推出 Agent 效能看板（时间节省/成本量化），支撑企业 IT 采购续费决策。恰好赶在欧盟 AI 法案 9 月生效前完成合规审计追踪功能。</div>
+        <div class="tl-tags">
+          <span class="tag tag-cloud">混合调度</span><span class="tag tag-cloud">MCP + A2A</span><span class="tag tag-hw">ROI 看板</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-time">📅 6～12 个月（2026 Q4）</div>
+        <div class="tl-title">垂直行业 ISV 生态 + 硬件级 TEE Agent 沙箱商用</div>
+        <div class="tl-desc">硬件级 TEE Agent 沙箱正式商用（目标：成为金融/医疗/政务行业 Agent 部署的合规首选）；启动 3～5 个垂直行业 ISV 预装合作；持续监控 OpenAI GPT-5.5（预计 Q2 发布）及 CrewAI 1.0 稳定版对 Agent 生态格局的影响，动态调整协议支持优先级。</div>
+        <div class="tl-tags">
+          <span class="tag tag-sec">TEE 商用</span><span class="tag tag-hw">ISV 生态</span><span class="tag tag-cloud">监控生态</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════
+       参考来源
+  ════════════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-num">REF</span>
+      <div>
+        <div class="sec-title">参考来源</div>
+      </div>
+    </div>
+    <ul class="ref-list">
+      <li><span class="ref-num">[1]</span><span>NVIDIA Agent Toolkit 正式发布 · prodSens.live（2026-03-19）· <a href="https://prodsens.live/2026/03/19/nvidia-wants-to-make-enterprise-ai-agents-safe-enough-to-actually-deploy/" target="_blank">链接</a></span></li>
+      <li><span class="ref-num">[2]</span><span>NVIDIA Press Release · StockTitan（2026-03-16）· <a href="https://www.stocktitan.net/news/NVDA/nvidia-ignites-the-next-industrial-revolution-in-knowledge-work-with-fm2cpwobav2m.html" target="_blank">链接</a></span></li>
+      <li><span class="ref-num">[3]</span><span>Manus 我的电脑官方博客（2026-03-16）· <a href="https://manus.im/zh-cn/blog/manus-my-computer-desktop" target="_blank">链接</a></span></li>
+      <li><span class="ref-num">[4]</span><span>OSChina · Manus 桌面端报道（2026-03-17）· <a href="https://www.oschina.net/news/411323/manus-my-computer-desktop" target="_blank">链接</a></span></li>
+      <li><span class="ref-num">[5]</span><span>腾讯龙虾管家 · 腾讯云开发者社区（2026-03-18）· <a href="https://cloud.tencent.com/developer/article/2640755" target="_blank">链接</a></span></li>
+      <li><span class="ref-num">[6]</span><span>腾讯电脑管家 18.0 发布 · 新浪财经（2026-03-13）· <a href="https://finance.sina.com.cn/jjxw/2026-03-13/doc-inhqwkey3902506.shtml" target="_blank">链接</a></span></li>
+      <li><span class="ref-num">[7]</span><span>360 龙虾卫士发布 · 澎湃新闻（2026-03-14）· <a href="https://www.thepaper.cn/newsDetail_forward_32769260" target="_blank">链接</a></span></li>
+      <li><span class="ref-num">[8]</span><span>360 龙虾卫士官网 · <a href="https://clawsafe.360.cn/" target="_blank">链接</a></span></li>
+      <li><span class="ref-num">[9]</span><span>360 安全龙虾产品 · 新浪财经（2026-03-15）· <a href="https://finance.sina.com.cn/jjxw/2026-03-15/doc-inhramvq3331018.shtml" target="_blank">链接</a></span></li>
+      <li><span class="ref-num">[10]</span><span>AI Agent News: March 2026 Roundup · Moltbook-AI.com（2026-03-16）· <a href="https://moltbook-ai.com/posts/ai-agents-march-2026-roundup" target="_blank">链接</a></span></li>
+      <li><span class="ref-num">[11]</span><span>How enterprises are building AI agents in 2026 · Anthropic × Material Research · <a href="https://claude.com/blog/how-enterprises-are-building-ai-agents-in-2026" target="_blank">链接</a></span></li>
+      <li><span class="ref-num">[12]</span><span>Microsoft at NVIDIA GTC · 微软官方博客（2026-03-16）· <a href="https://blogs.microsoft.com/blog/2026/03/16/microsoft-at-nvidia-gtc-new-solutions-for-microsoft-foundry-azure-ai-infrastructure-and-physical-ai/" target="_blank">链接</a></span></li>
+    </ul>
+  </div>
+
+  <!-- ─ 简报跳转 ─ -->
+  <div style="text-align:center;margin-top:20px;padding:20px;background:#0f1c33;border:1px solid #1e3050;border-radius:14px">
+    <a href="简报_AI2B_20260320.html" style="display:inline-block;background:linear-gradient(135deg,#1a56d6,#3b82f6);color:#fff;font-weight:700;font-size:13px;padding:10px 24px;border-radius:8px;text-decoration:none">← 返回今日行业简报</a>
+    <a href="index.html" style="display:inline-block;margin-left:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);font-weight:600;font-size:13px;padding:10px 24px;border-radius:8px;text-decoration:none">🗂 历史归档</a>
+  </div>
+</main>
+
+<footer>
+  AI 2B 行业洞察日报 · 行业分析视角 · 每个工作日更新 ·
+  <a href="index.html">历史归档</a> ·
+  <a href="https://github.com/YangzhengCUHK/ai2b-insights">GitHub</a>
+</footer>
+
+</body>
+</html>
