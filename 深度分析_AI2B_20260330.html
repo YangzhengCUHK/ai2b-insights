@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>AI 2B 深度分析 · 2026.03.30</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;background:#0d1624;color:#e0e8f0;min-height:100vh;line-height:1.7}
+
+header{background:linear-gradient(135deg,#0f1e3d 0%,#1a2f55 100%);border-bottom:2px solid #e6a419;padding:40px 24px 32px}
+.header-inner{max-width:900px;margin:0 auto}
+.eyebrow{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#e6a419;font-weight:700;margin-bottom:10px}
+h1{font-size:26px;font-weight:800;color:#fff;margin-bottom:6px}
+.subtitle{font-size:13px;color:rgba(255,255,255,0.45)}
+.meta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
+.chip{font-size:11px;padding:3px 10px;border-radius:20px}
+.chip-date{background:rgba(230,164,25,0.15);border:1px solid rgba(230,164,25,0.35);color:#e6a419;font-weight:600}
+.chip-scope{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5)}
+.chip-critical{background:rgba(220,38,38,0.15);border:1px solid rgba(220,38,38,0.35);color:#f87171;font-weight:700}
+
+main{max-width:900px;margin:36px auto 60px;padding:0 20px}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#3a5878;text-decoration:none;margin-bottom:28px;transition:color .15s}
+.back-link:hover{color:#60a5fa}
+
+/* ── Section ── */
+.sec{margin-bottom:48px}
+.sec-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #1e2d4a}
+.sec-num{font-size:11px;font-weight:800;color:#e6a419;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap}
+.sec-title{font-size:19px;font-weight:800;color:#e8f0f8}
+.sec-sub{font-size:13px;color:#5070a0;margin-top:2px}
+
+p{font-size:14px;color:#a8b8d0;line-height:1.8;margin-bottom:12px}
+h3{font-size:15px;font-weight:700;color:#c8d8ec;margin:20px 0 8px}
+h4{font-size:13.5px;font-weight:700;color:#a0b4cc;margin:14px 0 6px}
+
+/* ── Highlight Box ── */
+.hbox{background:#111e35;border-left:4px solid #e6a419;border-radius:0 10px 10px 0;padding:16px 18px;margin:14px 0}
+.hbox p{color:#c0d0e4;margin-bottom:0}
+.hbox-critical{background:#160e0e;border-left:4px solid #dc2626;border-radius:0 10px 10px 0;padding:16px 18px;margin:14px 0}
+.hbox-critical p{color:#fca5a5;margin-bottom:0}
+
+/* ── Info Grid ── */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+@media(max-width:600px){.info-grid{grid-template-columns:1fr}}
+.info-card{background:#111e35;border:1px solid #1e2d4a;border-radius:10px;padding:14px 16px}
+.info-card-label{font-size:10px;font-weight:700;letter-spacing:1px;color:#4a6080;text-transform:uppercase;margin-bottom:6px}
+.info-card-val{font-size:13px;color:#c0d0e4;line-height:1.6}
+
+/* ── Table ── */
+.table-wrap{overflow-x:auto;margin:14px 0}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+thead tr{background:#0f1a2f}
+th{padding:10px 14px;text-align:left;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#4a6080;border-bottom:1px solid #1e2d4a;white-space:nowrap}
+td{padding:10px 14px;border-bottom:1px solid #141f33;color:#a8b8d0;vertical-align:top}
+tr:hover td{background:rgba(30,50,80,0.3)}
+.tag{display:inline-block;font-size:10px;padding:2px 7px;border-radius:4px;margin:1px;font-weight:600}
+.tag-cloud{background:rgba(59,130,246,0.15);color:#60a5fa;border:1px solid rgba(59,130,246,0.25)}
+.tag-local{background:rgba(16,185,129,0.15);color:#34d399;border:1px solid rgba(16,185,129,0.25)}
+.tag-sec{background:rgba(239,68,68,0.15);color:#f87171;border:1px solid rgba(239,68,68,0.25)}
+.tag-hw{background:rgba(230,164,25,0.15);color:#e6a419;border:1px solid rgba(230,164,25,0.25)}
+.tag-win{background:rgba(99,102,241,0.15);color:#a5b4fc;border:1px solid rgba(99,102,241,0.25)}
+
+/* ── Priority ── */
+.pri-row{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid #141f33}
+.pri-row:last-child{border-bottom:none}
+.pri-badge{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;letter-spacing:0.5px}
+.p0{background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.35)}
+.p1{background:rgba(230,164,25,0.2);color:#e6a419;border:1px solid rgba(230,164,25,0.35)}
+.p2{background:rgba(59,130,246,0.2);color:#60a5fa;border:1px solid rgba(59,130,246,0.35)}
+.p3{background:rgba(100,116,139,0.2);color:#94a3b8;border:1px solid rgba(100,116,139,0.35)}
+.pri-content h4{font-size:14px;font-weight:700;color:#c8d8ec;margin-bottom:4px}
+.pri-content p{font-size:12.5px;color:#7a94b0;margin-bottom:0}
+.pri-signal{font-size:11px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:#5c7099;padding:2px 8px;border-radius:4px;margin-top:5px;display:inline-block}
+
+/* ── Timeline ── */
+.tl{position:relative;padding-left:24px;margin:12px 0}
+.tl::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:2px;background:#1e2d4a}
+.tl-item{position:relative;margin-bottom:22px}
+.tl-dot{position:absolute;left:-24px;top:3px;width:14px;height:14px;border-radius:50%;border:2px solid #e6a419;background:#0d1624}
+.tl-dot-critical{position:absolute;left:-24px;top:3px;width:14px;height:14px;border-radius:50%;border:2px solid #dc2626;background:#0d1624}
+.tl-time{font-size:11px;font-weight:700;color:#e6a419;letter-spacing:0.8px;margin-bottom:4px}
+.tl-time-critical{font-size:11px;font-weight:700;color:#f87171;letter-spacing:0.8px;margin-bottom:4px}
+.tl-title{font-size:14px;font-weight:700;color:#c8d8ec;margin-bottom:4px}
+.tl-desc{font-size:12.5px;color:#7a94b0}
+.tl-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px}
+
+/* ── SWOT ── */
+.swot-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+@media(max-width:600px){.swot-grid{grid-template-columns:1fr}}
+.swot-cell{border-radius:10px;padding:16px}
+.swot-s{background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2)}
+.swot-w{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2)}
+.swot-o{background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2)}
+.swot-t{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2)}
+.swot-label{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+.swot-s .swot-label{color:#34d399}
+.swot-w .swot-label{color:#f87171}
+.swot-o .swot-label{color:#60a5fa}
+.swot-t .swot-label{color:#fbbf24}
+.swot-cell ul{padding-left:16px}
+.swot-cell li{font-size:12.5px;color:#a0b4cc;line-height:1.7;margin-bottom:3px}
+
+/* ── References ── */
+.ref-list{list-style:none}
+.ref-list li{font-size:12px;color:#4a6080;padding:6px 0;border-bottom:1px solid #0e1828;display:flex;gap:8px}
+.ref-list li:last-child{border-bottom:none}
+.ref-num{color:#e6a419;font-weight:700;flex-shrink:0}
+.ref-list a{color:#2a6090;text-decoration:none}
+.ref-list a:hover{color:#60a5fa}
+
+footer{text-align:center;padding:20px;font-size:11px;color:#2a3a55;border-top:1px solid #121c2e}
+footer a{color:#2a4070;text-decoration:none}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="eyebrow">AI 2B Intelligence · Deep Analysis</div>
+    <h1>AI 2B 深度分析报告</h1>
+    <p class="subtitle">企业级AI · 竞争格局 · 产品战略 · 优先级建议</p>
+    <div class="meta-row">
+      <span class="chip chip-date">📅 2026年3月30日（周一）</span>
+      <span class="chip chip-scope">覆盖：3月23日～30日</span>
+      <span class="chip chip-scope">第6期</span>
+      <span class="chip chip-critical">🚨 含战略级分析</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <a class="back-link" href="index.html">← 返回历史归档</a>
+
+  <!-- ══════════════════════════════════════════
+       第一节：Claude Computer Use 深度拆解
+  ══════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <div>
+        <div class="sec-num">🚨 重大分析 · Section 01</div>
+        <div class="sec-title">Claude Computer Use：AI PC 行业范式转变的起点</div>
+        <div class="sec-sub">Anthropic · 2026年3月23日 · macOS 研究预览</div>
+      </div>
+    </div>
+
+    <div class="hbox-critical">
+      <p>这不是一个功能更新，而是一次<strong>价值主张重构</strong>：AI PC 的竞争核心从"本地推理算力"切换为"企业 Agent 可信本地执行环境"。Computer Use 正式为这一命题提供了产品级证明。</p>
+    </div>
+
+    <h3>功能架构深度拆解</h3>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-card-label">连接器优先原则</div>
+        <div class="info-card-val">Claude 优先通过 Slack、Gmail、Calendar 等 API 连接器执行任务。只有在无可用连接器时，才请求屏幕操控权限，最大限度减少"屏幕暴露面"</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">三层安全机制</div>
+        <div class="info-card-val">① Prompt Injection 自动扫描（防网页恶意指令注入）② 所有鼠标/键盘操作实时桌面可见 ③ 每类新操作须用户明确授权，可随时中断</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">与 Dispatch 联动</div>
+        <div class="info-card-val">用户在手机上向 Claude 派任务，Claude 在 Mac 上通过 Computer Use 执行（包括操控应用、网页、IDE），完成后推送结果到手机</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">Scheduled Tasks 集成</div>
+        <div class="info-card-val">支持 /loop 循环指令、cron 定时任务——如"每 5 分钟检查一次部署状态"，实现 24h 无人值守 Agent 工作流</div>
+      </div>
+    </div>
+
+    <h3>与 2024 年 API 版的本质差异</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>维度</th><th>2024年 API 版</th><th>2026年 Cowork 集成版</th><th>影响</th></tr></thead>
+        <tbody>
+          <tr><td>目标用户</td><td>开发者（需写代码）</td><td>所有用户（开箱即用）</td><td>市场规模扩大 100x</td></tr>
+          <tr><td>集成方式</td><td>纯屏幕操控，无 API 集成</td><td>连接器优先，屏幕操控兜底</td><td>安全性大幅提升</td></tr>
+          <tr><td>安全防护</td><td>无内置防护</td><td>Prompt Injection 扫描 + 操作可见</td><td>企业级合规基线</td></tr>
+          <tr><td>任务协作</td><td>单次独立任务</td><td>与 Dispatch/Scheduled Tasks 联动</td><td>长时 Agent 工作流成为可能</td></tr>
+          <tr><td>平台支持</td><td>Linux 容器</td><td>macOS（Windows/Linux 待支持）</td><td>企业 Windows 市场缺口</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>企业应用场景矩阵</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>场景类型</th><th>具体用例</th><th>当前局限</th><th>价值量化</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="tag tag-cloud">开发运维</span></td>
+            <td>自动跑测试、监控部署状态、抓取 PR 评审意见</td>
+            <td>仅 Mac，需 Claude Code</td>
+            <td>PR 评审质量提升 54%（16%→54% 获实质反馈）</td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-local">跨设备协作</span></td>
+            <td>通勤时手机派任务，办公室 Mac 执行并推送结果</td>
+            <td>电脑须保持开机和联网</td>
+            <td>彻底打破地理/设备限制</td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-sec">UI 自动化</span></td>
+            <td>操控无 API 的老旧系统（如企业 ERP 界面）</td>
+            <td>屏幕识别精度受 UI 复杂度影响</td>
+            <td>解决无 API 系统的最后一公里</td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-hw">定时监控</span></td>
+            <td>/loop 5m 自动巡检、夜间数据抓取</td>
+            <td>需长时间后台驻留，对续航要求高</td>
+            <td>替代重复人工巡检</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>2B AIPC 产品竞争定位 SWOT 分析</h3>
+    <div class="swot-grid">
+      <div class="swot-cell swot-s">
+        <div class="swot-label">S · 优势</div>
+        <ul>
+          <li>本地执行天然满足数据不出境合规需求</li>
+          <li>硬件级 TEE（可信执行环境）可提供云端无法比拟的安全隔离</li>
+          <li>Windows 平台空白，差异化切入机会</li>
+        </ul>
+      </div>
+      <div class="swot-cell swot-w">
+        <div class="swot-label">W · 劣势</div>
+        <ul>
+          <li>当前 AI PC 产品无 Agent 友好型 OS 调度能力</li>
+          <li>安全机制（Prompt Injection 防护）尚未标准化</li>
+          <li>与 Anthropic 无深度合作绑定</li>
+        </ul>
+      </div>
+      <div class="swot-cell swot-o">
+        <div class="swot-label">O · 机遇</div>
+        <ul>
+          <li>Computer Use 仅 macOS → Windows 企业市场巨大空白</li>
+          <li>Claude Mythos 4 月发布 → 新一轮企业 AI 采购热潮</li>
+          <li>信通院可信 AI 认证 5 月截止 → 先发优势</li>
+        </ul>
+      </div>
+      <div class="swot-cell swot-t">
+        <div class="swot-label">T · 威胁</div>
+        <ul>
+          <li>Anthropic 若快速支持 Windows，窗口期消失</li>
+          <li>OpenAI GPT Operator 竞品预计 4 月发布</li>
+          <li>国内厂商可能快速复制 Computer Use 能力</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       第二节：Anthropic 3月产品矩阵全景
+  ══════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <div>
+        <div class="sec-num">📊 产品矩阵 · Section 02</div>
+        <div class="sec-title">Anthropic 3月"疯狂发布月"：14 项更新全景解析</div>
+        <div class="sec-sub">3月1日 ～ 3月28日 · 核心产品线重组与生态扩张</div>
+      </div>
+    </div>
+
+    <h3>产品发布时间线</h3>
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-time">3月2日</div>
+        <div class="tl-title">免费用户记忆功能全面上线 + ChatGPT/Gemini 迁移工具</div>
+        <div class="tl-desc">8 个月推广完成，加速用户向 Claude 生态迁移</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-time">3月6日</div>
+        <div class="tl-title">Claude 应用市场上线（零抽成）</div>
+        <div class="tl-desc">企业用 Anthropic 预算直购 Replit、GitLab、Harvey 等 MCP 工具，Anthropic 不分成</div>
+        <div class="tl-tags"><span class="tag tag-cloud">企业生态</span><span class="tag tag-sec">战略卡位</span></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-time">3月9日</div>
+        <div class="tl-title">Claude Code 多 Agent 代码审查</div>
+        <div class="tl-desc">并行 Agent 在人类评审前捕捉错误，PR 实质反馈率 16%→54%</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-time">3月12日</div>
+        <div class="tl-title">交互式图表/可视化 + Claude 合作伙伴网络（1亿美元）</div>
+        <div class="tl-desc">可视化面向所有用户；Accenture 3万人培训，Cognizant 35万员工全员开放</div>
+        <div class="tl-tags"><span class="tag tag-cloud">合作伙伴</span></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-time">3月14日</div>
+        <div class="tl-title">100 万 Token 上下文按标准价格全面可用</div>
+        <div class="tl-desc">取消超 20 万 Token 部分 2 倍收费，企业长上下文成本大幅降低</div>
+        <div class="tl-tags"><span class="tag tag-hw">降价</span></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-time">3月17日</div>
+        <div class="tl-title">Claude Dispatch（跨设备任务派发）上线</div>
+        <div class="tl-desc">手机派任务→Mac 执行→手机收通知，构成"随时随地控 AI"新范式</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot tl-dot-critical"></div>
+        <div class="tl-time-critical">3月23日 🚨</div>
+        <div class="tl-title">Claude Computer Use 上线（macOS 研究预览）</div>
+        <div class="tl-desc">AI 首次具备直接操控用户桌面的能力，里程碑式发布</div>
+        <div class="tl-tags"><span class="tag tag-sec">里程碑</span><span class="tag tag-hw">2B AIPC P0</span></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-time">3月24日</div>
+        <div class="tl-title">Claude Code 自动模式（Auto Mode）</div>
+        <div class="tl-desc">链式自动执行代码修改、测试、部署，无需等待每步确认</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot tl-dot-critical"></div>
+        <div class="tl-time-critical">3月26日 🚨</div>
+        <div class="tl-title">Claude Mythos（Capybara）意外泄露</div>
+        <div class="tl-desc">下一代旗舰模型曝光，性能超越 Opus 4.6 达 30%+，预计 4 月发布</div>
+        <div class="tl-tags"><span class="tag tag-sec">泄露事件</span><span class="tag tag-cloud">下一代模型</span></div>
+      </div>
+    </div>
+
+    <h3>MCP 生态规模化：成为事实标准</h3>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-card-label">月度装机量</div>
+        <div class="info-card-val">9700 万次 SDK 下载，持续快速增长</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">生态规模</div>
+        <div class="info-card-val">5800+ 社区和企业服务器，覆盖主流 SaaS 工具链</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">标准化背书</div>
+        <div class="info-card-val">已纳入 Linux 基金会 Agentic AI 基金会，成为开放标准</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">对 AIPC 的意义</div>
+        <div class="info-card-val">2B AIPC 必须支持 MCP 才能接入工具生态；Claude 应用市场的零抽成策略正在快速聚集 ISV</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       第三节：竞争格局对比
+  ══════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <div>
+        <div class="sec-num">⚔️ 竞争格局 · Section 03</div>
+        <div class="sec-title">Computer Use 时代的竞争格局：Claude 领跑，差距显现</div>
+        <div class="sec-sub">截至 2026年3月30日</div>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>厂商</th>
+            <th>Computer Use 能力</th>
+            <th>平台支持</th>
+            <th>企业集成</th>
+            <th>状态</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Claude（Anthropic）</strong></td>
+            <td>完整：点击/打字/打开应用/浏览网页，连接器优先+屏幕操控兜底</td>
+            <td><span class="tag tag-local">macOS</span></td>
+            <td>MCP 9700万装机，Salesforce/Atlassian/ServiceNow</td>
+            <td>✅ 研究预览已上线</td>
+          </tr>
+          <tr>
+            <td><strong>OpenAI（GPT Operator）</strong></td>
+            <td>传闻中的竞品，可靠性和成熟度预期低于 Claude</td>
+            <td><span class="tag tag-win">待定</span></td>
+            <td>ChatGPT Enterprise 生态</td>
+            <td>⏳ 预计 4 月发布</td>
+          </tr>
+          <tr>
+            <td><strong>Google（Gemini Agentic）</strong></td>
+            <td>多步骤 API 调用链，不支持屏幕操控</td>
+            <td><span class="tag tag-cloud">云端</span></td>
+            <td>Google Workspace 生态</td>
+            <td>🟡 功能滞后 4-6 周</td>
+          </tr>
+          <tr>
+            <td><strong>阿里悟空</strong></td>
+            <td>API 集成+插件，无屏幕操控能力</td>
+            <td><span class="tag tag-cloud">云端</span></td>
+            <td>国内 SaaS 生态为主</td>
+            <td>🟠 国内最大用户基数，能力滞后</td>
+          </tr>
+          <tr>
+            <td><strong>国内（腾讯/360/百度）</strong></td>
+            <td>安全沙箱/权限监控为主，无完整 Computer Use</td>
+            <td><span class="tag tag-local">Windows</span></td>
+            <td>国内政企市场</td>
+            <td>🟡 安全产品卡位，Agent 能力待补</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="hbox">
+      <p><strong>关键结论：</strong>目前真正具备完整 Computer Use 能力的只有 Claude（macOS）。这个"macOS 独家"现状将持续 4-6 周，Windows/Linux 企业市场处于竞争真空期。</p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       第四节：产品定义建议
+  ══════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <div>
+        <div class="sec-num">🎯 产品战略 · Section 04</div>
+        <div class="sec-title">2B AIPC 产品定义建议（基于 Computer Use 浪潮）</div>
+        <div class="sec-sub">从 2B AIPC 产品专家视角 · 优先级 P0 → P3</div>
+      </div>
+    </div>
+
+    <div class="pri-row">
+      <div class="pri-badge p0">P0</div>
+      <div class="pri-content">
+        <h4>重新定义产品叙事：AI PC = "企业 Agent 可信本地执行端"</h4>
+        <p>彻底放弃"本地推理算力强"的老叙事。Computer Use 证明了真正的价值主张是：能接收云端 AI 指令、在本地安全执行、满足企业合规要求。立即更新所有对外产品定义、销售材料、融资/合作话语体系。</p>
+        <span class="pri-signal">本周执行</span>
+      </div>
+    </div>
+
+    <div class="pri-row">
+      <div class="pri-badge p0">P0</div>
+      <div class="pri-content">
+        <h4>向 Anthropic 争取 Windows/Linux Computer Use 优先适配权</h4>
+        <p>Computer Use 当前仅 macOS，Windows 企业市场缺口巨大。这是一个 6 个月的独家窗口期——在 OpenAI GPT Operator 成熟之前，与 Anthropic 达成"Windows AI PC 首选执行端"合作，是最大的差异化护城河。预计行动窗口：4-6 月。</p>
+        <span class="pri-signal">4月前启动合作接触</span>
+      </div>
+    </div>
+
+    <div class="pri-row">
+      <div class="pri-badge p0">P0</div>
+      <div class="pri-content">
+        <h4>申请信通院首批可信 AI 认证（5 月截止）</h4>
+        <p>国内企业采购大型 AI 系统面临合规压力，拥有信通院可信 AI 认证将成为政企市场入场券。Computer Use 场景下的安全可信需求尤为迫切。5 月截止，先发优势明显。</p>
+        <span class="pri-signal">本月启动申请材料准备</span>
+      </div>
+    </div>
+
+    <div class="pri-row">
+      <div class="pri-badge p1">P1</div>
+      <div class="pri-content">
+        <h4>OS 层启动 Agent 友好型架构设计</h4>
+        <p>Computer Use 需要：① 稳定后台驻留（不被系统 kill）；② 低功耗长时运行（夜间定时任务）；③ 硬件级权限隔离（防 Prompt Injection 在系统层生效）；④ TEE 可信执行环境。这些需要 OS 和硬件协同设计，非软件可单独解决。启动联合设计评估。</p>
+        <span class="pri-signal">Q2 立项</span>
+      </div>
+    </div>
+
+    <div class="pri-row">
+      <div class="pri-badge p1">P1</div>
+      <div class="pri-content">
+        <h4>支持 MCP 协议，接入 9700 万装机生态</h4>
+        <p>MCP 已是 Agent 工具集成的事实标准（Linux 基金会背书）。2B AIPC 若不支持 MCP，将被 Claude 应用市场及其 5800+ 企业工具生态隔离在外。建议将 MCP 客户端支持纳入下一个 OS 版本。</p>
+        <span class="pri-signal">Q2 规划</span>
+      </div>
+    </div>
+
+    <div class="pri-row">
+      <div class="pri-badge p2">P2</div>
+      <div class="pri-content">
+        <h4>针对 Claude Mythos（4月）的能力适配方案</h4>
+        <p>Mythos 发布将重新激活企业 AI 采购热潮（每次旗舰模型升级都是 AI PC 采购的自然推动力）。提前准备 Mythos + 2B AIPC 的联合能力演示，在 4 月发布窗口抢占市场声量。</p>
+        <span class="pri-signal">4月发布前就绪</span>
+      </div>
+    </div>
+
+    <div class="pri-row">
+      <div class="pri-badge p3">P3</div>
+      <div class="pri-content">
+        <h4>欧盟 AI 法案合规准备（9 月生效）</h4>
+        <p>欧盟 AI 法案 9 月强制要求 AI 系统提供审计追踪日志。出海欧洲的 AI PC 需提前内置"本地操作记录 + 可导出审计日志"功能，作为合规卖点而非负担。</p>
+        <span class="pri-signal">Q3 前完成</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       第五节：下周观察清单
+  ══════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-head">
+      <div>
+        <div class="sec-num">👁️ 前瞻 · Section 05</div>
+        <div class="sec-title">下周观察清单（3月31日 ～ 4月6日）</div>
+        <div class="sec-sub">按信号重要性排序</div>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>观察对象</th><th>核心信号</th><th>判断标准</th><th>意义</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Computer Use 用户数据</strong></td>
+            <td>Claude Pro/Max 用户日活比例</td>
+            <td>日活 &gt;15% = 超预期，意味着企业需求爆发</td>
+            <td>评估 Windows 市场紧迫性</td>
+          </tr>
+          <tr>
+            <td><strong>Anthropic Windows 声明</strong></td>
+            <td>官方是否公布 Windows 支持时间表</td>
+            <td>无公告 = 窗口期延续；有公告 = 加速竞争</td>
+            <td>P0 合作行动窗口判断</td>
+          </tr>
+          <tr>
+            <td><strong>Claude Mythos 正式发布</strong></td>
+            <td>Anthropic 官方公告</td>
+            <td>4 月 1-15 日发布概率最高</td>
+            <td>触发企业采购新周期</td>
+          </tr>
+          <tr>
+            <td><strong>OpenAI GPT Operator</strong></td>
+            <td>功能成熟度与 Computer Use 对比</td>
+            <td>质量低 = Claude 窗口延续；质量高 = 压缩 6 个月窗口为 3 个月</td>
+            <td>决定 P0 行动节奏</td>
+          </tr>
+          <tr>
+            <td><strong>国内厂商响应</strong></td>
+            <td>阿里/腾讯/百度是否发布 Computer Use 竞品</td>
+            <td>3 个月内无竞品 = 技术壁垒验证成立</td>
+            <td>评估国内市场差异化空间</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 参考资料 -->
+  <div class="sec">
+    <div class="sec-head">
+      <div>
+        <div class="sec-num">参考资料</div>
+        <div class="sec-title">本期信源索引</div>
+      </div>
+    </div>
+    <ul class="ref-list">
+      <li><span class="ref-num">[1]</span><span>Anthropic 官方博客 "Work with Claude on your computer" · claude.com/blog · 2026-03-23</span></li>
+      <li><span class="ref-num">[2]</span><span>The New Stack "Anthropic's madcap March: 14+ launches, 5 outages" · thenewstack.io · 2026-03-28</span></li>
+      <li><span class="ref-num">[3]</span><span>AI Insight "Claude Cowork 全景：Computer Use、Dispatch、定时任务" · ai-insight.org · 2026-03</span></li>
+      <li><span class="ref-num">[4]</span><span>Fortune "Claude Mythos 泄露事件" via findskill.ai/blog · 2026-03-26</span></li>
+      <li><span class="ref-num">[5]</span><span>新华网 "AI+ 赋能产业升级 博鳌嘉宾热议新趋势" · xinhuanet.com · 2026-03-26</span></li>
+      <li><span class="ref-num">[6]</span><span>Anthropic × Material 调研报告（500+ 技术领导者）· 2026-Q1</span></li>
+      <li><span class="ref-num">[7]</span><span>Claude 官方公告页 "Product announcements" · claude.com/blog/category/announcements · 2026-03-24</span></li>
+    </ul>
+  </div>
+
+</main>
+
+<footer>
+  <p>AI 2B 深度分析报告 · 第6期 · 2026年3月30日</p>
+  <p style="margin-top:6px"><a href="index.html">← 历史归档</a> · <a href="简报_AI2B_20260330.html">← 回到简报</a></p>
+</footer>
+
+</body>
+</html>
