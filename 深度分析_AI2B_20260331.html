@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 2B 深度分析报告 · 2026年3月31日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+        }
+        .header h1 {
+            font-size: 2rem;
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+        }
+        .header .subtitle {
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+        .header .date {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-top: 8px;
+        }
+        .section {
+            margin-bottom: 48px;
+        }
+        .section-title {
+            font-size: 1.4rem;
+            color: #f1f5f9;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgba(96, 165, 250, 0.3);
+        }
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #60a5fa;
+            margin: 32px 0 16px;
+        }
+        .section-content {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+        .section-content p {
+            margin-bottom: 16px;
+        }
+        .highlight-box {
+            background: rgba(96, 165, 250, 0.08);
+            border-left: 3px solid #60a5fa;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+        .insight-box {
+            background: rgba(245, 158, 11, 0.08);
+            border-left: 3px solid #f59e0b;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 0.9rem;
+        }
+        th, td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+        }
+        th {
+            background: rgba(30, 41, 59, 0.8);
+            color: #60a5fa;
+            font-weight: 600;
+        }
+        tr:hover {
+            background: rgba(96, 165, 250, 0.05);
+        }
+        .priority-p0 { color: #ef4444; font-weight: 600; }
+        .priority-p1 { color: #f59e0b; font-weight: 600; }
+        .priority-p2 { color: #3b82f6; font-weight: 600; }
+        .priority-p3 { color: #10b981; font-weight: 600; }
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        li {
+            margin-bottom: 10px;
+            color: #cbd5e1;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #60a5fa 0%, #a78bfa 100%);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 28px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #60a5fa;
+            border: 2px solid #0f172a;
+        }
+        .timeline-title {
+            font-weight: 600;
+            color: #f1f5f9;
+            margin-bottom: 8px;
+        }
+        .timeline-content {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        .swot-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .swot-card {
+            background: rgba(30, 41, 59, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        .swot-card h4 {
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+        .swot-s h4 { color: #10b981; }
+        .swot-w h4 { color: #f59e0b; }
+        .swot-o h4 { color: #3b82f6; }
+        .swot-t h4 { color: #ef4444; }
+        .source-section {
+            background: rgba(30, 41, 59, 0.4);
+            padding: 24px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+        .source-section h3 {
+            color: #94a3b8;
+            font-size: 1rem;
+            margin-bottom: 16px;
+        }
+        .source-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .source-list li {
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+        }
+        .source-list a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+        .source-list a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(148, 163, 184, 0.2);
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+        @media (max-width: 768px) {
+            .swot-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AI 2B 深度分析报告</h1>
+            <div class="subtitle">企业级AI Agent竞争格局与端侧AI PC战略洞察</div>
+            <div class="date">2026年3月31日 · 第6期</div>
+        </div>
+
+        <!-- 第一章：竞争格局分析 -->
+        <div class="section">
+            <h2 class="section-title">一、今日动态揭示的竞争格局分析</h2>
+            
+            <div class="section-content">
+                <p>3月27日至31日期间，AI 2B领域呈现<strong>"端云协同、生态卡位、硬件突破"</strong>三大主线竞争态势。腾讯云Agent全景图发布、阿里Qwen3.5-Omni全模态模型上线、江波龙端侧存储方案首发，标志着企业级AI竞争已从单一模型能力比拼，转向全栈工程能力、端侧基础设施和生态开放性的综合较量。</p>
+                
+                <div class="highlight-box">
+                    <p><strong>核心洞察：</strong>企业级AI Agent市场正形成"三层竞争架构"——云侧模型与平台层（阿里云、腾讯云、OpenAI）、端侧基础设施层（江波龙存储、高通/Intel芯片）、应用生态层（钉钉悟空、飞书aily、企业微信）。端侧AI PC作为连接三层的关键节点，其战略价值正在快速上升。</p>
+                </div>
+
+                <h3 class="section-subtitle">1.1 云侧平台层：Agent治理与工程化能力成为差异化焦点</h3>
+                <p>腾讯云在上海城市峰会首次发布Agent产品全景图，将MaaS平台升级为TokenHub，推出企业级Agent治理方案。这一动作表明，头部云厂商已从"拼模型参数"转向"拼工程化落地能力"。汤道生明确指出："AI落地不只是一道算法题，更是一道工程题。"</p>
+                
+                <p>与此同时，阿里Qwen3.5-Omni以不足0.8元/百万Tokens的定价，在215项任务中取得SOTA，直接对标Google Gemini-3.1 Pro。这表明<strong>多模态能力+极致性价比</strong>成为云侧竞争的新范式。</p>
+
+                <h3 class="section-subtitle">1.2 端侧基础设施层：存储-计算协同架构突破</h3>
+                <p>江波龙在MemoryS 2026发布的SPU（存储处理单元）及iSA（存储智能体），通过与AMD联合调优实现397B超大模型本地部署，在256K上下文场景下降低DRAM占用近40%。这标志着端侧AI硬件正在从"算力堆砌"走向"存算协同优化"的新阶段。</p>
+
+                <h3 class="section-subtitle">1.3 应用生态层：协同办公Agent化全面铺开</h3>
+                <p>飞书aily与钉钉"悟空"的正面交锋，标志着B端协同办公进入Agent化深水区。双方均强调MCP协议支持、企业级权限管理和安全沙箱，表明<strong>企业级合规与治理</strong>已成为应用层的准入门槛。</p>
+            </div>
+        </div>
+
+        <!-- 第二章：核心趋势拆解 -->
+        <div class="section">
+            <h2 class="section-title">二、核心趋势拆解</h2>
+            
+            <div class="section-content">
+                <h3 class="section-subtitle">2.1 趋势一：Agent治理从"可选项"变为"必选项"</h3>
+                <p>Gartner预测到2027年75%的招聘流程将加入AI能力认证，IDC预测到2027年全球G2000企业AI Agent使用量将增长10倍。伴随Agent规模爆发，企业级治理需求（安全沙箱、权限管理、审计追溯）已从"锦上添花"变为"刚性约束"。腾讯云Agent Runtime、钉钉悟空安全沙箱均将此作为核心卖点。</p>
+
+                <h3 class="section-subtitle">2.2 趋势二：端侧多模态能力成为企业级AI PC新标配</h3>
+                <p>阿里Qwen3.5-Omni支持10小时+音频输入、113种语言语音识别，江波龙SPU支持397B模型本地部署。这表明企业级AI PC需具备<strong>长上下文、多模态输入、大模型本地承载</strong>三大能力，传统的"轻薄办公本"定位已无法满足企业AI需求。</p>
+
+                <h3 class="section-subtitle">2.3 趋势三：MCP协议成为生态互操作标准</h3>
+                <p>飞书aily明确支持MCP协议连接企业知识与业务系统，腾讯云开放SkillHub生态。MCP（Model Context Protocol）正在成为Agent与外部工具、数据源交互的事实标准。企业级AI PC需预置MCP客户端能力，实现与企业现有系统的无缝集成。</p>
+
+                <h3 class="section-subtitle">2.4 趋势四：存储-计算协同架构突破端侧瓶颈</h3>
+                <p>江波龙iSA的MoE专家卸载和KV Cache智能管理技术，将端侧大模型部署的DRAM占用降低40%。这标志着端侧AI正在从"算力受限"走向"存储优化"的新范式，为企业级AI PC的硬件架构设计提供了新思路。</p>
+
+                <h3 class="section-subtitle">2.5 趋势五：B2B采购Agent化重塑企业IT采购流程</h3>
+                <p>Gartner预测到2028年90%的B2B采购将由AI Agent主导，交易金额超15万亿美元。这意味着企业级AI PC的销售模式也需适配Agent化采购趋势，提供可验证的操作数据、API接口和自动化集成能力。</p>
+            </div>
+        </div>
+
+        <!-- 第三章：各玩家战略路径比较 -->
+        <div class="section">
+            <h2 class="section-title">三、各玩家战略路径比较</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>玩家</th>
+                        <th>核心产品/发布</th>
+                        <th>战略定位</th>
+                        <th>端侧布局</th>
+                        <th>生态策略</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>阿里云</strong></td>
+                        <td>Qwen3.5-Omni<br>钉钉"悟空"</td>
+                        <td>全模态模型+企业级Agent平台</td>
+                        <td>通过百炼平台提供API，端侧依赖合作伙伴</td>
+                        <td>钉钉生态深度绑定，封闭但完整</td>
+                    </tr>
+                    <tr>
+                        <td><strong>腾讯云</strong></td>
+                        <td>Agent产品全景图<br>TokenHub</td>
+                        <td>五层全栈工程能力</td>
+                        <td>WorkBuddy+QClaw端云协同</td>
+                        <td>Cube开源+SkillHub开放，去中心化生态</td>
+                    </tr>
+                    <tr>
+                        <td><strong>字节跳动</strong></td>
+                        <td>飞书aily<br>飞书妙搭</td>
+                        <td>低门槛企业Agent开发平台</td>
+                        <td>云端为主，本地部署可选</td>
+                        <td>MCP协议开放，飞书生态集成</td>
+                    </tr>
+                    <tr>
+                        <td><strong>OpenAI</strong></td>
+                        <td>GPT-5.4</td>
+                        <td>企业级Agent能力整合</td>
+                        <td>云端API为主，端侧依赖第三方</td>
+                        <td>与Excel/Google Sheets深度集成</td>
+                    </tr>
+                    <tr>
+                        <td><strong>江波龙</strong></td>
+                        <td>SPU+iSA</td>
+                        <td>端侧AI存储基础设施</td>
+                        <td>核心玩家，397B模型本地部署</td>
+                        <td>与AMD等芯片厂商联合调优</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box insight-box">
+                <p><strong>战略启示：</strong>云厂商（阿里云、腾讯云、OpenAI）聚焦平台层和生态层，端侧基础设施（江波龙、芯片厂商）聚焦硬件突破。企业级AI PC作为连接两端的关键载体，需同时满足云厂商的Agent接入标准和端侧硬件的性能要求，其战略卡位价值正在凸显。</p>
+            </div>
+        </div>
+
+        <!-- 第四章：SWOT分析 -->
+        <div class="section">
+            <h2 class="section-title">四、企业级AI PC的SWOT分析</h2>
+            
+            <div class="swot-grid">
+                <div class="swot-card swot-s">
+                    <h4>优势 (Strengths)</h4>
+                    <ul>
+                        <li>端侧存储-计算协同架构成熟（江波龙SPU+iSA验证可行）</li>
+                        <li>本地大模型部署能力突破（397B模型本地运行）</li>
+                        <li>长上下文处理能力提升（256K+上下文支持）</li>
+                        <li>多模态输入输出能力完备（音视频+文本）</li>
+                    </ul>
+                </div>
+                <div class="swot-card swot-w">
+                    <h4>劣势 (Weaknesses)</h4>
+                    <ul>
+                        <li>云侧API成本持续下降（阿里云0.8元/百万Tokens），端侧成本优势收窄</li>
+                        <li>MCP协议生态尚未完全统一，集成复杂度高</li>
+                        <li>企业级Agent治理标准仍在演进中</li>
+                        <li>端侧大模型更新迭代速度不及云端</li>
+                    </ul>
+                </div>
+                <div class="swot-card swot-o">
+                    <h4>机会 (Opportunities)</h4>
+                    <ul>
+                        <li>Agent治理需求爆发（安全沙箱、权限管理成为刚需）</li>
+                        <li>B2B采购Agent化趋势（2028年90%采购由Agent主导）</li>
+                        <li>区域化AI平台割裂（35%国家形成区域生态，端侧价值提升）</li>
+                        <li>企业数据主权意识增强（本地部署需求上升）</li>
+                    </ul>
+                </div>
+                <div class="swot-card swot-t">
+                    <h4>威胁 (Threats)</h4>
+                    <ul>
+                        <li>云厂商Agent平台生态闭环（钉钉、飞书、企业微信）</li>
+                        <li>Intel/高通等芯片厂商直接集成Agent能力</li>
+                        <li>开源Agent框架（如OpenClaw）降低端侧差异化门槛</li>
+                        <li>企业IT预算收缩，优先采购成熟云方案</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第五章：产品定义优先级建议 -->
+        <div class="section">
+            <h2 class="section-title">五、产品定义优先级建议</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>优先级</th>
+                        <th>能力项</th>
+                        <th>具体需求</th>
+                        <th>价值说明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="priority-p0">P0</td>
+                        <td>Agent Runtime安全沙箱</td>
+                        <td>硬件级隔离、权限管控、操作审计、Prompt Injection防护</td>
+                        <td>企业采购刚需，腾讯云/钉钉均已布局</td>
+                    </tr>
+                    <tr>
+                        <td class="priority-p0">P0</td>
+                        <td>MCP协议原生支持</td>
+                        <td>预置MCP客户端、支持SkillHub生态接入</td>
+                        <td>生态互操作标准，飞书/腾讯云已支持</td>
+                    </tr>
+                    <tr>
+                        <td class="priority-p0">P0</td>
+                        <td>存算协同架构</td>
+                        <td>支持SPU/iSA类存储智能体、KV Cache智能管理</td>
+                        <td>江波龙已验证，端侧大模型部署关键</td>
+                    </tr>
+                    <tr>
+                        <td class="priority-p1">P1</td>
+                        <td>多模态输入输出</td>
+                        <td>音视频采集、长音频处理（10小时+）、多语言支持</td>
+                        <td>Qwen3.5-Omni定义的新标准</td>
+                    </tr>
+                    <tr>
+                        <td class="priority-p1">P1</td>
+                        <td>企业IAM深度集成</td>
+                        <td>对接企业身份系统、权限自动继承、单点登录</td>
+                        <td>钉钉悟空核心卖点</td>
+                    </tr>
+                    <tr>
+                        <td class="priority-p1">P1</td>
+                        <td>端云协同推理</td>
+                        <td>本地轻量模型+云端大模型混合调度、自动降级</td>
+                        <td>平衡成本与性能的最优解</td>
+                    </tr>
+                    <tr>
+                        <td class="priority-p2">P2</td>
+                        <td>办公套件深度集成</td>
+                        <td>与Excel/文档/会议系统无缝协作</td>
+                        <td>GPT-5.4已示范，跟进即可</td>
+                    </tr>
+                    <tr>
+                        <td class="priority-p2">P2</td>
+                        <td>Token成本可视化管理</td>
+                        <td>企业级用量统计、成本分摊、预算预警</td>
+                        <td>腾讯云TokenHub已布局</td>
+                    </tr>
+                    <tr>
+                        <td class="priority-p3">P3</td>
+                        <td>垂直行业Agent模板</td>
+                        <td>金融、制造、医疗等行业预置Agent</td>
+                        <td>差异化增值，后期补齐</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 第六章：战略路径与时间线建议 -->
+        <div class="section">
+            <h2 class="section-title">六、战略路径与时间线建议</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-title">即刻启动（2026年Q2）</div>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>启动Agent Runtime安全沙箱技术预研，参考腾讯云Agent治理方案架构</li>
+                            <li>对接MCP协议规范，完成技术可行性评估</li>
+                            <li>与江波龙等存储厂商建立合作，评估SPU/iSA技术引入可行性</li>
+                            <li>完成Qwen3.5-Omni、GPT-5.4等企业级模型API接入评估</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title">1-3个月（2026年Q2-Q3）</div>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>发布企业级AI PC技术白皮书，定义Agent Runtime接口规范</li>
+                            <li>完成MCP协议客户端原型开发，支持主流Skill接入</li>
+                            <li>启动与钉钉、飞书、企业微信等平台的Agent集成对接</li>
+                            <li>开展企业客户共创，验证安全沙箱和权限管理需求</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title">3-6个月（2026年Q3-Q4）</div>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>发布首款支持Agent Runtime的企业级AI PC产品</li>
+                            <li>通过中国信通院"可信AI-智能体"评估认证（首批结果5月公布）</li>
+                            <li>建立企业级AI PC生态联盟，引入ISV合作伙伴</li>
+                            <li>完成与3-5家头部云厂商的Agent平台深度集成</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title">6-12个月（2027年）</div>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>实现存算协同架构量产，支持400B+模型本地部署</li>
+                            <li>推出垂直行业解决方案（金融、制造、医疗）</li>
+                            <li>建立企业级AI PC服务网络，覆盖头部城市</li>
+                            <li>参与行业标准制定，争取话语权</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 参考来源 -->
+        <div class="source-section">
+            <h3>参考来源</h3>
+            <ul class="source-list">
+                <li>[1] 量子位：《阿里发布Qwen3.5-Omni，多模态能力超越Gemini-3.1 Pro》(2026-03-30) - <a href="https://www.qbitai.com/2026/03/393460.html" target="_blank">https://www.qbitai.com/2026/03/393460.html</a></li>
+                <li>[2] 财联社：《阿里千问宣布全模态大模型Qwen3.5-Omni上线》(2026-03-30) - <a href="https://www.cls.cn/detail/2329565" target="_blank">https://www.cls.cn/detail/2329565</a></li>
+                <li>[3] 腾讯新闻：《2026腾讯云城市峰会上海启幕，首次发布Agent产品全景图》(2026-03-27) - <a href="https://news.qq.com/rain/a/20260327A071CS00" target="_blank">https://news.qq.com/rain/a/20260327A071CS00</a></li>
+                <li>[4] 央广网：《腾讯云上海峰会：发布Agent产品全景图，升级全栈AI能力》(2026-03-27) - <a href="https://tech.cnr.cn/techgd/20260327/t20260327_527564472.shtml" target="_blank">https://tech.cnr.cn/techgd/20260327/t20260327_527564472.shtml</a></li>
+                <li>[5] Fortune：《OpenAI launches GPT-5.4, its most powerful model for enterprise work》(2026-03-05) - <a href="https://fortune.com/2026/03/05/openai-new-model-gpt5-4-enterprise-agentic-anthropic/" target="_blank">https://fortune.com/2026/03/05/openai-new-model-gpt5-4-enterprise-agentic-anthropic/</a></li>
+                <li>[6] 36氪：《MemoryS 2026｜江波龙首发SPU及iSA，端侧AI存储创新布局八大看点解读》(2026-03-27) - <a href="https://www.36kr.com/p/3741148490383623" target="_blank">https://www.36kr.com/p/3741148490383623</a></li>
+                <li>[7] 腾讯新闻：《飞书发布飞书版"小龙虾"，多款企业级Agent同步亮相》(2026-03-19) - <a href="https://news.qq.com/rain/a/20260319A06ZPF00" target="_blank">https://news.qq.com/rain/a/20260319A06ZPF00</a></li>
+                <li>[8] 新浪财经：《飞书推出多款企业级Agent产品》(2026-03-20) - <a href="https://finance.sina.com.cn/jjxw/2026-03-20/doc-inhrqtzi6960472.shtml" target="_blank">https://finance.sina.com.cn/jjxw/2026-03-20/doc-inhrqtzi6960472.shtml</a></li>
+                <li>[9] Gartner：《Strategic Predictions for 2026: How AI's Underestimated Disruption Is Reshaping Business》(2025-11) - <a href="https://www.gartner.com/en/articles/strategic-predictions-for-2026" target="_blank">https://www.gartner.com/en/articles/strategic-predictions-for-2026</a></li>
+                <li>[10] IDC：《FutureScape: 全球Agentic AI 2026年预测——中国启示》(2026-01) - <a href="https://www.idc.com/resource-center/blog/" target="_blank">https://www.idc.com/resource-center/blog/</a></li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>AI 2B 深度分析报告 · 每日更新</p>
+            <p style="margin-top: 10px;">
+                <a href="https://yangzhengcuhk.github.io/ai2b-insights/">历史归档</a> ·
+                <a href="https://yangzhengcuhk.github.io/ai2b-insights/简报_AI2B_20260331.html">今日简报</a>
+            </p>
+            <p style="margin-top: 20px;">
+                本报告基于公开信息整理，仅供行业研究参考
+            </p>
+        </div>
+    </div>
+</body>
+</html>
