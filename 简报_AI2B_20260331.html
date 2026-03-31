@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 2B 行业洞察日报 · 2026年3月31日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+        }
+        .header h1 {
+            font-size: 2.2rem;
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .header .date {
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+        .header .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        .section-title {
+            font-size: 1.1rem;
+            color: #60a5fa;
+            margin: 30px 0 20px;
+            padding-left: 12px;
+            border-left: 3px solid #60a5fa;
+        }
+        .card {
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            border-color: rgba(96, 165, 250, 0.3);
+            transform: translateY(-2px);
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+        .card-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #f1f5f9;
+        }
+        .card-company {
+            display: inline-block;
+            background: rgba(96, 165, 250, 0.15);
+            color: #60a5fa;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+        }
+        .card-date {
+            color: #64748b;
+            font-size: 0.8rem;
+        }
+        .card-content {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+        .card-section {
+            margin-top: 14px;
+        }
+        .card-section-title {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .card-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .card-section li {
+            padding: 6px 0;
+            padding-left: 16px;
+            position: relative;
+            color: #e2e8f0;
+            font-size: 0.9rem;
+        }
+        .card-section li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #60a5fa;
+        }
+        .source {
+            margin-top: 16px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+        .source a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+        .source a:hover {
+            text-decoration: underline;
+        }
+        .insight-card {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(217, 119, 6, 0.05) 100%);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+        .insight-card .card-section-title {
+            color: #fbbf24;
+        }
+        .insight-card li::before {
+            color: #fbbf24;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(148, 163, 184, 0.2);
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+        .footer a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            .header h1 { font-size: 1.6rem; }
+            .card { padding: 18px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AI 2B 行业洞察日报</h1>
+            <div class="date">2026年3月31日 · 星期二</div>
+            <div class="badge">第6期</div>
+        </div>
+
+        <div class="section-title">📊 今日高价值动态（5条）</div>
+
+        <!-- 动态1: 阿里Qwen3.5-Omni -->
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <span class="card-company">阿里巴巴</span>
+                    <span class="card-title">Qwen3.5-Omni 全模态大模型发布</span>
+                </div>
+                <span class="card-date">2026-03-30</span>
+            </div>
+            <div class="card-content">
+                阿里发布千问新一代全模态大模型，在音视频理解、识别、交互等215项任务中取得SOTA，超越Google Gemini-3.1 Pro。支持文本、图片、音频及音视频统一理解与生成，可生成细粒度、带时间戳的音视频Caption。
+            </div>
+            <div class="card-section">
+                <div class="card-section-title">解决的企业场景问题</div>
+                <ul>
+                    <li>视频内容自动分析与章节切片，将繁琐的后期梳理工作缩短至秒级</li>
+                    <li>支持113种语言语音识别和36种语言语音生成，满足全球化企业多语言需求</li>
+                    <li>音视频Vibe Coding：通过摄像头口述需求即可生成APP/网页/游戏代码原型</li>
+                    <li>超过10小时音频输入支持，适用于长会议记录、培训课程等场景</li>
+                </ul>
+            </div>
+            <div class="card-section">
+                <div class="card-section-title">对企业级AI PC的启示</div>
+                <ul>
+                    <li><strong>端侧多模态能力成为标配：</strong>企业级AI PC需支持音视频输入输出一体化，满足视频会议、内容创作等场景</li>
+                    <li><strong>本地长上下文处理需求：</strong>支持10小时+音频输入意味着端侧需要更大的内存和存储带宽</li>
+                    <li><strong>API成本优势驱动本地部署：</strong>阿里云定价不足0.8元/百万Tokens，端侧推理需在成本与隐私间找到平衡点</li>
+                </ul>
+            </div>
+            <div class="source">
+                来源：<a href="https://www.qbitai.com/2026/03/393460.html" target="_blank">量子位</a>、
+                <a href="https://www.cls.cn/detail/2329565" target="_blank">财联社</a>
+            </div>
+        </div>
+
+        <!-- 动态2: 腾讯云Agent全景图 -->
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <span class="card-company">腾讯</span>
+                    <span class="card-title">Agent产品全景图首次发布</span>
+                </div>
+                <span class="card-date">2026-03-27</span>
+            </div>
+            <div class="card-content">
+                腾讯云城市峰会上海站首次发布涵盖基础设施、模型、生态到应用的Agent产品全景图，MaaS平台升级为TokenHub，推出企业级Agent治理方案，底层平台Cube全面开源。
+            </div>
+            <div class="card-section">
+                <div class="card-section-title">解决的企业场景问题</div>
+                <ul>
+                    <li>提供从"用Agent、造Agent到管Agent"的完整工具链，解决AI落地"最后一公里"问题</li>
+                    <li>企业级Agent治理方案：安全沙箱(Agent Runtime)及全方位防护体系</li>
+                    <li>TC Data Agent让业务人员无需技术背景即可完成数据查询</li>
+                    <li>WorkBuddy + QClaw组合实现"开箱即用"的AI工作台</li>
+                </ul>
+            </div>
+            <div class="card-section">
+                <div class="card-section-title">对企业级AI PC的启示</div>
+                <ul>
+                    <li><strong>Agent治理成为企业采购刚需：</strong>企业级AI PC需内置Agent Runtime沙箱，满足企业合规要求</li>
+                    <li><strong>端云协同架构标准化：</strong>腾讯云五层架构为端侧Agent集成提供了参考范式</li>
+                    <li><strong>开源生态对接：</strong>Cube平台开源意味着端侧Agent框架需要支持开源协议对接</li>
+                </ul>
+            </div>
+            <div class="source">
+                来源：<a href="https://news.qq.com/rain/a/20260327A071CS00" target="_blank">腾讯新闻</a>、
+                <a href="https://tech.cnr.cn/techgd/20260327/t20260327_527564472.shtml" target="_blank">央广网</a>
+            </div>
+        </div>
+
+        <!-- 动态3: OpenAI GPT-5.4 -->
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <span class="card-company">OpenAI</span>
+                    <span class="card-title">GPT-5.4 企业级模型发布</span>
+                </div>
+                <span class="card-date">2026-03-05</span>
+            </div>
+            <div class="card-content">
+                OpenAI发布迄今为止最强大的企业级模型GPT-5.4，整合高级编程、改进推理和智能体能力，可自主操作计算机、浏览器和软件应用。推出ChatGPT for Excel/Google Sheets测试版，集成FactSet、MSCI等金融数据平台。
+            </div>
+            <div class="card-section">
+                <div class="card-section-title">解决的企业场景问题</div>
+                <ul>
+                    <li>复杂多步骤工作流处理，无需开发者自行构建底层基础设施</li>
+                    <li>金融数据分析：直接嵌入电子表格构建、分析和更新复杂财务模型</li>
+                    <li>事实性提升33%，完整回答错误率降低18%，满足企业高精度需求</li>
+                    <li>令牌效率优化，总成本可能因效率提升而降低</li>
+                </ul>
+            </div>
+            <div class="card-section">
+                <div class="card-section-title">对企业级AI PC的启示</div>
+                <ul>
+                    <li><strong>企业级Agent成为标配：</strong>AI PC需预装或深度集成企业级Agent框架，支持复杂工作流自动化</li>
+                    <li><strong>办公套件深度集成：</strong>与Excel/Google Sheets的集成表明端侧Agent需与本地办公软件无缝协作</li>
+                    <li><strong>金融/专业场景优先：</strong>企业级AI PC可优先切入金融、数据分析等专业场景</li>
+                </ul>
+            </div>
+            <div class="source">
+                来源：<a href="https://fortune.com/2026/03/05/openai-new-model-gpt5-4-enterprise-agentic-anthropic/" target="_blank">Fortune</a>
+            </div>
+        </div>
+
+        <!-- 动态4: 江波龙端侧AI存储 -->
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <span class="card-company">江波龙</span>
+                    <span class="card-title">SPU及iSA端侧AI存储方案首发</span>
+                </div>
+                <span class="card-date">2026-03-27</span>
+            </div>
+            <div class="card-content">
+                在MemoryS 2026存储峰会上，江波龙首发SPU（存储处理单元）及iSA（存储智能体），基于5nm先进制程，单盘可达128TB，支持存内无损压缩（平均压缩比2:1）和MoE专家卸载，与AMD联合调优实现397B超大模型本地部署。
+            </div>
+            <div class="card-section">
+                <div class="card-section-title">解决的企业场景问题</div>
+                <ul>
+                    <li>端侧大模型参数庞大的存储调度问题，MoE专家卸载技术缓解I/O延迟</li>
+                    <li>KV Cache智能管理与预取算法，在256K上下文场景下降低DRAM占用近40%</li>
+                    <li>128TB单盘容量高效益替代HDD，为eSSD方案提供新可能</li>
+                    <li>HLC高级缓存技术节省约40%DRAM容量需求，优化BOM成本</li>
+                </ul>
+            </div>
+            <div class="card-section">
+                <div class="card-section-title">对企业级AI PC的启示</div>
+                <ul>
+                    <li><strong>存储-计算协同架构：</strong>端侧AI PC需采用SPU+iSA架构，突破存储带宽瓶颈</li>
+                    <li><strong>大模型本地部署成为可能：</strong>397B模型本地部署证明端侧可承载超大规模模型</li>
+                    <li><strong>成本优化路径：</strong>通过存储压缩和KV Cache管理降低DRAM依赖，优化企业采购成本</li>
+                </ul>
+            </div>
+            <div class="source">
+                来源：<a href="https://www.36kr.com/p/3741148490383623" target="_blank">36氪</a>
+            </div>
+        </div>
+
+        <!-- 动态5: 飞书aily企业级Agent -->
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <span class="card-company">字节跳动</span>
+                    <span class="card-title">飞书aily企业级Agent产品发布</span>
+                </div>
+                <span class="card-date">2026-03-19</span>
+            </div>
+            <div class="card-content">
+                飞书发布多款企业级Agent产品，包括全新升级的智能体平台飞书aily、飞书妙搭及多维表格AI能力。深度融合飞书生态，基于企业场景工作，支持MCP协议连接企业知识与业务系统，可自主读取群聊、会议、文档等信息。
+            </div>
+            <div class="card-section">
+                <div class="card-section-title">解决的企业场景问题</div>
+                <ul>
+                    <li>企业办公全场景专属智能体落地，一键创建个人"龙虾"Agent</li>
+                    <li>查重要事、帮任务、给提醒等日常场景智能化</li>
+                    <li>海量MCP服务、AI编排引擎和企业级智能客服、知识问答</li>
+                    <li>与钉钉"悟空"正面交锋，B端AI商业化大战启幕</li>
+                </ul>
+            </div>
+            <div class="card-section">
+                <div class="card-section-title">对企业级AI PC的启示</div>
+                <ul>
+                    <li><strong>MCP协议成为生态标准：</strong>企业级AI PC需支持MCP协议，实现与企业系统的无缝集成</li>
+                    <li><strong>协同办公Agent化：</strong>端侧Agent需深度集成办公场景，实现"沟通即执行"</li>
+                    <li><strong>生态竞争加剧：</strong>飞书与钉钉的竞争表明端侧Agent需选择生态阵营或保持开放</li>
+                </ul>
+            </div>
+            <div class="source">
+                来源：<a href="https://news.qq.com/rain/a/20260319A06ZPF00" target="_blank">腾讯新闻</a>、
+                <a href="https://finance.sina.com.cn/jjxw/2026-03-20/doc-inhrqtzi6960472.shtml" target="_blank">新浪财经</a>
+            </div>
+        </div>
+
+        <div class="section-title">💡 行业观点</div>
+
+        <!-- 观点1: Gartner -->
+        <div class="card insight-card">
+            <div class="card-header">
+                <div>
+                    <span class="card-company">Gartner</span>
+                    <span class="card-title">2026年战略预测：AI重构人才、商业与全球规则</span>
+                </div>
+                <span class="card-date">2025-10</span>
+            </div>
+            <div class="card-content">
+                Gartner发布2026年及未来战略预测，揭示AI Agent、主权平台和生产力工具如何悄然改变人才招聘、采购和治理格局。
+            </div>
+            <div class="card-section">
+                <div class="card-section-title">核心观点</div>
+                <ul>
+                    <li><strong>招聘流程变革：</strong>到2027年，75%的招聘流程将在录用环节加入工作场所AI能力认证与测试</li>
+                    <li><strong>生产力工具市场重塑：</strong>到2027年末，GenAI与AI智能体的应用将给主流生产力工具带来30年来首次真正挑战，引发价值580亿美元的市场格局重塑</li>
+                    <li><strong>B2B采购变革：</strong>到2028年，B2B采购的90%将由AI Agent主导，交易金额超15万亿美元</li>
+                    <li><strong>全球AI平台割裂：</strong>到2027年，全球35%的国家将被锁定在特定语境数据的区域性AI"大牢"中</li>
+                </ul>
+            </div>
+            <div class="source">
+                来源：<a href="https://www.gartner.com/en/articles/strategic-predictions-for-2026" target="_blank">Gartner Strategic Predictions 2026</a>
+            </div>
+        </div>
+
+        <!-- 观点2: IDC -->
+        <div class="card insight-card">
+            <div class="card-header">
+                <div>
+                    <span class="card-company">IDC</span>
+                    <span class="card-title">FutureScape 2026：Agentic AI十大预测</span>
+                </div>
+                <span class="card-date">2026-01</span>
+            </div>
+            <div class="card-content">
+                IDC发布《全球Agentic AI 2026年预测——中国启示》，系统刻画未来五年中国企业智能体发展的十个关键转折点。
+            </div>
+            <div class="card-section">
+                <div class="card-section-title">核心观点</div>
+                <ul>
+                    <li><strong>复合AI普及：</strong>到2026年，70%的组织将采用融合生成式、处方式、预测式和智能体技术的复合AI</li>
+                    <li><strong>智能体爆发：</strong>到2027年，全球G2000企业中AI智能体的使用量将增长10倍，调用量更将提升1000倍</li>
+                    <li><strong>新交互界面：</strong>到2028年，45%的IT产品与服务交互将以智能体为主要界面</li>
+                    <li><strong>数字劳动力：</strong>到2030年，全球约有22亿个AI Agent进入企业运作，成为新一代数字劳动力</li>
+                </ul>
+            </div>
+            <div class="source">
+                来源：<a href="https://www.idc.com/resource-center/blog/" target="_blank">IDC FutureScape 2026</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>AI 2B 行业洞察日报 · 每日更新</p>
+            <p style="margin-top: 10px;">
+                <a href="https://yangzhengcuhk.github.io/ai2b-insights/">历史归档</a> ·
+                <a href="https://yangzhengcuhk.github.io/ai2b-insights/深度分析_AI2B_20260331.html">今日深度分析</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 0.75rem; color: #475569;">
+                本报告基于公开信息整理，仅供行业研究参考
+            </p>
+        </div>
+    </div>
+</body>
+</html>
