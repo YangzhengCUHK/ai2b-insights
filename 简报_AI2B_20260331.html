@@ -143,6 +143,22 @@
         .insight-card li::before {
             color: #fbbf24;
         }
+        /* ── GitHub 热门项目板块 ── */
+        .gh-list{display:flex;flex-direction:column;gap:12px;margin-bottom:10px}
+        .gh-card{display:grid;grid-template-columns:32px 1fr;gap:0 14px;background:rgba(30,41,59,0.6);border:1px solid rgba(148,163,184,0.1);border-radius:10px;padding:14px 16px;transition:all 0.3s ease}
+        .gh-card:hover{border-color:rgba(16,185,129,0.3);transform:translateY(-1px)}
+        .gh-rank{font-size:18px;font-weight:800;color:rgba(16,185,129,0.4);display:flex;align-items:flex-start;padding-top:2px}
+        .gh-header{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+        .gh-name{font-size:14px;font-weight:700;color:#f1f5f9}
+        .gh-stars{font-size:11px;color:#fbbf24;font-weight:600}
+        .gh-desc{font-size:12px;color:rgba(226,232,240,0.6);margin-bottom:8px;line-height:1.6}
+        .gh-tags{display:flex;gap:6px;margin-bottom:8px;flex-wrap:wrap}
+        .gh-cat{font-size:10px;padding:2px 8px;border-radius:10px;background:rgba(96,165,250,0.12);border:1px solid rgba(96,165,250,0.25);color:#60a5fa;font-weight:600}
+        .gh-lang{font-size:10px;padding:2px 8px;border-radius:10px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(148,163,184,0.6)}
+        .gh-detail{font-size:11px;color:rgba(226,232,240,0.5);line-height:1.6;margin-bottom:6px}
+        .gh-aipc{font-size:11px;color:rgba(16,185,129,0.85);line-height:1.6;background:rgba(16,185,129,0.06);border-left:2px solid rgba(16,185,129,0.3);padding:6px 10px;border-radius:0 6px 6px 0}
+        .gh-aipc strong{color:rgba(16,185,129,0.95)}
+
         .footer {
             text-align: center;
             margin-top: 40px;
@@ -342,6 +358,102 @@
                 来源：<a href="https://news.qq.com/rain/a/20260319A06ZPF00" target="_blank">腾讯新闻</a>、
                 <a href="https://finance.sina.com.cn/jjxw/2026-03-20/doc-inhrqtzi6960472.shtml" target="_blank">新浪财经</a>
             </div>
+        </div>
+
+        <div class="section-title">🛠 GitHub AI/Agent 热门开源项目 · TOP 5</div>
+        <p style="color:#64748b;font-size:0.85rem;margin-bottom:16px;">综合 GitHub Stars / 28天增长 / 开发者贡献 / 社媒热度排名 · 数据截至 2026.04.07</p>
+
+        <div class="gh-list">
+          <!-- #1 -->
+          <div class="gh-card">
+            <div class="gh-rank">#1</div>
+            <div class="gh-body">
+              <div class="gh-header">
+                <span class="gh-name">block/goose</span>
+                <span class="gh-stars">⭐ +1,523/天 · Square 出品</span>
+              </div>
+              <div class="gh-desc">基于 Rust 的可扩展 AI Agent 框架，能够安装、执行、编辑和测试代码，代表金融科技级工程进入 Agent 领域</div>
+              <div class="gh-tags">
+                <span class="gh-cat">Coding Agent</span>
+                <span class="gh-lang">Rust</span>
+                <span class="gh-lang">MCP</span>
+              </div>
+              <div class="gh-detail"><strong>核心能力：</strong>自主代码安装/执行/测试、多工具编排、MCP 协议原生支持、沙箱隔离执行</div>
+              <div class="gh-aipc"><strong>🖥 AI PC 场景：</strong>Rust 高性能特性天然适配 AIPC NPU/CPU 混合架构；本地代码 Agent 执行端可作为企业开发者的"AI 工程师工作站"，数据不出设备满足安全合规。Square 的金融级安全设计为端侧 Agent 沙箱提供最佳实践参考。</div>
+            </div>
+          </div>
+          <!-- #2 -->
+          <div class="gh-card">
+            <div class="gh-rank">#2</div>
+            <div class="gh-body">
+              <div class="gh-header">
+                <span class="gh-name">NousResearch/hermes-agent</span>
+                <span class="gh-stars">⭐ 28,000+ · +1,574/天</span>
+              </div>
+              <div class="gh-desc">自学习 AI Agent 框架，具备闭环学习系统，可自动将任务经验提炼为可复用技能文件，支持 200+ 模型切换</div>
+              <div class="gh-tags">
+                <span class="gh-cat">Agent Framework</span>
+                <span class="gh-lang">Python</span>
+                <span class="gh-lang">Multi-Model</span>
+              </div>
+              <div class="gh-detail"><strong>核心能力：</strong>经验→技能文件自动提炼、200+模型热切换、集成飞书/企业微信等十余个平台、兼容 OpenClaw 记忆与技能迁移</div>
+              <div class="gh-aipc"><strong>🖥 AI PC 场景：</strong>"越用越聪明"的端侧 Agent 范例——每次任务执行都在本地积累技能库，不需要云端同步即可实现个性化。多平台集成意味着 AIPC 可作为企业 Agent 的统一本地入口，替代分散的 SaaS 工具。</div>
+            </div>
+          </div>
+          <!-- #3 -->
+          <div class="gh-card">
+            <div class="gh-rank">#3</div>
+            <div class="gh-body">
+              <div class="gh-header">
+                <span class="gh-name">google-ai-edge/LiteRT-LM</span>
+                <span class="gh-stars">⭐ +483/天 · Google Research</span>
+              </div>
+              <div class="gh-desc">Google 端侧 LLM 轻量推理运行时，针对移动设备和边缘硬件优化，支持隐私保护和离线推理场景</div>
+              <div class="gh-tags">
+                <span class="gh-cat">Edge AI</span>
+                <span class="gh-lang">C++</span>
+                <span class="gh-lang">LiteRT</span>
+              </div>
+              <div class="gh-detail"><strong>核心能力：</strong>量化推理优化（INT4/INT8）、消费级硬件零配置部署、与 Google AI Edge Gallery 用例展示集成、离线全功能运行</div>
+              <div class="gh-aipc"><strong>🖥 AI PC 场景：</strong>直接对标 AIPC 本地推理优化需求——Google 将 Android 端侧经验迁移到 PC 的信号明确。AIPC 可集成 LiteRT 作为本地推理引擎，实现"断网可用"的 AI 助手体验，在金融/政务/军工等断网或涉密场景价值极高。</div>
+            </div>
+          </div>
+          <!-- #4 -->
+          <div class="gh-card">
+            <div class="gh-rank">#4</div>
+            <div class="gh-body">
+              <div class="gh-header">
+                <span class="gh-name">KeygraphHQ/shannon</span>
+                <span class="gh-stars">⭐ +733/天 · 安全领域新星</span>
+              </div>
+              <div class="gh-desc">自主白盒 AI 渗透测试工具，AI 驱动的安全评估自动化，可对系统进行全流程漏洞扫描与报告生成</div>
+              <div class="gh-tags">
+                <span class="gh-cat">AI Security</span>
+                <span class="gh-lang">Python</span>
+                <span class="gh-lang">Pentest</span>
+              </div>
+              <div class="gh-detail"><strong>核心能力：</strong>自主渗透测试路径规划、漏洞自动化利用验证、结构化安全报告生成、白盒分析（非黑盒猜测）</div>
+              <div class="gh-aipc"><strong>🖥 AI PC 场景：</strong>企业安全是 AIPC 最强差异化场景之一。端侧安全 Agent 可 7×24 对本机进行安全审计，数据不外传满足合规。与 Accenture × Anthropic 的 Cyber.AI 形成互补——云端做大范围监控，本地做终端防护。</div>
+            </div>
+          </div>
+          <!-- #5 -->
+          <div class="gh-card">
+            <div class="gh-rank">#5</div>
+            <div class="gh-body">
+              <div class="gh-header">
+                <span class="gh-name">anthropics/claude-code</span>
+                <span class="gh-stars">⭐ 310,000+ · +4,995/28天</span>
+              </div>
+              <div class="gh-desc">Anthropic 官方终端 AI 编程助手，本月 GitHub 增长最快的项目，与 Claude Computer Use 深度联动</div>
+              <div class="gh-tags">
+                <span class="gh-cat">Coding Agent</span>
+                <span class="gh-lang">TypeScript</span>
+                <span class="gh-lang">Anthropic</span>
+              </div>
+              <div class="gh-detail"><strong>核心能力：</strong>终端优先代码生成/审查/重构、Claude Computer Use 本地操控、Auto Mode 全自动编程、MCP 工具生态集成</div>
+              <div class="gh-aipc"><strong>🖥 AI PC 场景：</strong>Claude Code 是当前唯一实现"AI 操控电脑"的成熟产品，但仅 macOS——这正是 AIPC Windows 平台的 P0 机会。需争取 Anthropic Windows 适配优先权，或自研兼容层。开发者社区爆发式增长（+5K/28天）说明市场需求真实存在。</div>
+            </div>
+          </div>
         </div>
 
         <div class="section-title">💡 行业观点</div>
